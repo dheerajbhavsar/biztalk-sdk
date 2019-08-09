@@ -1,0 +1,17 @@
+Northwind Shipping
+Batch type:Purchase Orders
+PO1999-10-20
+US        Alice Smith         123 Maple Street    Mill Valley    CA 90952
+US        Robert Smith        8 Oak Avenue        Old Town       PA 95819
+Hurry, my lawn is going wild!
+ITEMS,ITEM872-AA|Lawnmower|1|148.95|Confirm this is electric,ITEM926-AA|Baby Monitor|1|39.98|Confirm this is electric
+PO1999-10-21
+US        John Dow            123 Elm Street      Mill Valley    CA 90952
+US        July Dow            8 Pine Avenue       Old Town       PA 95819
+Please ship it urgent!
+ITEMS,ITEM398-BB|Tire|4|324.99|Wrap them up nicely,ITEM201-BB|Engine Oil|1|12.99|SAE10W30
+PO1999-10-23
+US        John Connor         123 Cedar Street    Mill Valley    CA 90952
+US        Sarah Connor        8 Grass Avenue      Old Town       PA 95819
+Use cheapest shipping method.
+ITEMS,ITEM101-TT|Plastic flowers|10|4.99|Fragile handle with care,ITEM202-RR|Fertilizer|1|10.99|Lawn fertilizer,ITEM453-XS|Weed killer|1|5.99|Lawn weed killer

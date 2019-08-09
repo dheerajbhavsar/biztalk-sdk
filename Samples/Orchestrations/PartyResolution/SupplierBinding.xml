@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.0.1.0" BindingStatus="FullyBound" BoundEndpoints="3" TotalEndpoints="3">
+  <ModuleRefCollection>
+    <ModuleRef Name="Supplier" Version="1.0.0.0" Culture="" PublicKeyToken="" FullName="Supplier, Version=1.0.0.0">
+      <Services>
+        <Service Name="Microsoft.Samples.BizTalk.Supplier.SupplierProcess">
+          <Ports>
+            <Port Name="__Buyer_Supplier_POReceivePortType" Modifier="2" BindingOption="5">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_ReceivePOFromBuyer" />
+            </Port>
+            <Port Name="__Supplier_Shipment_ShipmentAckPortType" Modifier="2" BindingOption="5">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_Receive_ShipmentAgency_Ack" />
+            </Port>
+            <Port Name="SendPODeliveryReceiptPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_PODeliveryReceipt" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles>
+            <Role Name="ShipmentRole" RoleType="Uses">
+              <EnlistedParties>
+                <EnlistedParty Name="ShipmentAgency1">
+                  <Mappings>
+                    <Mapping PortTypeName="Microsoft.Samples.BizTalk.Supplier.ShipmentPortType" OperationName="SupplierOrder">
+                      <SendPortRef Name="SP_FilesToShipmentAgency1" />
+                    </Mapping>
+                    <Mapping PortTypeName="Microsoft.Samples.BizTalk.Supplier.ShipmentPortType" OperationName="SupplierAdvice">
+                      <SendPortRef Name="SP_FilesToShipmentAgency1" />
+                    </Mapping>
+                  </Mappings>
+                </EnlistedParty>
+                <EnlistedParty Name="ShipmentAgency2">
+                  <Mappings>
+                    <Mapping PortTypeName="Microsoft.Samples.BizTalk.Supplier.ShipmentPortType" OperationName="SupplierOrder">
+                      <SendPortRef Name="SP_FilesToShipmentAgency2" />
+                    </Mapping>
+                    <Mapping PortTypeName="Microsoft.Samples.BizTalk.Supplier.ShipmentPortType" OperationName="SupplierAdvice">
+                      <SendPortRef Name="SP_FilesToShipmentAgency2" />
+                    </Mapping>
+                  </Mappings>
+                </EnlistedParty>
+              </EnlistedParties>
+            </Role>
+            <Role Name="Buyer" RoleType="Uses">
+              <EnlistedParties>
+                <EnlistedParty Name="BuyerAgency">
+                  <Mappings>
+                    <Mapping PortTypeName="Microsoft.Samples.BizTalk.Supplier.POAckPortType" OperationName="OP_SendPOAck">
+                      <SendPortRef Name="SP_POAck" />
+                    </Mapping>
+                  </Mappings>
+                </EnlistedParty>
+              </EnlistedParties>
+            </Role>
+            <Role Name="Supplier1" RoleType="Implements">
+              <EnlistedParties />
+            </Role>
+            <Role Name="SupplierRole" RoleType="Implements">
+              <EnlistedParties />
+            </Role>
+          </Roles>
+        </Service>
+      </Services>
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SP_PODeliveryReceipt" IsStatic="true" IsTwoWay="false">
+      <TransmitPipeline Name="XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines:3.0.1.0:Microsoft.BizTalk.DefaultPipelines.XMLTransmit" Type="2" />
+      <SendPipelineData xsi:nil="true" />
+      <PrimaryTransport>
+        <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\PODeliveryReceipt\PODeliveryReceipt.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;FilePath vt="8"&gt;C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\PODeliveryReceipt&lt;/FilePath&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;PODeliveryReceipt.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <TransportType xsi:nil="true" />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </SecondaryTransport>
+      <EncryptionCert xsi:nil="true" />
+      <ReceivePipeline xsi:nil="true" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+    </SendPort>
+    <SendPort Name="SP_FilesToShipmentAgency1" IsStatic="true" IsTwoWay="false">
+      <TransmitPipeline Name="XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines:3.0.1.0:Microsoft.BizTalk.DefaultPipelines.XMLTransmit" Type="2" />
+      <SendPipelineData xsi:nil="true" />
+      <PrimaryTransport>
+        <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\ShipmentAgency1\ShipmentAgency1.txt</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;FilePath vt="8"&gt;C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\ShipmentAgency1&lt;/FilePath&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ShipmentAgency1.txt&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <TransportType xsi:nil="true" />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </SecondaryTransport>
+      <EncryptionCert xsi:nil="true" />
+      <ReceivePipeline xsi:nil="true" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+    </SendPort>
+    <SendPort Name="SP_FilesToShipmentAgency2" IsStatic="true" IsTwoWay="false">
+      <TransmitPipeline Name="XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines:3.0.1.0:Microsoft.BizTalk.DefaultPipelines.XMLTransmit" Type="2" />
+      <SendPipelineData xsi:nil="true" />
+      <PrimaryTransport>
+        <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\ShipmentAgency2\ShipmentAgency2.txt</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;FilePath vt="8"&gt;C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\ShipmentAgency2&lt;/FilePath&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ShipmentAgency2.txt&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <TransportType xsi:nil="true" />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </SecondaryTransport>
+      <EncryptionCert xsi:nil="true" />
+      <ReceivePipeline xsi:nil="true" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+    </SendPort>
+    <SendPort Name="SP_POAck" IsStatic="true" IsTwoWay="false">
+      <TransmitPipeline Name="XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines:3.0.1.0:Microsoft.BizTalk.DefaultPipelines.XMLTransmit" Type="2" />
+      <SendPipelineData xsi:nil="true" />
+      <PrimaryTransport>
+        <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\PurchaseOrderAck\PurchaseOrderAck_%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;FilePath vt="8"&gt;C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\PurchaseOrderAck&lt;/FilePath&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;PurchaseOrderAck_%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <TransportType xsi:nil="true" />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2003-04-10T00:00:00.0000000-07:00</FromTime>
+        <ToTime>2003-04-10T23:59:59.0000000-07:00</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </SecondaryTransport>
+      <EncryptionCert xsi:nil="true" />
+      <ReceivePipeline xsi:nil="true" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="RP_ReceivePOFromBuyer" IsTwoWay="false">
+      <ReceiveLocations>
+        <ReceiveLocation Name="RL_ReceivePOFromBuyer">
+          <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\FileDrop\PurchaseOrdertoSupplier\*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;FilePath vt="8"&gt;C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\FileDrop\PurchaseOrdertoSupplier&lt;/FilePath&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileMask vt="8"&gt;*.xml&lt;/FileMask&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="MimePartyResReceivePipeline" FullyQualifiedName="ProjectSchema:1.0.0.0:Microsoft.Samples.BizTalk.ProjectSchema.MimePartyResReceivePipeline" Type="1" />
+          <ReceivePipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+    </ReceivePort>
+    <ReceivePort Name="RP_Receive_ShipmentAgency_Ack" IsTwoWay="false">
+      <ReceiveLocations>
+        <ReceiveLocation Name="RL_Receive_ShipmentAgency_Ack">
+          <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\ShipmentAck\*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;FilePath vt="8"&gt;C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Orchestrations\PartyResolution\Filedrop\ShipmentAck&lt;/FilePath&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileMask vt="8"&gt;*.xml&lt;/FileMask&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines:3.0.1.0:Microsoft.BizTalk.DefaultPipelines.XMLReceive" Type="1" />
+          <ReceivePipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection>
+    <Party Name="ShipmentAgency1">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="ShipmentAgency1" IsAutoCreated="true" />
+      </Aliases>
+      <SendPorts>
+        <SendPortRef Name="SP_FilesToShipmentAgency1" />
+      </SendPorts>
+      <SignatureCert xsi:nil="true" />
+      <CustomData xsi:nil="true" />
+    </Party>
+    <Party Name="ShipmentAgency2">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="ShipmentAgency2" IsAutoCreated="true" />
+      </Aliases>
+      <SendPorts>
+        <SendPortRef Name="SP_FilesToShipmentAgency2" />
+      </SendPorts>
+      <SignatureCert xsi:nil="true" />
+      <CustomData xsi:nil="true" />
+    </Party>
+    <Party Name="BuyerAgency">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="BuyerAgency" IsAutoCreated="true" />
+      </Aliases>
+      <SendPorts>
+        <SendPortRef Name="SP_POAck" />
+      </SendPorts>
+      <SignatureCert xsi:nil="true" />
+      <CustomData xsi:nil="true" />
+    </Party>
+  </PartyCollection>
+</BindingInfo>

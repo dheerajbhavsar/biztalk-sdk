@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<q1:schema xmlns:_ns0="http://contoso.org/samples" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://contoso.org/samples" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:frag="http://contoso.org/samples/Fragments" elementFormDefault="qualified" targetNamespace="http://contoso.org/samples" xmlns:q1="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Imported_OrderHeader.xsd" namespace="http://contoso.org/samples/Fragments" />
+  <xs:annotation>
+    <xs:appinfo>
+      <imports xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        <namespace prefix="_ns0" uri="http://contoso.org/samples" location=".\Imported_PropertySchema_0.xsd" />
+      </imports>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>
+      <b:references xmlns:b="http://schemas.microsoft.com/BizTalk/2003">
+        <b:reference targetNamespace="http://contoso.org/samples/Fragments" />
+      </b:references>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InvoiceMessage">
+    <xs:annotation>
+      <xs:appinfo>
+        <properties xmlns="http://schemas.microsoft.com/BizTalk/2003">
+          <property name="_ns0:OrderID" xpath="/*[local-name()='InvoiceMessage' and namespace-uri()='http://contoso.org/samples']/*[local-name()='OrderHeader' and namespace-uri()='http://contoso.org/samples/Fragments']/*[local-name()='OrderID' and namespace-uri()='http://contoso.org/samples/Fragments']" />
+        </properties>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="frag:OrderHeader" />
+        <xs:element name="Items">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="frag:Item" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TotalPrice" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</q1:schema>

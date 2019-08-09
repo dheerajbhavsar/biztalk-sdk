@@ -1,0 +1,223 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="b3dc9cc8-3d2d-4592-a65b-f42cd72be0dc" LowerBound="1.1" HigherBound="53.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="30ed5508-bf12-4b5e-ad61-78481175e202" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PORequestResponsePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="af174f25-399d-468f-9b1f-790d96d7b060" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="0fe6290c-6d8d-4a0c-9d16-0315108bc2d2" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.26">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse.POMessageType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="ace864db-4eca-48e8-b8af-c7d6c934ea31" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="16.28" HigherBound="16.44">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse.POAckMessageType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="ffc65806-2185-47b9-9402-bae1a775f3a4" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="POMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="955dd70f-6b1f-4b41-8da3-103f75b37bfd" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse.POSchema" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="858d19d8-cc4d-46c6-85fc-1a02c5b7723a" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="POAckMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="a2aeecec-ba7e-45eb-baa1-06ff8b3ab79a" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse.POAck" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="34552dd3-02ea-47a0-8a10-243ca2165c82" ParentLink="Module_ServiceDeclaration" LowerBound="19.1" HigherBound="52.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="POReceiveOrchestration" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="LongRunningTransaction" OID="40320ed6-e06c-4576-ad90-8d639a7ae249" ParentLink="ServiceDeclaration_Transaction" LowerBound="20.20" HigherBound="20.67">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_2" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fd13dcaa-2cf2-4528-b66f-63ac4d9cdb06" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse.POMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="POMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="07c192b5-fc83-40b3-afc9-8a17ff202e8a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse.POAckMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="POAckMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="3f8bcc0e-9b53-42c2-9142-e7b7ba7f27ef" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="cfddc026-3a6d-4258-a0ab-583293b971b0" ParentLink="ServiceBody_Statement" LowerBound="28.1" HigherBound="30.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="PORequestResponsePort" />
+                    <om:Property Name="MessageName" Value="POMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceivePO" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="f6673eb9-42cf-4535-8d6f-19717628cb60" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="48.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="AckScope" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Construct" OID="5388244b-dfd0-4275-95b3-3e704c1de1e1" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="46.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstrucAcktMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="f7e8671f-912a-4dd9-b61e-a421fc465199" ParentLink="Construct_MessageRef" LowerBound="39.31" HigherBound="39.43">
+                            <om:Property Name="Ref" Value="POAckMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="c78ba177-b9a4-4063-9432-d92fc9a1bcbd" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="45.1">
+                            <om:Property Name="Expression" Value="xmlDocument = new System.Xml.XmlDocument();&#xD;&#xA;xmlDocument.LoadXml(&quot;&lt;ns0:POAck xmlns:ns0=\&quot;http://HTTPRequestResponse.POAck\&quot;&gt; &lt;Status&gt;Received&lt;/Status&gt;&lt;/ns0:POAck&gt;&quot;);&#xD;&#xA;POAckMessage.MessagePart_1 = xmlDocument;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="AtomicTransaction" OID="62bc503c-c564-47e2-8ea6-1f34bdb0d7b3" ParentLink="Scope_Transaction" LowerBound="32.18" HigherBound="32.51">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="TransactionAttribute" OID="915a9217-3f4e-4884-ab28-4fac2b42288a" ParentLink="Statement_CLRAttribute" LowerBound="31.1" HigherBound="32.1">
+                        <om:Property Name="Batch" Value="True" />
+                        <om:Property Name="Retry" Value="True" />
+                        <om:Property Name="Timeout" Value="60" />
+                        <om:Property Name="Isolation" Value="Serializable" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="acfa070c-6b76-46f5-a834-73d4927c83e7" ParentLink="Scope_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                        <om:Property Name="UseDefaultConstructor" Value="True" />
+                        <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="xmlDocument" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="d9150462-5cd2-4e64-bb0f-d91428afedd4" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="50.1">
+                    <om:Property Name="PortName" Value="PORequestResponsePort" />
+                    <om:Property Name="MessageName" Value="POAckMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendPOAck" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c13e6941-60f4-41ad-9dc7-4caca48232b3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="22.1" HigherBound="24.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HTTPRequestResponse.PORequestResponsePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PORequestResponsePort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="0f5aa5b9-3e10-4a95-808f-ce33dfac9510" ParentLink="PortDeclaration_CLRAttribute" LowerBound="22.1" HigherBound="23.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.Samples.BizTalk.HTTPRequestResponse
+{
+    private messagetype POMessageType
+    {
+        body POSchema MessagePart_1;
+    };
+    private messagetype POAckMessageType
+    {
+        body POAck MessagePart_1;
+    };
+    private porttype PORequestResponsePortType
+    {
+        requestresponse Operation_1
+        {
+            POMessageType, POAckMessageType
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    private service longrunning transaction POReceiveOrchestration
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PORequestResponsePortType PORequestResponsePort;
+        message POMessageType POMessage;
+        message POAckMessageType POAckMessage;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cfddc026-3a6d-4258-a0ab-583293b971b0")]
+            activate receive (PORequestResponsePort.Operation_1, POMessage);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f6673eb9-42cf-4535-8d6f-19717628cb60")]
+            [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+            scope atomic transaction Transaction_1
+            {
+                System.Xml.XmlDocument xmlDocument;
+                body
+                {
+                    xmlDocument = new System.Xml.XmlDocument();
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5388244b-dfd0-4275-95b3-3e704c1de1e1")]
+                    construct POAckMessage
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("c78ba177-b9a4-4063-9432-d92fc9a1bcbd")]
+                        xmlDocument = new System.Xml.XmlDocument();
+                        xmlDocument.LoadXml("<ns0:POAck xmlns:ns0=\"http://HTTPRequestResponse.POAck\"> <Status>Received</Status></ns0:POAck>");
+                        POAckMessage.MessagePart_1 = xmlDocument;
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d9150462-5cd2-4e64-bb0f-d91428afedd4")]
+            send (PORequestResponsePort.Operation_1, POAckMessage);
+        }
+    }
+}
+

@@ -1,0 +1,5 @@
+<job id="ReplacePKT">
+	<script language="VBScript" src="..\..\Scenarios\Common\StringUtils\ReplaceStrings.vbs"> </script>
+	<script language="VBScript" src="ReplacePKT.vbs"> </script>
+</job>
+

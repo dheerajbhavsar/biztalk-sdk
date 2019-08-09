@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72FA47A9-E6D9-49B9-B258-2EEF1D363CC4}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Microsoft.Samples.BizTalk</RootNamespace>
+    <AssemblyName>Microsoft.Samples.BizTalk.SchemaResolver</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <AssemblyOriginatorKeyFile>SchemaResolver.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\Debug\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\Release\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+    </Reference>
+    <Reference Include="SchemaResolverFlatFileDasm">
+      <Name>SchemaResolverFlatFileDasm</Name>
+      <HintPath>..\..\..\..\..\Pipeline Components\Microsoft.Samples.BizTalk.SchemaResolverFlatFileDasm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Bam.XLANGs">
+      <Name>Microsoft.BizTalk.Bam.XLANGs</Name>
+    </Reference>
+    <Compile Include="Properties\AssemblyInfo.cs">
+    </Compile>
+    <Schema Include="PurchaseOrder.xsd">
+      <TypeName>PurchaseOrder</TypeName>
+      <Namespace>SchemaResolverSample</Namespace>
+    </Schema>
+    <Schema Include="PurchaseRequest.xsd">
+      <TypeName>PurchaseRequest</TypeName>
+      <Namespace>SchemaResolverSample</Namespace>
+    </Schema>
+    <Schema Include="SalesOrder.xsd">
+      <TypeName>SalesOrder</TypeName>
+      <Namespace>SchemaResolverSample</Namespace>
+    </Schema>
+    <Schema Include="SalesRequest.xsd">
+      <TypeName>SalesRequest</TypeName>
+      <Namespace>SchemaResolverSample</Namespace>
+    </Schema>
+    <Pipeline Include="SchemaResolverRP.btp">
+      <TypeName>SchemaResolverRP</TypeName>
+      <Namespace>Microsoft.Samples.BizTalk.SchemaResolverPipeline</Namespace>
+    </Pipeline>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

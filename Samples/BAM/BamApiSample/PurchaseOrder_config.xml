@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<TraceInterceptorConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TrackPoint Type="Start">
+    <Location xsi:type="xsd:string">locNewPo</Location>
+    <ExtractionInfo xsi:type="xsd:string">@PoID</ExtractionInfo>
+  </TrackPoint>
+  <TrackPoint Type="End">
+    <Location xsi:type="xsd:string">locPackaged</Location>
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Received">
+    <Location xsi:type="xsd:string">locNewPo</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Approved">
+    <Location xsi:type="xsd:string">locApproved</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Denied">
+    <Location xsi:type="xsd:string">locRejected</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Packaged">
+    <Location xsi:type="xsd:string">locPackaged</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Amount">
+    <Location xsi:type="xsd:string">locNewPo</Location>
+    <ExtractionInfo xsi:type="xsd:string">./Price</ExtractionInfo>
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Product">
+    <Location xsi:type="xsd:string">locNewPo</Location>
+    <ExtractionInfo xsi:type="xsd:string">./Product</ExtractionInfo>
+  </TrackPoint>
+</TraceInterceptorConfiguration>

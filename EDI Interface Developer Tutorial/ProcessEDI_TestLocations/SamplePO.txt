@@ -1,0 +1,18 @@
+ISA*00*          *00*          *ZZ*THEM           *ZZ*US             *991221*1226*U*00401*000000025*0*T*>
+GS*PO*THEM*US*19991221*1226*1*X*004010
+ST*850*0001
+BEG*00*NE*3859199838**950727***IBM
+PER*AA*Andrew Carlson*TE*(708) 555-2930
+DTM*002*970523
+PO1*1*93*BX*145.39**CB*KOW-20392-10
+PID*F****Uninterruptible Power System
+PER*AA*Camilla Anderson*TE*(708) 555-2011
+PO1*2*25*EA*35.68**CB*1093-4927-001
+PID*F****High Volume Printer Stand
+PER*AA*Miranda Cappelan*TE*(708) 555-1111
+PO1*3*4*PC*2002.91**CB*ABX-2001
+PID*F****Electronics Cabinet Package (56" High)
+CTT*3
+SE*14*0001
+GE*1*1
+IEA*1*000000025

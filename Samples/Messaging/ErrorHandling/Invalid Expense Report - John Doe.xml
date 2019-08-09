@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><?mso-infoPathSolution productVersion="11.0.6357" PIVersion="1.0.0.0" href="file:///C:\Temp\InfoPathForms\Expense%20Report.xsn" name="urn:schemas-microsoft-com:office:infopath:Expense-Report:http---schemas-microsoft-com-biztalk-2006-sample-ExpenseReport" solutionVersion="1.0.0.35" ?><?mso-application progid="InfoPath.Document"?><ns1:expenseReport xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:exp="http://schemas.microsoft.com/office/infopath/2003/sample/ExpenseReport" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns:ns0="http://ErrorHandling.PipelinesAndSchemas.PropertySchema.PropertySchema" xmlns:ns1="http://schemas.microsoft.com/biztalk/2006/sample/ExpenseReport" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003" xml:lang="en-us">
+	<ns1:employee>
+		<ns1:name>
+			<ns1:prefix></ns1:prefix>
+			<ns1:givenName></ns1:givenName>
+			<ns1:middleName></ns1:middleName>
+			<ns1:surname></ns1:surname>
+			<ns1:suffix></ns1:suffix>
+			<ns1:singleName>John Doe</ns1:singleName>
+		</ns1:name>
+		<ns1:address>
+			<ns1:line1>1234 NE 1st street</ns1:line1>
+			<ns1:line2></ns1:line2>
+			<ns1:line3></ns1:line3>
+			<ns1:line4></ns1:line4>
+			<ns1:city>Some town</ns1:city>
+			<ns1:stateProvince>WA</ns1:stateProvince>
+			<ns1:postalCode>98007</ns1:postalCode>
+			<ns1:country>USA</ns1:country>
+		</ns1:address>
+		<ns1:identificationNumber>12345</ns1:identificationNumber>
+		<ns1:emailAddressPrimary>johndoe@northwind.com</ns1:emailAddressPrimary>
+		<ns1:emailAddressSecondary></ns1:emailAddressSecondary>
+		<ns1:telephoneNumberWork></ns1:telephoneNumberWork>
+		<ns1:telephoneNumberHome></ns1:telephoneNumberHome>
+		<ns1:telephoneNumberCell></ns1:telephoneNumberCell>
+		<ns1:telephoneNumberPager></ns1:telephoneNumberPager>
+		<ns1:faxNumber></ns1:faxNumber>
+		<ns1:jobTitle>Product manager</ns1:jobTitle>
+		<ns1:officeLocation></ns1:officeLocation>
+		<ns1:department>Incorrectly specified department</ns1:department>
+		<ns1:webSite></ns1:webSite>
+		<ns1:ftpSite></ns1:ftpSite>
+	</ns1:employee>
+	<ns1:manager>
+		<ns1:name>
+			<ns1:prefix></ns1:prefix>
+			<ns1:givenName></ns1:givenName>
+			<ns1:middleName></ns1:middleName>
+			<ns1:surname></ns1:surname>
+			<ns1:suffix></ns1:suffix>
+			<ns1:singleName>Jane Smith</ns1:singleName>
+		</ns1:name>
+		<ns1:address>
+			<ns1:line1></ns1:line1>
+			<ns1:line2></ns1:line2>
+			<ns1:line3></ns1:line3>
+			<ns1:line4></ns1:line4>
+			<ns1:city></ns1:city>
+			<ns1:stateProvince></ns1:stateProvince>
+			<ns1:postalCode></ns1:postalCode>
+			<ns1:country></ns1:country>
+		</ns1:address>
+		<ns1:identificationNumber></ns1:identificationNumber>
+		<ns1:emailAddressPrimary>janesmith@northwind.com</ns1:emailAddressPrimary>
+		<ns1:emailAddressSecondary></ns1:emailAddressSecondary>
+		<ns1:telephoneNumberWork></ns1:telephoneNumberWork>
+		<ns1:telephoneNumberHome></ns1:telephoneNumberHome>
+		<ns1:telephoneNumberCell></ns1:telephoneNumberCell>
+		<ns1:telephoneNumberPager></ns1:telephoneNumberPager>
+		<ns1:faxNumber></ns1:faxNumber>
+		<ns1:jobTitle></ns1:jobTitle>
+		<ns1:officeLocation></ns1:officeLocation>
+		<ns1:department></ns1:department>
+		<ns1:webSite></ns1:webSite>
+		<ns1:ftpSite></ns1:ftpSite>
+	</ns1:manager>
+	<ns1:expenseCode>ABC123</ns1:expenseCode>
+	<ns1:startDate>2005-03-07</ns1:startDate>
+	<ns1:endDate>2005-03-11</ns1:endDate>
+	<ns1:reportDate>2005-03-21</ns1:reportDate>
+	<ns1:purpose>Customer visit</ns1:purpose>
+	<ns1:notes>I had a blast!</ns1:notes>
+	<ns1:currency>
+		<ns1:name>USD</ns1:name>
+		<ns1:symbol>($) </ns1:symbol>
+	</ns1:currency>
+	<ns1:items>
+		<ns1:item>
+			<ns1:date>2005-03-07</ns1:date>
+			<ns1:description>Flight ticket</ns1:description>
+			<ns1:amount>580</ns1:amount>
+			<ns1:category>Transportation</ns1:category>
+			<ns1:currency>USD</ns1:currency>
+			<ns1:rate>1</ns1:rate>
+			<ns1:totalAmount>580</ns1:totalAmount>
+		</ns1:item>
+	<ns1:item>
+									<ns1:date>2005-03-10</ns1:date>
+									<ns1:description>Lunch with customer</ns1:description>
+									<ns1:amount>143</ns1:amount>
+									<ns1:category>Meals</ns1:category>
+									<ns1:currency>USD</ns1:currency>
+									<ns1:rate>1</ns1:rate>
+									<ns1:totalAmount>143</ns1:totalAmount>
+								</ns1:item><ns1:item>
+									<ns1:date>2005-03-11</ns1:date>
+									<ns1:description>Hotel bill</ns1:description>
+									<ns1:amount>674</ns1:amount>
+									<ns1:category>Lodging</ns1:category>
+									<ns1:currency>USD</ns1:currency>
+									<ns1:rate>1</ns1:rate>
+									<ns1:totalAmount>674</ns1:totalAmount>
+								</ns1:item></ns1:items>
+	<ns1:cashAdvance>0</ns1:cashAdvance>
+	<ns1:total>1397</ns1:total>
+	<ns1:subTotal>1397</ns1:subTotal>
+	<ns1:correlationID>null</ns1:correlationID>
+	<ns1:errors></ns1:errors>
+</ns1:expenseReport>

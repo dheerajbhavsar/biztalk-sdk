@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <GlobalProperties>
+    <GlobalProperty ID="MBVREPORTTITLE" Value="My MBV Report" />
+    <GlobalProperty ID="MGMTDBSERVER" Value="servername" />
+    <GlobalProperty ID="MGMTDBNAME" Value="BizTalkMgmtDb" />
+    <GlobalProperty ID="SQLCONNTIMEOUT" Value="30" />
+    <GlobalProperty ID="SQLQUERYTIMEOUT" Value="30" />
+    <GlobalProperty ID="SQLUSERNAME" Value="" />
+    <GlobalProperty ID="WMITIMEOUT" Value="00:00:30" />
+    <GlobalProperty ID="WMIUSERNAME" Value="" />
+    <GlobalProperty ID="VBSCMDBAT_TIMEOUT" Value="00:00:30" />
+    <GlobalProperty ID="GENERATEMULTIPLEFILES" Value="True" />
+    <GlobalProperty ID="GENERATEHTMLFILE" Value="True" />
+    <GlobalProperty ID="GENERATEXMLFILE" Value="True" />
+    <GlobalProperty ID="GENERATETXTFILE" Value="False" />
+    <GlobalProperty ID="GENERATESTATUSFILE" Value="True" />
+    <GlobalProperty ID="LOGQUERYREPORTS" Value="True" />
+    <GlobalProperty ID="LOGTOPOLOGYREPORT" Value="True" />
+    <GlobalProperty ID="LOGSUMMARYREPORT" Value="True" />
+    <GlobalProperty ID="LOGDASHBOARDREPORT" Value="True" />
+    <GlobalProperty ID="LOGMSGFLOW" Value="True" />
+    <GlobalProperty ID="RWARNINGS_IN_JOURNAL" Value="False" />
+    <GlobalProperty ID="YWARNINGS_IN_JOURNAL" Value="False" />
+    <GlobalProperty ID="ENABLE_ALLRULES" Value="True" />
+    <GlobalProperty ID="SELECTMANDATORYQUERIES" Value="False" />
+    <GlobalProperty ID="TARGETSERVERS" Value="." />
+    <GlobalProperty ID="DEFAULTWMINAMESPACE" Value="CIMV2" />
+    <GlobalProperty ID="EVENTIDSTARTRANGE" Value="5000" />
+  </GlobalProperties>
+  <options>
+    <HTMLandXMLFolder>C:\Users\xuehongg\Desktop\MBV131</HTMLandXMLFolder>
+    <LastHTMLFile>C:\Users\xuehongg\Desktop\MBV131\MBVOutput_2013-06-12_5-24-12 PM_MyMBVReport\MBVOutputMAINPAGE.html</LastHTMLFile>
+    <LastStatusFile>C:\Users\xuehongg\Desktop\MBV131\MBVOutput_2013-06-12_5-24-12 PM_MyMBVReport\Status.txt</LastStatusFile>
+  </options>
+  <Queries>
+    <Query ID="eedc43fb-b495-43a3-b497-67560c6a7cb6" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7a7ec4d0-2494-41ac-8869-68eb7b999cfd" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="9f7696c3-4b8a-4276-b7f6-9ee7611021e8" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="87614440-593d-4434-abb4-5312d4318ca0" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="79ae3d7b-c465-42b3-99f1-7473bff45743" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="240f29b2-5851-4381-a6e3-ae20c7d2b09e" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="a535da2d-2eef-47ff-bdda-45956fa89e38" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="55e86cf8-cfa0-42a0-86e1-e70aa38471e2" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="67fa9752-0af4-48ad-b73a-30d5348ba4d1" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="51083bf0-3b06-4c87-9146-8db762622409" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="9f2b369c-4764-40a5-8974-41bdf922bec0" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="89106edf-0c1d-495c-b3eb-087579c17660" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="4d1a2e50-2c3e-4ea4-9d8b-7c165690169a" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="734771be-7b4f-4b02-87c0-6e934448103f" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="86a1c2a7-d360-4b7b-80d4-b1d615788f1b" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="F4EF3A4A-1841-4416-B0F7-35741586B841" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="dffc719d-71e7-499e-90d5-5e84f493fba8" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="905f24ad-4fd7-483a-92ae-91044318f9a9" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="ff75ab3c-c00e-480a-a76f-9d4bf185c7bf" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="199a1c28-e322-49f8-99e0-9d018448a3cc" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8a0bf525-f13b-4788-bce8-f566b240f0e7" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="MSGBOX_MINSIZE_YWARNING" Value="10000" />
+      <CustomProperty ID="MSGBOX_MINSIZE_RWARNING" Value="20000" />
+      <CustomProperty ID="DTA_MINSIZE_YWARNING" Value="20000" />
+      <CustomProperty ID="DTA_MINSIZE_RWARNING" Value="40000" />
+    </Query>
+    <Query ID="76ea30dc-8629-4704-958f-9c499d067c48" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="c651dc9e-a54b-4c74-9665-bd5333d90e2b" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="dd901b5a-ed4f-4186-ac98-f4e61e8ac93e" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="fc1748e6-2ba7-4d65-b50c-d034bdf7d60e" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="6e23ee26-fe35-44b3-a5eb-d9558d8e5377" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="804a3bc0-094f-4fce-b51c-3b46ffc656d5" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="28c04612-6879-4d9a-92ed-2eb998312f78" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="fa2646e7-e369-4f65-af0b-5c6f47073f41" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="a7757c55-a6b9-4def-8952-ad08da06d020" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="bed23113-0401-4711-99e1-845d1d608b85" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="1798a3ef-0d15-4599-b3f6-8f7168d5d444" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="a8bb0b60-cf0b-4373-b51c-a3ee361d9eb5" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="e7f7bb25-b841-42c4-a167-5f19c321d579" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="3226334c-c08d-4695-8909-71d26c44cec2" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="55627318-2433-4487-8aff-6169a64d7ffc" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="202FCA52-9043-4F8D-B991-EF97E63E5405" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="54178411-49eb-45db-8748-dcb3340dfbde" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="e42d0f98-8fb6-423e-a207-410c9e3dbc78" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="dbff2f00-e7a1-4d16-99b6-825c2455d80f" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="SORTORDER" Value="Application" />
+    </Query>
+    <Query ID="6cd504fe-cbfa-444b-9be2-8598823642ca" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="SORTORDER" Value="Application" />
+    </Query>
+    <Query ID="3121137a-0aab-4b45-974d-51f8425fb674" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="49b5190a-fd53-4f48-9138-bb94048e8e56" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="918d321c-56ce-443c-b1e3-0b3605b37906" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="SORTORDER" Value="Orchestration Name" />
+    </Query>
+    <Query ID="4963fd69-81fe-422e-979f-26885cea5274" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="021e2238-035d-446f-8be2-6fc448c58455" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8144dd7c-ccd6-41a5-a859-1315039e2473" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="41b85a48-cec2-4fcd-88e8-efd86267d1e4" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="6b43ab38-030a-4d8c-9672-b3ab7bc88837" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7302a495-1177-4b62-827e-64750e8e8fa9" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="SORTORDER" Value="Application" />
+    </Query>
+    <Query ID="0c79c709-a153-4a4c-9a49-3841f8b3a493" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="ce45e1e6-d855-43a6-a7a2-9757bb40e209" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8e3caa4e-81ac-47d8-8b09-01f6ad484041" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="b5953958-d6a4-4b71-9263-529266ee3aff" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPX" Value="50" />
+    </Query>
+    <Query ID="30e35ea6-5e68-403a-9d76-ffdec551bc47" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="72d59418-b09a-4346-810b-2a145324e17e" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="bf4584e1-4e03-4e87-8a30-b442b12db065" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="SORTORDER" Value="Table Name" />
+      <CustomProperty ID="SORTDIRECTION" Value="ASC" />
+      <CustomProperty ID="MARKLOGTRIGGER" Value="30000" />
+      <CustomProperty ID="GETSIZEMETHOD" Value="Sp_SpaceUsed" />
+    </Query>
+    <Query ID="f28f8189-c915-4ab2-95ab-40064b79b73a" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="0129bbb5-ab01-492d-9d68-f70aa3c77a56" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="SORTORDER" Value="Table Name" />
+      <CustomProperty ID="SORTDIRECTION" Value="ASC" />
+      <CustomProperty ID="MARKLOGTRIGGER" Value="30000" />
+      <CustomProperty ID="GETSIZEMETHOD" Value="Sp_SpaceUsed" />
+    </Query>
+    <Query ID="12b612f1-a7b7-4a55-abf2-6e42314616d9" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="0ec65f33-fb90-4d0e-a102-94d2b8819688" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="be6803dd-de53-4a84-ba11-6b2816df149b" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="MINSUSPENDED_YWARNING" Value="10000" />
+      <CustomProperty ID="MINSUSPENDED_RWARNING" Value="50000" />
+    </Query>
+    <Query ID="7aac6986-f836-4d23-8db0-d624b40555ad" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="6e209f75-c911-4e14-91e5-56a408637a46" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="ccb3f086-db7a-42de-88fa-4855d4d45464" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="68bdcc74-1b75-405e-8d53-f924a013781d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="b650c97d-8306-43b1-a4bc-3de05df62a18" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="3b8b9041-4402-4e8a-932b-fd4760a99a10" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="f7a973b7-50ad-4b73-aea0-926c15c8b1ea" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="65b1a5fa-9ed7-4853-b11e-aa8a36975883" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7e0838b8-3330-4f44-928f-d673faa91aa2" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="d4b8d409-5427-44ed-a527-aba7d0b17da5" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="07247521-0639-4e87-8295-7fd6bebb8371" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="1bba8372-0c90-4c2f-8be1-4e8e3c1047e9" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="4867fbb0-2edb-4802-924f-df04474adf6e" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="00dfd57e-ce3c-488d-b325-e27ba8291a68" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="ad638608-5aa4-4aa7-a4a7-67e36139c9f9" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="9e40ee1b-565f-4f5e-95d6-82de6d3bb515" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8f2275a4-0808-4d35-98d0-8ce31b619cd8" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="f57aab5c-85d1-4cde-8b36-9207b103048a" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="51ac4656-bf31-43df-bd98-414b6528690c" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="1c5c1ac6-ce2c-446e-9685-b3be2bf4f6a8" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="85016ae4-75bf-427d-a9ca-9f08649e595d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="a48534e2-f1c0-47ab-bc7a-f5844d6e056d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="ce5d731e-b292-4505-9d31-c9597c5cb630" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="f58c97e9-5ac4-4505-96a1-be3f2c2c94d3" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="3059e129-2a4d-4bf0-ae51-4dd07b19ee35" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="420ae603-4238-480d-8ed9-cc7b65824143" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="67d9dd80-4f59-4ed6-b6fc-926185533775" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="df9f8a79-8749-4b9f-9c12-0b3fe9e0324e" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="00a5c17e-527b-48d8-97aa-27841402a588" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="32e5da43-f405-4ee2-ac34-5f34b0df3de2" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="a3f8ca4b-48b2-4c59-9145-3c949753893a" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="522023d7-83f3-44f7-9ede-edac14940d43" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="aee80ce9-8fac-4e88-beaa-727fb9fe8134" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="91df3bf5-d5c1-475e-aa2e-16ef8bac9abb" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="72aa7def-c6fc-46d5-b508-aeec8ee24f7d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7d371d00-fb5e-46fe-b626-80e6f59d2537" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="2ea755c1-6ddf-4258-92a5-b6dcae6d32de" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="b47d3dc7-3ba3-480a-a86f-29aa61bea75e" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="320a2dac-68a5-4865-8858-85210e3a0f23" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="effcbac3-e386-48c8-94e7-e6e8f95bf66c" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="C448B907-70F9-4E1D-BDE6-76B48AF3FD47" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="a460f709-aa1e-48c6-a9c8-51f48d43d64e" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="abdeb528-dcd5-4438-aa5a-f97303072101" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="PERFCOUNTERS" Value="BizTalk:Message Box:General Counters\*|BizTalk:Messaging\*|BizTalk:Message Agent\*|XLANG/s Orchestrations\*|BizTalk:Messaging Latency\*|Process\BTSNTSVC*;RUNTIMEAGENT*" />
+      <CustomProperty ID="PERFCOUNTERS_BTS2K4" Value="BizTalk:Messaging\*|XLANG/s Orchestrations\*|Process\BTSNTSVC*" />
+    </Query>
+    <Query ID="091f7dee-6bae-4aae-8979-bc31be607409" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="PERFCOUNTERS" Value="SQLServer:General Statistics\*|SQLServer:Locks\*|SQLServer:Databases\*|Process\SQLSERVR*" />
+    </Query>
+    <Query ID="59eba4a1-d571-4254-90e0-8504edc7f5e9" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="NETSTATDETAILS" Value="True" />
+    </Query>
+    <Query ID="9878694d-96e7-497d-993c-a4b637e86f38" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPMAX" Value="500" />
+      <CustomProperty ID="MAXHOURS" Value="48" />
+      <CustomProperty ID="TYPE" Value="Error and Warning" />
+      <CustomProperty ID="LISTEVENTSRC" Value="BAM|BIZTALK|ENTSSO|TDDS|XLANG|EDI|RULEENGINE|MSDTC|Service Control Manager" />
+    </Query>
+    <Query ID="5175bdaf-cec6-4081-8475-9617a2b12ec3" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="c47f216e-66ca-4f83-bede-832fa96de82c" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="1e4672b0-f640-4ee9-aa9b-d877da165a0d" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="LASTSVCINST" Value="100" />
+    </Query>
+    <Query ID="a455662d-a8d3-4f3e-abf2-2b325dd59a7f" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="AVGFRAGTH" Value="30" />
+    </Query>
+    <Query ID="2d164fb3-1432-4069-bfea-f8ea19a00303" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="753fae9e-2abe-4903-9d49-49103dc44b79" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="dc75a45a-8aa0-47f8-ad39-596dd6fd4671" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="d8ac7e98-a2d8-4319-a1ae-a637a155e528" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7090624B-D313-440F-AA6F-0834009290B1" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="6A24F9C6-3012-4A27-9409-F8172251DF9C" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8649e601-2bf4-463a-a810-df67052a4766" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="6a340d23-9103-4971-bbf5-03f29bba5247" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="AVGFRAGTH" Value="30" />
+    </Query>
+    <Query ID="a59890f5-c8f3-4c05-aa48-f3f154785610" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="77a6aa88-346c-4fde-9fc6-9fbce7360fae" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="cddd7125-3242-4cb9-a14d-45306a77faf4" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="c8677eb6-0b03-481d-b3fb-f41f4cac3c2a" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="721c7b52-af1f-4919-951c-10cd8cd14368" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="e8f47c59-4f48-457b-a9a1-845eae81c7e6" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="03ee48ef-2039-4912-b0db-e4b0cd43b7df" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="65a31344-aa99-47fb-a2ba-88c639a059ff" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="THRESHOLD_YELLOW" Value="2000" />
+      <CustomProperty ID="THRESHOLD_RED" Value="4000" />
+    </Query>
+    <Query ID="7fb85f04-5388-4394-921a-adc60d4a0db5" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="b192b1eb-46bb-430a-913a-57336fc52d66" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="f92e292d-435b-4c09-b455-46ce07c9b18d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="1a0bb12c-2b8e-4cca-a745-d95a6ad6e63d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="5f6c9125-135c-491d-b8ca-d31f5555212b" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="3182b552-929c-4a23-8c2e-1cecd01863fc" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="f2c6a35f-84b4-4296-8305-f5860242a5c2" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="87c1fb70-94a3-4bea-81d4-f5eb50ddc3c5" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="e05f6f40-6655-4c47-998c-e2e09cbe0a71" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="3019ff0e-d1f2-483c-8154-c6ac24877aec" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="ab1a8e7b-5e92-4088-a39a-0168cb5fd154" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="YELLOW_WARNING_LIMIT" Value="1000" />
+      <CustomProperty ID="RED_WARNING_LIMIT" Value="5000" />
+    </Query>
+    <Query ID="16262485-7e70-4255-a0c3-ee1ef24db256" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="e696e3c6-ad43-472f-bd84-210b5049bd15" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="d78778ec-92ce-47b8-8485-ce37378c278f" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8f49ab9c-fbfc-47d6-ab10-5e6b7b6e3143" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="e45b34cf-91e6-4d2c-be5a-90cf35d0346d" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="bb2209b3-60f6-43c5-b2e2-d0073ee33371" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7f8b59a3-4791-485d-83b5-7ff84dc70b0d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="6c6fba3e-fdf1-4761-8a0a-e02492b8f40b" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="1dcab54f-757f-496f-9bcd-eb18ca08b595" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPMAX" Value="50" />
+    </Query>
+    <Query ID="ef5e767d-3a7a-442c-8dbe-0ef77fcf5fb7" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPMAX" Value="50" />
+    </Query>
+    <Query ID="cc3a19d3-1209-47f4-b9ba-c0139e03f289" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="918EF144-7242-4C10-9572-0338A10F1D51" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7628552f-f20a-4687-9827-2795e8dd6606" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="2abe4950-d189-41ea-aee5-07c6d881eff4" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="24137af3-8ac4-4b14-8f9c-afcd379f6a11" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="c4110ebe-2544-453a-a56c-1c4bb6a872e1" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="3bc0437c-848a-4b18-858a-5b8b0431a2d6" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="30bd7d46-0729-4362-bc5b-69eea1f1c50a" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="4ec724bd-0ce9-4af5-ba08-3f34abe42b27" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="6def90bb-6a9e-404f-92be-87fdcf754007" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="0cb55a4a-ca3f-43e1-bf25-7cd21adad334" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="3aa5f391-b503-499a-8e0a-13bd3c5eae1f" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPX" Value="50" />
+    </Query>
+    <Query ID="A3D6185E-998C-474B-99EA-C0324161F3A6" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="9005eeef-e8ff-4bee-a497-f79d94a38384" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="43b84485-3433-4483-8553-eb22b880aea9" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="36340340-cf8c-47f0-9e71-c39447e53541" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="BEA936BC-64AE-4C2D-9813-F70DF9855B51" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="dd10e1ef-9cf5-4045-9c1b-eb8178941809" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8E0C5D1B-E7EC-4C2C-A0B4-14CA25F36AAB" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="1654142E-DE13-4169-B8A2-D23AFCC995F6" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPX" Value="100" />
+      <CustomProperty ID="RINTERVALLIMIT" Value="30" />
+      <CustomProperty ID="YINTERVALLIMIT" Value="7" />
+    </Query>
+    <Query ID="e0149c39-0d26-48ac-b561-e879b2daaaf7" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="267a1bce-10ad-4ee3-b459-de5836be8f16" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="31dabe00-6f98-4530-82a4-c1522181e195" Selected="False">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="587a27ba-7518-4cb9-b603-7c90c3f9e585" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="578963A2-663E-410C-982A-8396C865EEF8" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="2D0EBC0D-4513-4456-A3E7-1AB3C3815B08" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="8952A05D-9581-4710-827C-3BB4FEBF4D4A" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="41312473-F4D4-4030-996B-4204B66028E8" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="LASTX" Value="100" />
+    </Query>
+    <Query ID="45267bc9-6586-4730-a39f-4cdb66fa7d33" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="LASTX" Value="100" />
+    </Query>
+    <Query ID="b0081f2a-1524-4245-8929-2576540994f6" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="ECA04256-B70F-4D53-B807-68C094C93840" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPX" Value="10" />
+    </Query>
+    <Query ID="d16add7b-f076-4784-8c62-4033cb6b61c5" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+      <CustomProperty ID="TOPX" Value="10" />
+    </Query>
+    <Query ID="204a5f6f-7055-4b15-a36e-091e1813e494" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="587d39dc-7cbb-4147-98c8-943208e952b0" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="7f982fec-c2ac-4a7a-8979-3852ced9d0e4" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="761b9124-ef77-460a-b7cf-253be52d7005" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="eac4ff0c-5656-4bfc-a157-30a171b83ea8" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="d5842144-9132-46ab-845d-7672aa242f5d" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="bc81449d-2288-423c-914a-332f314a56a6" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="DFC16EF1-DC17-4AA5-A71F-2A7346E1A857" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+    <Query ID="832402ee-41b9-4cf6-ad1d-f7a2345a7413" Selected="True">
+      <CustomProperty ID="MAXROWS" Value="2000" />
+      <CustomProperty ID="RAISEWARNINGSINEVENTLOG" Value="False" />
+    </Query>
+  </Queries>
+</configuration>

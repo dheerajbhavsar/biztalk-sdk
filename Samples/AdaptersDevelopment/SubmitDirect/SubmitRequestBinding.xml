@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.0.1.0" BindingStatus="FullyBound" BoundEndpoints="1" TotalEndpoints="1">
+  <ModuleRefCollection>
+    <ModuleRef Name="ProcessRequest" Version="1.0.0.0" Culture="" PublicKeyToken="" FullName="ProcessRequest, Version=1.0.0.0">
+      <Services>
+        <Service Name="Microsoft.Samples.BizTalk.ProcessRequest.Multiplier">
+          <Ports>
+            <Port Name="ReqRespPort" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="SubmitRequestRP" />
+            </Port>
+          </Ports>
+          <Roles />
+	 <Host Name="BizTalkServerApplication" NTGroupName="BizTalk Application Users" Type="1" />
+        </Service>
+      </Services>
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection />
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="SubmitRequestRP" IsTwoWay="true">
+      <ReceiveLocations>
+        <ReceiveLocation Name="SubmitRequestRL">
+          <Address>submit://submitrequest</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationTransportType Name="Submit" Capabilities="129" ConfigurationClsid="8ea860eb-8d23-4a93-aa6c-d98d45abfa7f" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;CustomProps xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&amp;gt;&amp;lt;uri&amp;gt;submit://submitrequest&amp;lt;/uri&amp;gt;&amp;lt;/CustomProps&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines:3.0.1.0:Microsoft.BizTalk.DefaultPipelines.XMLReceive" Type="1" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline Name="XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines:3.0.1.0:Microsoft.BizTalk.DefaultPipelines.XMLTransmit" Type="2" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection />
+</BindingInfo>

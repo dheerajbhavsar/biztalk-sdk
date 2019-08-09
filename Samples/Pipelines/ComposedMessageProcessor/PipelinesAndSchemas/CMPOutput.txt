@@ -1,0 +1,15 @@
+Northwing Shipping
+DocumentTypes:Invoices
+INVOICE1999-10-20
+BILLTO,US,Alice Smith,123 Maple Street,Mill Valley,CA,90952
+872-AA         Lawnmower         1    148.95    Confirm this is electric
+926-AA         Baby Monitor      1    39.98     Confirm this is electric
+INVOICE1999-10-21
+BILLTO,US,John Dow,123 Elm Street,Mill Valley,CA,90952
+398-BB         Tire              4    324.99    Wrap them up nicely     
+201-BB         Engine Oil        1    12.99     SAE10W30                
+INVOICE1999-10-23
+BILLTO,US,John Connor,123 Cedar Street,Mill Valley,CA,90952
+101-TT         Plastic flowers   10   4.99      Fragile handle with care
+202-RR         Fertilizer        1    10.99     Lawn fertilizer         
+453-XS         Weed killer       1    5.99      Lawn weed killer        

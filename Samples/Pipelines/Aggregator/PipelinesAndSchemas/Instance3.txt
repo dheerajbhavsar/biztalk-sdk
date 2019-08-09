@@ -1,0 +1,6 @@
+INVOICE2223
+DestinationPartnerURI:http://www.northwind.com?ID=A5C42A88-F9E1-4bd4-869F-8CC761315A42
+BILLTO,US,John Connor,123 Cedar Street,Mill Valley,CA,90952
+101-TT         Plastic flowers   10   4.99      Fragile handle with care
+202-RR         Fertilizer        1    10.99     Lawn fertilizer         
+453-XS         Weed killer       1    5.99      Lawn weed killer        

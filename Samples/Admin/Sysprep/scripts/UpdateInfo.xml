@@ -1,0 +1,61 @@
+<UpdateConfiguration>
+	<MessageBoxDB oldDBName="BizTalkMsgBoxDb" oldDBServer="$(OLDCOMPUTERENAME)" newDBName="BizTalkMsgBoxDb" newDBServer="$(NEWCOMPUTERNAME)" IsMaster="1"/>
+	<TrackingDB oldDBName="BizTalkDTADb" oldDBServer="$(OLDCOMPUTERENAME)" newDBName="BizTalkDTADb" newDBServer="$(NEWCOMPUTERNAME)"/>
+	<ManagementDB oldDBName="BizTalkMgmtDb" oldDBServer="$(OLDCOMPUTERENAME)" newDBName="BizTalkMgmtDb" newDBServer="$(NEWCOMPUTERNAME)"/>
+	<BAM>
+		<GlobalProperty Name="BAMVRoot">http://$(NEWCOMPUTERNAME):80/BAM</GlobalProperty>
+		<GlobalProperty Name="MaxAlertableActivityViews">63</GlobalProperty>
+		<DeploymentUnit Name="OldPrimaryImportDatabase">
+			<Property Name="ServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="DatabaseName">BAMPrimaryImport</Property>
+		</DeploymentUnit>
+		<DeploymentUnit Name="PrimaryImportDatabase">
+			<Property Name="ServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="DatabaseName">BAMPrimaryImport</Property>
+		</DeploymentUnit>
+		<DeploymentUnit Name="StarSchemaDatabase">
+			<Property Name="ServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="DatabaseName">BAMStarSchema</Property>
+		</DeploymentUnit>
+		<DeploymentUnit Name="AnalysisDatabase">
+			<Property Name="ServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="DatabaseName">BAMAnalysis</Property>
+		</DeploymentUnit>
+		<DeploymentUnit Name="ArchivingDatabase">
+			<Property Name="ServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="DatabaseName">BAMArchive</Property>
+		</DeploymentUnit>
+		<DeploymentUnit Name="CubeUpdateDTS">
+			<Property Name="ConnectionTimeOut">120</Property>
+			<Property Name="UseEncryption">0</Property>
+		</DeploymentUnit>
+		<DeploymentUnit Name="DataMaintenanceDTS">
+			<Property Name="ConnectionTimeOut">120</Property>
+			<Property Name="UseEncryption">0</Property>
+		</DeploymentUnit>
+		<DeploymentUnit Name="Alert">
+			<Property Name="DBServer">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="ApplicationDatabaseName">Application</Property>
+			<Property Name="InstanceDatabaseName">BAMAlerts</Property>
+			<Property Name="GeneratorServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="ProviderServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="DistributorServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="SmtpServerName">$(NEWCOMPUTERNAME)</Property>
+			<Property Name="AlertMailFrom">BAM@microsoft.com</Property>
+			<Property Name="FileDropUNC">\\$(NEWCOMPUTERNAME)\alerts</Property>
+		</DeploymentUnit>
+	</BAM>
+	<RuleEngineDB oldDBName="BizTalkRuleEngineDb" oldDBServer="$(OLDCOMPUTERENAME)" newDBName="BizTalkRuleEngineDb" newDBServer="$(NEWCOMPUTERNAME)"/>
+	<OtherDatabases>
+		<Database Name="SSO" oldDBName="SSODB" oldDBServer="$(OLDCOMPUTERENAME)" newDBName="SSODB" newDBServer="$(NEWCOMPUTERNAME)"/>
+	</OtherDatabases>
+	<sso>
+  		<globalInfo>
+     			<secretServer>$(NEWCOMPUTERNAME)</secretServer>
+  		</globalInfo>
+	</sso>
+</UpdateConfiguration>
+
+
+
+

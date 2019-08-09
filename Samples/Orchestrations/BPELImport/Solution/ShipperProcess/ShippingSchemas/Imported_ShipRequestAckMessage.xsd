@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<q1:schema xmlns:_ns0="http://contoso.org/samples" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://contoso.org/samples" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" elementFormDefault="qualified" targetNamespace="http://contoso.org/samples" xmlns:q1="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <imports xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        <namespace prefix="_ns0" uri="http://contoso.org/samples" location=".\Imported_PropertySchema_0.xsd" />
+      </imports>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ShipRequestAckMessage">
+    <xs:annotation>
+      <xs:appinfo>
+        <properties xmlns="http://schemas.microsoft.com/BizTalk/2003">
+          <property name="_ns0:Ship_Acknowledged" xpath="/*[local-name()='ShipRequestAckMessage' and namespace-uri()='http://contoso.org/samples']/*[local-name()='Ack' and namespace-uri()='http://contoso.org/samples']" />
+          <property name="_ns0:OrderID" xpath="/*[local-name()='ShipRequestAckMessage' and namespace-uri()='http://contoso.org/samples']/*[local-name()='OrderID' and namespace-uri()='http://contoso.org/samples']" />
+        </properties>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Ack">
+          <xs:simpleType>
+            <xs:restriction base="xs:boolean" />
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="OrderID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</q1:schema>

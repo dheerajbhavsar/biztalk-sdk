@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://contoso.org/samples" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" elementFormDefault="qualified" targetNamespace="http://contoso.org/samples" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OrderAckMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="OrderID" type="xs:string" />
+        <xs:element name="Ack" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

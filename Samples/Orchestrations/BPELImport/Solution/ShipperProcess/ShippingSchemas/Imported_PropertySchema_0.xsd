@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:tns="http://contoso.org/samples" targetNamespace="http://contoso.org/samples" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <schemaInfo schema_type="property" xmlns="http://schemas.microsoft.com/BizTalk/2003" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Ship_Acknowledged" type="xs:boolean" />
+  <xs:element name="Ship_Completed" type="xs:boolean" />
+  <xs:element name="ShipStatus" type="xs:string" />
+  <xs:element name="OrderID" type="xs:string" />
+</xs:schema>

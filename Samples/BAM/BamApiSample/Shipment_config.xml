@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TraceInterceptorConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TrackPoint Type="Continue">
+    <Location xsi:type="xsd:string">locShipped</Location>
+    <ExtractionInfo xsi:type="xsd:string">@ShipmentID</ExtractionInfo>
+  </TrackPoint>
+  <TrackPoint Type="End">
+    <Location xsi:type="xsd:string">locDelivered</Location>
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Shipped">
+    <Location xsi:type="xsd:string">locShipped</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Delivered">
+    <Location xsi:type="xsd:string">locDelivered</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+</TraceInterceptorConfiguration>

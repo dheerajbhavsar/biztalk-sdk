@@ -1,0 +1,234 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="531d0538-6894-4e81-aa2c-ee923c1432fc" LowerBound="1.1" HigherBound="49.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="647887f8-594d-4b76-8b8b-4cc6df2d961a" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FileInPT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="87b64bb3-7faf-48fc-b459-62b7a1d85bff" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="In" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="276f6ed7-12d5-4933-bbf4-3d3c80ec0520" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.28">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.MultiplyRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="7524c14c-2630-4fd9-9073-c5de221e354b" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FileOutPT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="10d56861-8838-4bd7-afcb-a87955f54e35" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Out" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="c7d66147-7f33-4b1b-89ce-fa3efeb5e907" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.29">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.MultiplyResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="df49567f-9a2c-4ea8-b673-5ad7f842feff" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultiplyServicePT" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="00df6d01-1c47-4f3f-936d-51f811b8feda" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Multiply" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="e98b37cc-a8bc-456f-890b-7ad3f3d59907" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.28">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.MultiplyRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="82a5d42c-6d41-4c8b-89b6-1a2d3576eb98" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="22.30" HigherBound="22.46">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.MultiplyResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="bc7a08ec-a802-4816-a0c6-c0f82d8e7abb" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="48.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultiplyTwoIntegers" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="ServiceBody" OID="23590c49-2cc5-42ec-8ce4-1fc6537b1b12" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="fc3d02e4-5e4d-40ae-a70c-88a0ef8b60a3" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="40.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="FileIn" />
+                    <om:Property Name="MessageName" Value="MsgIn" />
+                    <om:Property Name="OperationName" Value="In" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="FileReceive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="1b780710-1157-4305-a429-d8b1a4e60d82" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="42.1">
+                    <om:Property Name="PortName" Value="MultiplyService" />
+                    <om:Property Name="MessageName" Value="MsgIn" />
+                    <om:Property Name="OperationName" Value="Multiply" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="HttpSend" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="3e99ba34-90b5-415f-b7f0-f8ad29805b07" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="MultiplyService" />
+                    <om:Property Name="MessageName" Value="MsgOut" />
+                    <om:Property Name="OperationName" Value="Multiply" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="HttpReceive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="81784309-b773-4ff1-b15b-b8e5e589850d" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="46.1">
+                    <om:Property Name="PortName" Value="FileOut" />
+                    <om:Property Name="MessageName" Value="MsgOut" />
+                    <om:Property Name="OperationName" Value="Out" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="FileSend" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="029413dd-0c84-4174-85a0-653e7ff98afb" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.FileInPT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileIn" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b1e52b29-8721-4edc-8df3-5f9c782cc9e7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="41f7e963-fc0f-42d4-9e06-83e54b1f41d6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.FileOutPT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileOut" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c116fc23-1023-451c-add4-0a5bcbb8828a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="14c634a7-ea8d-410b-b779-ca574c81eb12" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.MultiplyServicePT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MultiplyService" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b9e6614d-a9a3-4eb4-adc7-70fce769b117" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fc71e5bb-60aa-4773-9ac0-67d4d60f428a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.MultiplyRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="aaa84f3a-473e-48a8-b28a-f86ed627a601" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.HttpSolicitResponse.MultiplyResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.Samples.BizTalk.HttpSolicitResponse
+{
+    public porttype FileInPT
+    {
+        oneway In
+        {
+            MultiplyRequest
+        };
+    };
+    public porttype FileOutPT
+    {
+        oneway Out
+        {
+            MultiplyResponse
+        };
+    };
+    internal porttype MultiplyServicePT
+    {
+        requestresponse Multiply
+        {
+            MultiplyRequest, MultiplyResponse
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    private service MultiplyTwoIntegers
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements FileInPT FileIn;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses FileOutPT FileOut;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses MultiplyServicePT MultiplyService;
+        message MultiplyRequest MsgIn;
+        message MultiplyResponse MsgOut;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fc3d02e4-5e4d-40ae-a70c-88a0ef8b60a3")]
+            activate receive (FileIn.In, MsgIn);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1b780710-1157-4305-a429-d8b1a4e60d82")]
+            send (MultiplyService.Multiply, MsgIn);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3e99ba34-90b5-415f-b7f0-f8ad29805b07")]
+            receive (MultiplyService.Multiply, MsgOut);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("81784309-b773-4ff1-b15b-b8e5e589850d")]
+            send (FileOut.Out, MsgOut);
+        }
+    }
+}
+

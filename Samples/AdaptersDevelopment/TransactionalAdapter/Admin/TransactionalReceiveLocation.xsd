@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:baf="BiztalkAdapterFramework.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="BiztalkAdapterFramework.xsd" />
+    <xs:element name="Config">
+        <xs:complexType>
+            <xs:sequence>
+                
+                <xs:element name="uri" type="xs:string" default="null://">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <baf:designer>
+                                <baf:browsable show="false" />
+                            </baf:designer>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+                
+                <xs:element name="cookie" type="xs:string" minOccurs="1" default="cookie">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <baf:designer>
+                                <baf:displayname _locID="">Cookie</baf:displayname>
+                                <baf:description _locID="">Comprises part of the URI - feel free to edit.</baf:description>
+                            </baf:designer>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element name="pollingInterval" type="xs:int" minOccurs="1" default="3">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <baf:designer>
+                                <baf:displayname _locID="">Polling Interval</baf:displayname>
+                                <baf:description _locID="">The elapsed time between transactions against the database.</baf:description>
+                            </baf:designer>
+                        </xs:appinfo>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element name="pollingIntervalUnit" minOccurs="1" default="seconds">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <baf:designer>
+                                <baf:displayname _locID="">Polling Interval Unit</baf:displayname>
+                                <baf:description _locID="">The unit of time measure for the Polling Interval.</baf:description>
+                            </baf:designer>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="milliseconds">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <baf:designer>
+                                            <baf:displayname _locID="">Milliseconds</baf:displayname>
+                                        </baf:designer>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="seconds">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <baf:designer>
+                                            <baf:displayname _locID="">Seconds</baf:displayname>
+                                        </baf:designer>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="minutes">
+                                <xs:annotation>
+                                    <xs:appinfo>
+                                        <baf:designer>
+                                            <baf:displayname _locID="">Minutes</baf:displayname>
+                                        </baf:designer>
+                                    </xs:appinfo>
+                                </xs:annotation>
+                            </xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+              <xs:element name="connectionString" type="xs:string" minOccurs="1" default="Data Source='.';Initial Catalog='Northwind';Integrated Security='SSPI';">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <baf:designer>
+                      <baf:displayname _locID="">Connection String</baf:displayname>
+                      <baf:description _locID="">The SQL database connection string.</baf:description>
+                    </baf:designer>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+
+              <xs:element name="cmdText" type="xs:string" minOccurs="1" default="select CompanyName, City from Customers for xml auto">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <baf:designer>
+                      <baf:displayname _locID="">Command Text</baf:displayname>
+                      <baf:description _locID="">The SQL database command text.</baf:description>
+                    </baf:designer>
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

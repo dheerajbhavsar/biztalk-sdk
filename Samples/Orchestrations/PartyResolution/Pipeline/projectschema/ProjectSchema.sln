@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSchema", "ProjectSchema.btproj", "{4D9BE62E-C822-4006-84AC-A5D903BEE3DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|.NET = Release|.NET
+		Standard|.NET = Standard|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D9BE62E-C822-4006-84AC-A5D903BEE3DF}.Release|.NET.ActiveCfg = Release|Any CPU
+		{4D9BE62E-C822-4006-84AC-A5D903BEE3DF}.Release|.NET.Build.0 = Release|Any CPU
+		{4D9BE62E-C822-4006-84AC-A5D903BEE3DF}.Release|.NET.Deploy.0 = Release|Any CPU
+		{4D9BE62E-C822-4006-84AC-A5D903BEE3DF}.Standard|.NET.ActiveCfg = Standard|Any CPU
+		{4D9BE62E-C822-4006-84AC-A5D903BEE3DF}.Standard|.NET.Build.0 = Standard|Any CPU
+		{4D9BE62E-C822-4006-84AC-A5D903BEE3DF}.Standard|.NET.Deploy.0 = Standard|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

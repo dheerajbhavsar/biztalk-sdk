@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<SSO>
+  <mapping>
+    <windowsDomain>DomainName</windowsDomain>
+    <windowsUserId>UserA</windowsUserId>
+    <externalApplication>SSOApplication</externalApplication>
+    <externalUserId>ExternalUserID that corresponds to UserA</externalUserId>
+  </mapping>
+</SSO>

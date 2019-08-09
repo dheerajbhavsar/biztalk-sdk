@@ -1,0 +1,5 @@
+﻿<?xml version="1.0"?>
+<MultiplyRequest xmlns="http://HttpSolicitResponse.schemas.MultiplyRequest">
+  <Operand1>100</Operand1>
+  <Operand2>100</Operand2>
+</MultiplyRequest>

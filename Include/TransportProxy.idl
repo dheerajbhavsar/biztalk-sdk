@@ -1,0 +1,6 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "BaseMessage.idl";
+import "pipeline.idl";
+import "transact.idl";	
+#include "TransportProxy_Int.idl"

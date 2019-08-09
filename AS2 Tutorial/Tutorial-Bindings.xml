@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2006-05-11T14:45:16.1594638-07:00</Timestamp>
+  <SendPortCollection>
+    <SendPort Name="Send_Loopback_864" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>C:\AS2 Tutorial\_Loopback\%MessageID%.edi</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.edi&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2006-05-11T07:00:00</FromTime>
+        <ToTime>2006-05-12T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2006-05-11T07:00:00</FromTime>
+        <ToTime>2006-05-12T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;Filter&gt;&lt;Group&gt;&lt;Statement Property="Microsoft.BizTalk.Edi.GlobalProperties.IsAS2PayloadMessage" Operator="0" Value="True"/&gt;&lt;Statement Property="Microsoft.BizTalk.Edi.GlobalProperties.IsEmptyMDNResponse" Operator="0" Value="False"/&gt;&lt;/Group&gt;&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="Send_Async_997" IsStatic="true" IsTwoWay="true" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Send" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Send, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>http://localhost/Fabrikam/Default.aspx?Destination=_997ToFabrikam</Address>
+        <TransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;EnableChunkedEncoding vt="11"&gt;0&lt;/EnableChunkedEncoding&gt;&lt;ProxyPort vt="3"&gt;80&lt;/ProxyPort&gt;&lt;AuthenticationScheme vt="8"&gt;Anonymous&lt;/AuthenticationScheme&gt;&lt;UseHandlerSetting vt="11"&gt;-1&lt;/UseHandlerSetting&gt;&lt;UseProxy vt="11"&gt;0&lt;/UseProxy&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2006-05-11T07:00:00</FromTime>
+        <ToTime>2006-05-12T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="true">
+          <TransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2006-05-11T07:00:00</FromTime>
+        <ToTime>2006-05-12T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <EncryptionCert LongName="C=US, S=WA, L=Redmond, O=Microsoft, OU=CSD-B2B, CN=Microsoft, E=monahk@microsoft.com" ShortName="US, WA, Redmond, Microsoft, CSD-B2B, Microsoft, monahk@microsoft.com" UsageType="Both" ThumbPrint="E3F987C1A482B087CC1CDA15C2BC34E10DDD2586" />
+      <ReceivePipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Receive" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Receive, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;  &lt;Group&gt;    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Edi/X12#X12_997_Root" /&gt;  &lt;/Group&gt;&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="Send_Payload_EdiXml" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>C:\AS2 Tutorial\_EDIXMLToContoso\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2006-05-11T07:00:00</FromTime>
+        <ToTime>2006-05-12T06:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2006-05-11T07:00:00</FromTime>
+        <ToTime>2006-05-12T06:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;  &lt;Group&gt;    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/BizTalk/EDI/X12/2006#X12_00401_864" /&gt;  &lt;/Group&gt;&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+    <SendPort Name="Send_Async_MDN" IsStatic="false" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Send" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Send, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;  &lt;Group&gt;    &lt;Statement Property="Microsoft.BizTalk.Edi.GlobalProperties.AsyncMDN" Operator="0" Value="True" /&gt;  &lt;/Group&gt;&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="BatchControlMessageRecvPort" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="BatchControlMessageRecvLoc">
+          <Description xsi:nil="true" />
+          <Address>SQL://STORMY/BizTalkDTADb/</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T08:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T21:30:00</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2005-03-01T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-06-30T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="SQL" Capabilities="81163" ConfigurationClsid="6e688659-1374-4f37-90dc-40cb6dd3c73d" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Receive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;sqlCommand&amp;gt;EXEC edi_GetControlMessage&amp;lt;/sqlCommand&amp;gt;&amp;lt;connectionString&amp;gt;Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=BizTalkDTADb;Data Source=STORMY&amp;lt;/connectionString&amp;gt;&amp;lt;documentRootElementName&amp;gt;ControlMessage&amp;lt;/documentRootElementName&amp;gt;&amp;lt;documentTargetNamespace&amp;gt;http://SQLControlMessage.IssueSelect&amp;lt;/documentTargetNamespace&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Minutes&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;pollingInterval&amp;gt;5&amp;lt;/pollingInterval&amp;gt;&amp;lt;uri&amp;gt;SQL://STORMY/BizTalkDTADb/&amp;lt;/uri&amp;gt;&amp;lt;pollWhileDataFound&amp;gt;False&amp;lt;/pollWhileDataFound&amp;gt;&amp;lt;/Receive&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.Edi.BatchControlMessageRecvPipeline" FullyQualifiedName="Microsoft.BizTalk.Edi.BatchControlMessageRecvPipeline, Microsoft.BizTalk.Edi.BatchingOrchestration, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="true">
+            <TransportType Name="SQL" Capabilities="81163" ConfigurationClsid="6e688659-1374-4f37-90dc-40cb6dd3c73d" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="Receive_Loopback_864" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="Receive_Loopback_864">
+          <Description xsi:nil="true" />
+          <Address>C:\AS2 Tutorial\_Loopback\*.edi</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2006-05-11T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2006-05-12T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2006-05-10T17:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2006-05-11T17:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.edi&lt;/FileMask&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="Receive_AS2_And_MDN" IsTwoWay="true" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="Receive_AS2_And_MDN">
+          <Description xsi:nil="true" />
+          <Address>/Contoso/BTSHTTPReceive.dll</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2006-05-11T07:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2006-05-12T06:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2006-05-10T17:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2006-05-11T17:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;ReturnCorrelationHandle vt="11"&gt;0&lt;/ReturnCorrelationHandle&gt;&lt;ResponseContentType vt="8"&gt;text/xml&lt;/ResponseContentType&gt;&lt;SuspendFailedRequests vt="11"&gt;-1&lt;/SuspendFailedRequests&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;LoopBack vt="11"&gt;0&lt;/LoopBack&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Receive" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Receive, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Send" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Send, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkServerIsolatedHost" HostTrusted="true">
+            <TransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <OutboundTransforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>BizTalk Application 1</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection>
+    <Party Name="Fabrikam">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="Fabrikam" IsAutoCreated="true" />
+        <PartyAlias Name="EDIINT-AS2" Qualifier="AS2-To" Value="Fabrikam" IsAutoCreated="false" />
+        <PartyAlias Name="EDIINT-AS2" Qualifier="AS2-From" Value="Fabrikam" IsAutoCreated="false" />
+        <PartyAlias Name="ZZ" Qualifier="ZZ" Value="7654321" IsAutoCreated="false" />
+      </Aliases>
+      <SendPorts>
+        <SendPortRef Name="Send_Async_997" />
+      </SendPorts>
+      <SignatureCert xsi:nil="true" />
+      <CustomData xsi:nil="true" />
+    </Party>
+  </PartyCollection>
+</BindingInfo>

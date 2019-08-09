@@ -1,0 +1,28 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelinesAndSchemas", "PipelinesAndSchemas\PipelinesAndSchemas.btproj", "{FFAE901D-169A-4A37-9F7B-71FBB2B44C44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandler", "ErrorHandler\ErrorHandler.btproj", "{6AF81124-5EB5-4653-8D65-05D711F96BF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Release|.NET = Release|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFAE901D-169A-4A37-9F7B-71FBB2B44C44}.Debug|.NET.ActiveCfg = Release|Any CPU
+		{FFAE901D-169A-4A37-9F7B-71FBB2B44C44}.Debug|.NET.Build.0 = Release|Any CPU
+		{FFAE901D-169A-4A37-9F7B-71FBB2B44C44}.Release|.NET.ActiveCfg = Release|Any CPU
+		{FFAE901D-169A-4A37-9F7B-71FBB2B44C44}.Release|.NET.Build.0 = Release|Any CPU
+		{FFAE901D-169A-4A37-9F7B-71FBB2B44C44}.Release|.NET.Deploy.0 = Release|Any CPU
+		{6AF81124-5EB5-4653-8D65-05D711F96BF0}.Debug|.NET.ActiveCfg = Release|Any CPU
+		{6AF81124-5EB5-4653-8D65-05D711F96BF0}.Debug|.NET.Build.0 = Release|Any CPU
+		{6AF81124-5EB5-4653-8D65-05D711F96BF0}.Release|.NET.ActiveCfg = Release|Any CPU
+		{6AF81124-5EB5-4653-8D65-05D711F96BF0}.Release|.NET.Build.0 = Release|Any CPU
+		{6AF81124-5EB5-4653-8D65-05D711F96BF0}.Release|.NET.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

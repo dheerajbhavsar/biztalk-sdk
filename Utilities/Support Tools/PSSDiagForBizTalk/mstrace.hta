@@ -1,0 +1,563 @@
+<!-- 
+Manage Biztalk Tracing
+
+Based on NewTrace.cmd by Nirk (Nir Katz)
+Written:  Erez Amir (erezam) 21-Aug-2002
+Modified for Biztalk by mshea (Michael Shea) Sept 2009
+-->
+
+<HTML>
+<HEAD>
+  <TITLE>Biztalk Server Tracing</TITLE>
+
+
+  <HTA:APPLICATION ID="oApp" 
+    APPLICATIONNAME="Trace Format" 
+    BORDER="dialog"
+    CAPTION="yes"
+    SHOWINTASKBAR="yes"
+    SINGLEINSTANCE="Yes"
+    SYSMENU="yes"
+    CONTEXTMENU="no"
+    SELECTION="no"
+    WINDOWSTATE="normal"
+  >
+</HEAD>
+
+<BODY bgcolor=BurlyWood ID=Body style="font-family=Tahoma"  
+	style="filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)">
+<DIV ID=ShowOff 
+	Style="position:absolute;
+			top:0px;
+			left:300; 
+			padding:5px; 
+			filter:progid:DXImageTransform.Microsoft.MotionBlur(Strength=100, Direction=90, Add='true')">
+	<H2>Biztalk Positive Control Tracing
+</DIV>
+<br>
+<TABLE border cellspacing=10 cellpadding=0 bgcolor=navajowhite>
+<TR>
+<TD>
+	<!-- this table is filled on-the-fly by the scripts below -->
+	<Table ID=Groups border=1 cellspacing=0 cellpadding=1>
+	<TR>
+		<TH>Group
+		<TH><Button OnClick=SetAllLevel(ErrorLevel)>Error</Button>
+		<TH><Button OnClick=SetAllLevel(WarnLevel)>Warn</Button>
+		<TH><Button OnClick=SetAllLevel(InfoLevel)>Info</Button>
+		<TH><Button OnClick=SetAllLevel(NoneLevel)>None</Button>
+		<TH><Button OnClick=SetAllLevel(AllLevel)>All</Button>
+	
+	<TR>
+		<TD>
+		<TD colspan=3>
+			<button STYLE='width:100%' OnClick=ApplyAllGroups()>
+			<B>GO!</B>
+			</Button>
+	</Table>
+<TD valign=top>
+	<!--This is a comment. Comments are not displayed in the browser
+	Trace format search path:<br>
+	<input ID=TRACE_FORMAT_SEARCH_PATH type=text Size=60>
+	-->
+	<hr>
+	<!--This is a comment. Comments are not displayed in the browser
+	View Log: <button ID=ViewLog OnClick=ViewLog(false) title="formatted HTML, might take longer to format">HTML</Button>&nbsp;
+	<button ID=ViewLog OnClick=ViewLog(true) title="Raw text, no formatting">Text</Button>
+	<hr>
+	-->
+	<DIV ID=LogStatus></DIV>
+	<button ID=StopTracing OnClick=StopTracing() >Stop Tracing</Button>
+	<hr>
+	<!--
+	Build trace files from PDBs on path<br>
+	<input ID=PDB_PATH type=text size=60><button OnClick=BuildFromPDB()>Go</Button>
+	-->
+</TABLE>
+<button OnClick=ByeBye()>Close</Button>
+</body>
+
+<!--------------------------------------------------------------------------------->
+<Script Language=VBScript>
+
+Option Explicit
+
+'
+' Some global objects
+'
+Dim oShell
+Set oShell = CreateObject("Wscript.Shell")
+dim oEnv
+Set oEnv = oShell.Environment("Process")
+Dim oFS
+Set oFS = CreateObject("Scripting.FileSystemObject")
+Const ForReading = 1, ForWriting = 2, ForAppending = 8
+
+
+'
+' const error level values
+'
+
+const ErrorLevel   = 1
+const WarnLevel    = 3
+const InfoLevel    = 7
+const NoneLevel    = 0
+const AllLevel     = 55  
+
+'==============================================================================
+' START OF PROJECT SPECIFIC CONSTANTS
+'==============================================================================
+
+'
+' Persistante store
+'
+const cRegPath = "HKEY_CURRENT_USER\Software\Microsoft\BizTalk Server\Trace\"
+
+'
+' binary log file name
+'
+const x_LogBinFile = "mstrace.bin"
+
+'
+' Formatted text log file name
+'
+const x_LogTextFile = "mstrace.txt"
+
+'
+' Logger name, as used by tracefmt and tracelog utilities
+'
+const x_LoggerName = "mstrace"
+
+dim oGUIDS
+set oGUIDS = CreateObject("Scripting.Dictionary")
+oGUIDS.add "AGENT", 		Array("#29da55e6,e688,425f,a52c,79f840b8C89", "(AGENT)")
+oGUIDS.add "XLANGSCSHARP", 	Array("#186cc4a4,abab,abab,abab,abababababab", "(XLANGsCSHARP)")
+oGUIDS.add "ProcessContainer",	Array("#186cc4a5,abab,abab,abab,abababababab", "(ProcessContainer)")
+oGUIDS.add "NTSVC", 		Array("#186cc4a5,abab,abab,abab,abababababab", "(NTSVC)")
+oGUIDS.add "Messaging", 	Array("#9d0e4402,4cce,4536,83fa,4a5040674ad6", "(Messaging)")
+oGUIDS.add "HTTPReceive",	Array("#ff1bf348,eff3,4e72,baa4,0bb90a2a58ad", "(HTTPReceive)")
+oGUIDS.add "SOAPTransmitter",	Array("#6796973A,3ABB,30F7,A30A,A48797B885BD", "(SOAPTransmitter)")
+oGUIDS.add "SOAPReceive", 	Array("#C8F975BF,5C97,4f17,9CA1,F894BC258761", "(SOAPReceive)")
+oGUIDS.add "DBAccessor", 	Array("#442B65E4,5BA1,4e09,B620,5AE937F02995", "(DBAccessor)")
+oGUIDS.add "SchemaCache",	Array("#9d0e4403,4cce,4536,83fa,4a5040674ad6", "(SchemaCache)")
+oGUIDS.add "UTIL",		Array("#9d0e4406,4cce,4536,83fa,4a5040674ad6", "(UTIL)")
+oGUIDS.add "ERRORHANDLER",	Array("#9d0e4409,4cce,4536,83fa,4a5040674ad6", "(ERRORHANDLER)")
+oGUIDS.add "MGDCOMPS",		Array("#689E4209,67A2,409b,8303,0905CE67A931", "(MGDCOMPS)")
+oGUIDS.add "MQSAGENT",		Array("#2F7FEF13,7A25,44B0,90F1,840E94FC5A9F", "(MQSAGENT)")
+oGUIDS.add "MIME",		Array("#9d0e4408,4cce,4536,83fa,4a5040674ad6", "(MIME)")
+oGUIDS.add "BTSTicket",		Array("#2bfdd646,b8a0,4731,8e5a,9a9ddb84381a", "(BTSTicket)")
+oGUIDS.add "InfoCache",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a00", "(InfoCache)")
+oGUIDS.add "SSOAdmin",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a01", "(SSOAdmin)")
+oGUIDS.add "SSOAdminServer",	Array("#4100fd26,a656,45c6,9b81,f7da488d3a02", "(SSOAdminServer)")
+oGUIDS.add "SSOConfiguration",	Array("#B156D071,308C,4931,93C3,199E167C4834", "(SSOConfiguration)")
+oGUIDS.add "SSOLookup",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a03", "(SSOLookup)")
+oGUIDS.add "SSOLookupServer",	Array("#4100fd26,a656,45c6,9b81,f7da488d3a04", "(SSOLookupServer)")
+oGUIDS.add "SSOMapper",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a05", "(SSOMapper)")
+oGUIDS.add "SSOMappingServer",	Array("#4100fd26,a656,45c6,9b81,f7da488d3a06", "(SSOMappingServer)")
+oGUIDS.add "SSOSS",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a07", "(SSOSS)")
+oGUIDS.add "BTSSSO",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a08", "(BTSSSO)")
+oGUIDS.add "ssocheck",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a09", "(ssocheck)")
+oGUIDS.add "ssoclient",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a0a", "(ssoclient)")
+oGUIDS.add "ssoconfig",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a0b", "(ssoconfig)")
+oGUIDS.add "ssomanage",		Array("#4100fd26,a656,45c6,9b81,f7da488d3a0c", "(ssomanage)")
+oGUIDS.add "SSOConfigStore",	Array("#4100fd26,a656,45c6,9b81,f7da488d9901", "(SSOConfigStore)")
+oGUIDS.add "SSOCSServer",	Array("#4100fd26,a656,45c6,9b81,f7da488d3a99", "(SSOCSServer)")
+oGUIDS.add "SSOCSTX",	        Array("#4100fd26,a656,45c6,9b81,f7da488d9902", "(SSOCSTX)")
+oGUIDS.add "ImportExport",	Array("#4100fd26,a656,45c6,9b81,f7da488d9903", "(ImportExport)")
+oGUIDS.add "WindowsSharepointServicesAdapter",	Array("#BA7DAD66,5FC8,4a24,A27E,D9F68FD67C3A", "(WindowsSharepointServicesAdapter)")
+oGUIDS.add "BamTddsService",	Array("#FDA0D9B6,CF63,4096,8912,C008E42A3B86", "BamTddsService)")
+oGUIDS.add "BamInterceptors",	Array("#7DED31DE,B123,42A6,889C,090A60ED3CBB", "BamInterceptors)")
+'oGUIDS.add "MSDTC",	Array("#1b1d4ff4-f27b-4c99-8bd7-da8f1a74051a", "MSDTC)")
+
+
+
+
+
+
+'==============================================================================
+' END OF PROJECT SPECIFIC CONSTANTS
+'==============================================================================
+
+'
+' default value is from the environment, taking preceedance over registry
+'
+'Document.All.TRACE_FORMAT_SEARCH_PATH.Value = oEnv("TRACE_FORMAT_SEARCH_PATH")
+
+'
+' Dynamically build the tabe rows and populate with each group's name and radios
+'
+dim G
+for each G in oGUIDS
+	dim oTRow
+	dim Count
+	Count = Document.All.Groups.Rows.Length
+	set oTRow = Document.All.Groups.InsertRow(Count - 1) ' insert one before last line
+	dim oTD
+	set oTD = oTRow.InsertCell()
+	oTD.innerHTML = "<B>" & G & "</b><Small> " & oGuids(G)(1) & "</Small>"
+	set oTD = oTRow.InsertCell()
+	oTD.innerHTML = "<input style=""height:8;filter:progid:DXImageTransform.Microsoft.Glow(Strength=5,color=red)"" Type=Radio Name=" & G & " onClick='SetOneLevel(""" & G & """," & "ErrorLevel);'>"
+	set oTD = oTRow.InsertCell()
+	oTD.innerHTML = "<input style=""height:8;filter:progid:DXImageTransform.Microsoft.Glow(Strength=5,color=yellow)"" Type=Radio Name=" & G & " onClick='SetOneLevel(""" & G & """," & "WarnLevel);'>"
+	set oTD = oTRow.InsertCell()
+	oTD.innerHTML = "<input style=""height:8;filter:progid:DXImageTransform.Microsoft.Glow(Strength=5,color=green)"" Type=Radio Name=" & G & " onClick='SetOneLevel(""" & G & """," & "InfoLevel);'>"
+	set oTD = oTRow.InsertCell()
+	oTD.innerHTML = "<input style=""height:8;filter:progid:DXImageTransform.Microsoft.Glow(Strength=5,color=green)"" Type=Radio Name=" & G & " onClick='SetOneLevel(""" & G & """," & "NoneLevel);'>"
+	set oTD = oTRow.InsertCell()
+	oTD.innerHTML = "<input style=""height:8;filter:progid:DXImageTransform.Microsoft.Glow(Strength=5,color=green)"" Type=Radio Name=" & G & " onClick='SetOneLevel(""" & G & """," & "AllLevel);'>"
+next
+
+VerifyRequiredUtilities
+ReadAllFromRegistry 
+ShowStatus
+ShowOff
+
+' at this point, the form is up and waits for events
+' no more direct program flow below this point
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+'-------------------------------------------------------------------------------------------
+' Functions
+'-------------------------------------------------------------------------------------------
+
+Sub SetOneLevel(Group, Level)
+	Level = cint(Level)
+	Dim Levels,i
+	Levels = Array(ErrorLevel, WarnLevel, InfoLevel, NoneLevel, AllLevel)
+	For i = 0 To UBound(Levels)
+		document.all.Item(Group)(i).Checked = (Level = Levels(i))
+		document.all.Item(Group)(i).Filters.item("DXImageTransform.Microsoft.glow").Enabled = (Level = Levels(i))
+	next
+end sub
+
+function GetGroupLevel(Group)
+	dim RadioGroup
+	set RadioGroup = document.all.Item(Group)
+	GetGroupLevel = 0 ' nothing is checked
+	If RadioGroup(0).Checked Then GetGroupLevel = ErrorLevel
+	If RadioGroup(1).Checked Then GetGroupLevel = WarnLevel
+	If RadioGroup(2).Checked Then GetGroupLevel = InfoLevel
+	If RadioGroup(3).Checked Then GetGroupLevel = NoneLevel
+	If RadioGroup(4).Checked Then GetGroupLevel = AllLevel
+end function
+
+sub Launch(Command, Wait)
+	oShell.run Command, 1, Wait
+end sub
+
+function IsLoggerRunning
+	IsLoggerRunning = (0 = oShell.run("tracelog -q " & x_LoggerName, 7, True) )
+end function
+
+sub ShowStatus
+	dim Running
+	Running = IsLoggerRunning
+	if Running then
+		document.all.LogStatus.InnerHTML = "<b>Logging is currently ON"
+	else
+		document.all.LogStatus.InnerHTML = "<b>Logging is currently OFF"
+	end if
+	document.all.StopTracing.Disabled = not Running
+end sub
+
+'function TRACE_FORMAT_SEARCH_PATH
+	'TRACE_FORMAT_SEARCH_PATH = Document.All.TRACE_FORMAT_SEARCH_PATH.Value 
+'end function
+
+Sub ReadAllFromRegistry
+	dim G, Level
+	on error resume next
+	for each G in oGUIDS
+		Level = oShell.RegRead(cRegPath & G)
+		if Level = 0 then Level = ErrorLevel
+		SetOneLevel G, Level
+	next
+	'if TRACE_FORMAT_SEARCH_PATH = "" then 
+	'	Document.All.TRACE_FORMAT_SEARCH_PATH.Value = oShell.RegRead(cRegPath & "TRACE_FORMAT_SEARCH_PATH")
+	'end if
+	Document.all.PDB_Path.Value = oShell.RegRead(cRegPath & "PDB_PATH")
+end sub
+
+Sub SaveAllToRegistry
+	dim G
+	for each G in oGUIDS
+		oShell.RegWrite cRegPath & G, GetGroupLevel(G)
+	next
+	'oShell.RegWrite cRegPath & "TRACE_FORMAT_SEARCH_PATH", TRACE_FORMAT_SEARCH_PATH
+	'oShell.RegWrite cRegPath & "PDB_PATH", Document.all.PDB_Path.Value
+end sub
+
+sub BuildFromPDB
+	Dim PDBPath
+	PDBPath = Document.all.PDB_Path.Value
+	' is the path valid?
+	If Not oFS.FolderExists(PDBPath) Then
+		MsgBox "source PDB path not found:" & vbCrLf & PDBPath, vbCritical, "Not found"
+		Exit sub
+	End if
+	If Not oFS.FolderExists(TRACE_FORMAT_SEARCH_PATH) Then
+		MsgBox "Target path not found:" & vbCrLf & TRACE_FORMAT_SEARCH_PATH, vbCritical, "Not found"
+		Exit sub
+	End if
+	Dim PDBFound, File
+	PDBFound = False
+	' any PDBs on path?
+	For Each File in oFS.GetFolder(PDBPath).Files
+		If ucase(right(File.Name,4)) = ".PDB" Then
+			PDBFound = True
+			Exit for
+		End If 
+	Next
+	If not PDBFound Then
+		MsgBox "No PDB files found on" & vbCrLf & PDBPath, vbCritical, "Not found"
+		Exit sub
+	End if
+	Const BatchFile = "PDB2TMF.bat"
+	Dim TS 
+	Set TS = oFS.CreateTextFile(BatchFile, True)
+	TS.WriteLine "@Rem -- Automatically generated by Trace.HTA at " & Now
+	TS.WriteLine "@echo off"
+	TS.WriteLine "set TRACE_FORMAT_SEARCH_PATH=" & TRACE_FORMAT_SEARCH_PATH
+	TS.WriteLine "cd /d " & TRACE_FORMAT_SEARCH_PATH
+	TS.WriteLine "for %%p in (" & Document.all.PDB_Path.Value & "\*.PDB) do tracepdb -f %%p"
+	TS.Close
+	Launch "cmd /c " & BatchFile, True
+	oFS.DeleteFile BatchFile 
+	MsgBox "Done", vbInformation, "TMF from PDBs"
+end Sub
+
+Sub VerifyRequiredUtilities
+	Dim Result
+	Dim Files
+	Files = Array("tracelog.exe")
+	Dim i
+	Do
+		Result = ""
+		For i = 0 To UBound(Files)
+			If Not isFileExists(Files(i)) then Result = Result & VbCrLf & Files(i)
+		next
+		If Result = "" Then Exit sub
+		select case MsgBox("The folowing files could not be located:" & Result & _
+		                   VbCrLf & "Please copy them to your path", _
+		                   vbCritical + VBAbortRetryIgnore, "Missing files")
+		Case vbIgnore: Exit Sub
+		Case vbRetry : ' do nothing, retry
+		Case vbAbort : Window.close
+		End select
+	loop
+End Sub
+
+Function isFileExists(Filename)
+	Dim Path
+	Path = split(".;" & oEnv("path"), ";")
+	Dim i
+	For i = 0 To UBound(Path)
+		If oFS.FileExists(Path(i) & "\" & Filename) then
+			isFileExists = True
+			Exit Function
+		End if
+	Next 
+End Function
+
+'-------------------------------------------------------------------------------------------
+' Event handlers - called when document elements (such as buttons) are invoked 
+'-------------------------------------------------------------------------------------------
+sub SetAllLevel(Level)
+	dim G
+	for each G in oGUIDS
+		SetOneLevel G, Level
+	next
+end Sub
+
+'
+' Create and launch a batch file with appropriate trace commands to set,start and view logging
+'
+sub ApplyAllGroups
+	If IsLoggerRunning Then
+		If MsgBox("Restart logging?", vbQuestion + VBYesNoCancel, "Trace logging is currently ON") <> vbYes Then 
+			Exit Sub
+		End if
+	End if
+	Dim TS 
+	Set TS = oFS.CreateTextFile("Trace.bat", True)
+	TS.WriteLine "@Rem -- Automatically generated by Trace.HTA at " & Now
+	TS.WriteLine "@echo off"
+	TS.WriteLine "title " & x_LoggerName & " Trace"
+	TS.WriteLine "color 8e" ' light Yellow text on gray background
+	'TS.WriteLine "set TRACE_FORMAT_SEARCH_PATH=" & TRACE_FORMAT_SEARCH_PATH
+	TS.WriteLine "tracelog -stop " & x_LoggerName
+
+	dim Running
+	Running = False
+	dim Group
+	for each Group in oGUIDS
+		dim Level
+		Level = GetGroupLevel(Group)
+		if Level = 55 then Level = "0x7FFFFFFF" ' mshea
+		
+		if not Running then
+			TS.WriteLine "TraceLog -start " & x_LoggerName& " -flags " & Level & " -f " & x_LogBinFile & " -guid " & oGUIDS(Group)(0) 
+		else
+			TS.WriteLine "tracelog -enable " & x_LoggerName & " -flags " & Level & " -guid " & oGUIDS(Group)(0)
+		end If
+		Running = true
+	Next
+	'TS.WriteLine "cls"
+	'TS.WriteLine "tracefmt -display -rt " & x_LoggerName & " -o " & x_LogTextFile
+	' comment mshea
+	'TS.Close
+	Launch "cmd.exe /c Trace.bat", false
+	window.setTimeout "ShowStatus", 5000, "VBScript"
+	SaveAllToRegistry
+end Sub
+
+'
+' Create and launch a batch file that formats the binary log file
+' than create an HTM file from the formatted text file
+'
+Sub ViewLog(TextOnly)
+	If not oFS.FileExists(x_LogBinFile) Then
+		MsgBox "Could not find file " & x_LogBinFile, vbCritical, "Error"
+		Exit sub
+	End If
+	Dim OutFile
+	OutFile = oFS.GetTempName & ".txt"
+	If oFS.FileExists(OutFile) Then 
+		oFS.DeleteFile OutFile
+	End If
+	Const BatchFile = "ViewLog.bat"
+	Dim TS 
+	Set TS = oFS.CreateTextFile(BatchFile, True)
+	TS.WriteLine "@Rem -- Automatically generated by Trace.HTA at " & Now
+	TS.WriteLine "@echo off"
+	TS.WriteLine "set TRACE_FORMAT_SEARCH_PATH=" & TRACE_FORMAT_SEARCH_PATH
+	TS.WriteLine "tracefmt " & x_LogBinFile & " -o " & OutFile 
+	TS.Close
+	Launch "cmd /c " & BatchFile, True
+	If not oFS.FileExists(OutFile) Then 
+		MsgBox "Could not format the log", vbCritical, "Error"
+		Exit sub
+	End If
+	oFS.DeleteFile BatchFile 
+	
+	If TextOnly Then
+		oFS.DeleteFile OutFile & ".sum"
+		Launch OutFile, false
+		Exit sub	
+	End if
+	
+	Const HTMFile = "TraceLog.HTM"
+	set TS = oFS.CreateTextFile(HTMFile, True)
+	TS.WriteLine "<!--Automatically generated by Trace.HTA at " & Now & "-->"
+	TS.WriteLine "<HTML><BODY style=""font-family=Tahoma"" bgcolor=white>"
+	TS.WriteLine "<H2>Trace log " & x_LogBinFile & "</H2>"
+	TS.WriteLine "<TABLE border cellpadding=1 cellspacing=0>"
+	TS.WriteLine "<TR><TH>Source<TH width=100%>Description</TR>"
+	Dim LogTS
+	Set LogTS = oFS.OpenTextFile(OutFile, ForReading)
+	do While Not LogTS.AtEndOfStream 
+		Dim Line
+		Line = LogTS.ReadLine
+		' typical line:
+		' [0]1a28.1d98 12/02/2002-10:39:18.218 [dll MsmqInit] Info:Inside MsmqInit
+		' Matches:
+		'  0     1          2                   3             4    5
+		dim Reg 
+		Set Reg = new RegExp
+		Reg.Pattern = "^\s?\[(\d+)\](\w+.\w+)\s(\S+)\s\[(.+)\]\s(\w+):(.+)$" 
+		Reg.IgnoreCase = True   ' Set case insensitivity.
+  		Reg.Global = True   ' Set global applicability.
+  		Dim oMatches
+  		Set oMatches = Reg.Execute(Line)   ' Execute search.
+		TS.WriteLine "<TR Title=""" & Line & """>"
+		Dim oMatch, LastSource
+		If oMatches.Count = 1 then
+			Set oMatch = oMatches(0)
+			If oMatch.SubMatches.Count = 6 then
+				TS.Write "<TD>" 
+				if oMatch.SubMatches(3) <> LastSource Then
+					TS.Write oMatch.SubMatches(3)
+					LastSource = oMatch.SubMatches(3)
+				End if
+				select case left(oMatch.SubMatches(4),1) ' Info/Warning/Error
+				Case "E" : TS.Write "<TD bgcolor=red>"
+				Case "W" : TS.Write "<TD bgcolor=orange>"
+				case Else: TS.Write "<TD>"
+				End select
+				TS.WriteLine oMatch.SubMatches(5)
+			Else
+				' non-standard line - print as-is
+				TS.Write "<TD colspan=2>" & Line
+			End If 
+		End If 
+	Loop
+	TS.WriteLine "</TABLE>"
+	TS.Close
+	LogTS.Close
+	Launch HTMFile, False
+	oFS.DeleteFile OutFile
+	oFS.DeleteFile OutFile & ".sum"
+End Sub
+
+Sub StopTracing
+	Launch "tracelog -stop " & x_LoggerName, true
+	ShowStatus
+end sub
+
+sub ByeBye
+	SaveAllToRegistry
+	FadeOut
+end Sub
+
+Sub FadeOut
+	Dim F
+	Set F = document.body.Filters.item("DXImageTransform.Microsoft.Alpha")
+	If F.Opacity > 0 Then
+		F.Opacity = F.Opacity - 10
+		window.setTimeout "FadeOut", 100, "VBScript"
+	Else
+		window.Close
+	End If
+	
+End sub
+
+'
+' Enimate the title - make it (and the motion blur) move to the left and stop slowly
+' 
+sub ShowOff
+	Dim LeftPos
+	LeftPos = CInt(Replace("0" & document.all.ShowOff.Style.Left, "px",""))
+	Dim F
+	set F = document.all.ShowOff.Filters.item("DXImageTransform.Microsoft.MotionBlur")
+	If (LeftPos > 1) Or (F.Strength > 1) Then
+		document.all.ShowOff.Style.Left = int(LeftPos * 0.90)
+		F.Strength = int(F.Strength * 0.95)
+		window.setTimeout "ShowOff", 10, "VBScript"
+	Else
+		document.all.ShowOff.Filters.item("DXImageTransform.Microsoft.MotionBlur").Enabled = False
+		ProcessCommandLine
+	End if
+End Sub 
+
+sub ProcessCommandLine
+	Dim Cmd
+	Cmd = oApp.CommandLine
+	Cmd = Trim(Mid(Cmd, InStr(ucase(Cmd), ".HTA") + 5))
+	Select case UCase(Cmd)
+	Case "/START", "/GO", "GO"
+		ApplyAllGroups
+	Case "/STOP", "STOP"
+		StopTracing
+	Case "/VIEW", "/V", "/LOG", "/VIEWLOG"
+		ViewLog True
+	case ""
+		' do nothing
+	Case else
+		MsgBox "Trace.HTA [/Start] [/Stop] [/View]", vbInformation, "USAGE"
+	End select
+End sub
+
+</script>
+
+
+</html>

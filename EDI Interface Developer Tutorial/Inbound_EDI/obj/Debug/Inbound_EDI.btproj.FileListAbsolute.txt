@@ -1,0 +1,4 @@
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\EDI Interface Developer Tutorial\Inbound_EDI\bin\Debug\Inbound_EDI.dll
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\EDI Interface Developer Tutorial\Inbound_EDI\bin\Debug\Inbound_EDI.pdb
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\EDI Interface Developer Tutorial\Inbound_EDI\obj\Debug\Inbound_EDI.dll
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\EDI Interface Developer Tutorial\Inbound_EDI\obj\Debug\Inbound_EDI.pdb

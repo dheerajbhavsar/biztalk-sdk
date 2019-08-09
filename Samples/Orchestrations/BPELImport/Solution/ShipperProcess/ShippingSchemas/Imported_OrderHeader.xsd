@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://contoso.org/samples/Fragments" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" elementFormDefault="qualified" targetNamespace="http://contoso.org/samples/Fragments" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OrderHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="BillingAddress">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Street1" type="xs:string" />
+              <xs:element name="Street2" type="xs:string" />
+              <xs:element name="City" type="xs:string" />
+              <xs:element name="ZIP" type="xs:string" />
+              <xs:element name="State" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ShippingAddress">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Street1" type="xs:string" />
+              <xs:element name="Street2" type="xs:string" />
+              <xs:element name="City" type="xs:string" />
+              <xs:element name="ZIP" type="xs:string" />
+              <xs:element name="State" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrderID" type="xs:string" />
+        <xs:element name="CustomerID" type="xs:string" />
+        <xs:element name="Date" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Item">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SKU" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="Price" type="xs:string" />
+        <xs:element name="Quantity" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetMQSeriesHeaderPropertyPipeline", "SetMQSeriesHeaderPropertyPipeline.btproj", "{2D00AFB7-63AC-4793-8146-DD6486AFF62D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Debug|.NET.Build.0 = Debug|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Debug|.NET.Deploy.0 = Debug|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Release|.NET.ActiveCfg = Release|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Release|.NET.Build.0 = Release|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Release|.NET.Deploy.0 = Release|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D00AFB7-63AC-4793-8146-DD6486AFF62D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

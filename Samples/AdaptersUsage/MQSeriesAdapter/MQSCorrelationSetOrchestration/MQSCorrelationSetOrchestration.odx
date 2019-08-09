@@ -1,0 +1,352 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="5e212476-ac28-4d3f-8134-f7123c46d116" LowerBound="1.1" HigherBound="72.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="MQSCorrelationSetOrchestration" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="f8472443-8579-4a28-9035-fede35c82732" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FileReceivePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9e2b8a2e-5b31-43c0-aa27-2ffec7d05bc0" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileReceiveOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="950797df-e51b-4728-b81a-f8969e45603a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0fb3e846-8fcf-47bc-8957-0f5d6e4633f7" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MQSRequestSendPorttype" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="87e6939a-0343-48e8-89dc-98bf55a45c30" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSeriesRequestSendOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="9a620879-d575-49fe-9fc8-3b118124b545" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d4d2ec1f-9ac4-4b9b-8d11-c1b0c4a0070c" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MQSeriesReponseReceivePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="57a5b5b6-bceb-434a-8e66-2f9eb0694535" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSeriesReponseReceiveOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="23548942-e351-4ee8-9570-a695e644b57b" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e50f2fe4-d2b9-404c-9e1c-e7bb5fec6de2" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FileSendPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="330d111f-8385-4afe-b216-a75006ae3dd3" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileSendOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="fa5e5861-0b3b-41a1-92fe-b025709ce61a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="beaa0744-58b9-4a7c-8d97-b5e7ea9d280d" ParentLink="Module_CorrelationType" LowerBound="32.1" HigherBound="36.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorrelationType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PropertyRef" OID="b99c5498-6323-4ece-96de-35d9ad557d74" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.31">
+                <om:Property Name="Ref" Value="MQSeries.MQMD_CorrelId" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="e8123645-e41a-4a60-b17e-79c9fd3486d3" ParentLink="Module_ServiceDeclaration" LowerBound="36.1" HigherBound="71.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Orchestration_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="CorrelationDeclaration" OID="f62a014c-0075-4b26-aef8-b07c820f0591" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="MQSCorrelationSetOrchestration.CorrelationType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSCorrelationSet" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="d808fba1-4628-48a2-97c7-a3188885cae7" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="64.109" HigherBound="64.137">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="5902e8a1-a19a-4ae3-b480-192d324f2dd9" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="047f18ff-ce64-4ed3-9ac8-3649712bc4d7" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="66.114" HigherBound="66.131">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="e9f303ff-20fc-480b-968b-a225f23bd19b" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="efd14c21-bc9c-409a-a77d-06841ffabae8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSeriesRequestSendMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a9569bdc-01a8-4b97-8633-d27c49f7419e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSeriesResponseReceiveMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="50efc5b0-3bbe-443b-af21-77748f3e99fa" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSeriesRequestSendMessageModified" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="12a3a764-bfad-4a9c-86fb-7ca637237a51" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="e0fb7cbc-a55d-423e-b31f-cbecb5a676fb" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="55.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="FileReceivePort" />
+                    <om:Property Name="MessageName" Value="MQSeriesRequestSendMessage" />
+                    <om:Property Name="OperationName" Value="FileReceiveOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="FileReceiveAction" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="442d79e6-2c6f-453d-8eca-45b70d9df9ec" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="63.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMQSeriesRequestSendMessageModified" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="8476c751-56cf-44c0-a98d-73ae0d4105bf" ParentLink="ComplexStatement_Statement" LowerBound="58.1" HigherBound="62.1">
+                        <om:Property Name="Expression" Value="MQSeriesRequestSendMessageModified = MQSeriesRequestSendMessage;&#xD;&#xA;MQSeriesRequestSendMessageModified(MQSeries.MQMD_MsgId) = &quot;111213141516171819202122232425262728293031323334&quot;;&#xD;&#xA;MQSeriesRequestSendMessageModified(MQSeries.MQMD_CorrelId) = &quot;111213141516171819202122232425262728293031323334&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MQSeriesRequestSendMessageModifiedAssignment" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="b8bb32b1-9be1-4489-a322-52f17379e39a" ParentLink="Construct_MessageRef" LowerBound="56.23" HigherBound="56.57">
+                        <om:Property Name="Ref" Value="MQSeriesRequestSendMessageModified" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="5902e8a1-a19a-4ae3-b480-192d324f2dd9" ParentLink="ServiceBody_Statement" LowerBound="63.1" HigherBound="65.1">
+                    <om:Property Name="PortName" Value="MQSeriesRequestSendPort" />
+                    <om:Property Name="MessageName" Value="MQSeriesRequestSendMessageModified" />
+                    <om:Property Name="OperationName" Value="MQSeriesRequestSendOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="MQSeriesRequestSendModifiedAction" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="e9f303ff-20fc-480b-968b-a225f23bd19b" ParentLink="ServiceBody_Statement" LowerBound="65.1" HigherBound="67.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="MQSeriesReponseReceivePort" />
+                    <om:Property Name="MessageName" Value="MQSeriesResponseReceiveMessage" />
+                    <om:Property Name="OperationName" Value="MQSeriesReponseReceiveOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="MQSeriesResponseReceiveAction" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="a3e936f1-d1d8-4153-ba98-e8684db016a3" ParentLink="ServiceBody_Statement" LowerBound="67.1" HigherBound="69.1">
+                    <om:Property Name="PortName" Value="FileSendPort" />
+                    <om:Property Name="MessageName" Value="MQSeriesResponseReceiveMessage" />
+                    <om:Property Name="OperationName" Value="FileSendOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="FileSendAction" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2e92009f-c5d4-4b00-9803-95bf02a34046" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="39.1" HigherBound="41.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="6" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MQSCorrelationSetOrchestration.FileReceivePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileReceivePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="3a569103-5708-498b-8aff-aafee7483b2d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="39.1" HigherBound="40.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="c:\temp\Pickup\*.*" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0a2a2f34-02f3-4b87-9253-a9c3400f9187" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="43.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MQSCorrelationSetOrchestration.MQSRequestSendPorttype" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSeriesRequestSendPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="59a7eb7a-93ef-4f9e-b4ae-575d12dac51c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="50e0bfee-f8e5-4091-b987-6cbf3fe644b7" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="45.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="7" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MQSCorrelationSetOrchestration.MQSeriesReponseReceivePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MQSeriesReponseReceivePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="9b1b3012-1055-4ac4-9428-7098c6c8533a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3619ac45-eaed-4b09-b479-21a5cd6594df" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="45.1" HigherBound="47.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="10" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="MQSCorrelationSetOrchestration.FileSendPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileSendPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="PhysicalBindingAttribute" OID="e861108d-d379-4ac0-aa8b-a1bd08cf883f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="45.1" HigherBound="46.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="c:\temp\DropIt\%MessageId%.xml" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module MQSCorrelationSetOrchestration
+{
+    internal porttype FileReceivePortType
+    {
+        oneway FileReceiveOperation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype MQSRequestSendPorttype
+    {
+        oneway MQSeriesRequestSendOperation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype MQSeriesReponseReceivePortType
+    {
+        oneway MQSeriesReponseReceiveOperation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype FileSendPortType
+    {
+        oneway FileSendOperation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal correlationtype CorrelationType_1
+    {
+        MQSeries.MQMD_CorrelId
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Orchestration_1
+    {
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "c:\\temp\\Pickup\\*.*", typeof(Microsoft.BizTalk.DefaultPipelines.PassThruReceive))]
+        port implements FileReceivePortType FileReceivePort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses MQSRequestSendPorttype MQSeriesRequestSendPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements MQSeriesReponseReceivePortType MQSeriesReponseReceivePort;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "c:\\temp\\DropIt\\%MessageId%.xml", typeof(Microsoft.BizTalk.DefaultPipelines.PassThruTransmit))]
+        port uses FileSendPortType FileSendPort;
+        correlation CorrelationType_1 MQSCorrelationSet;
+        message System.Xml.XmlDocument MQSeriesRequestSendMessage;
+        message System.Xml.XmlDocument MQSeriesResponseReceiveMessage;
+        message System.Xml.XmlDocument MQSeriesRequestSendMessageModified;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e0fb7cbc-a55d-423e-b31f-cbecb5a676fb")]
+            activate receive (FileReceivePort.FileReceiveOperation, MQSeriesRequestSendMessage);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("442d79e6-2c6f-453d-8eca-45b70d9df9ec")]
+            construct MQSeriesRequestSendMessageModified
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8476c751-56cf-44c0-a98d-73ae0d4105bf")]
+                MQSeriesRequestSendMessageModified = MQSeriesRequestSendMessage;
+                MQSeriesRequestSendMessageModified(MQSeries.MQMD_MsgId) = "111213141516171819202122232425262728293031323334";
+                MQSeriesRequestSendMessageModified(MQSeries.MQMD_CorrelId) = "111213141516171819202122232425262728293031323334";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5902e8a1-a19a-4ae3-b480-192d324f2dd9")]
+            send (MQSeriesRequestSendPort.MQSeriesRequestSendOperation, MQSeriesRequestSendMessageModified, initialize MQSCorrelationSet);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e9f303ff-20fc-480b-968b-a225f23bd19b")]
+            receive (MQSeriesReponseReceivePort.MQSeriesReponseReceiveOperation, MQSeriesResponseReceiveMessage, MQSCorrelationSet);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a3e936f1-d1d8-4153-ba98-e8684db016a3")]
+            send (FileSendPort.FileSendOperation, MQSeriesResponseReceiveMessage);
+        }
+    }
+}
+

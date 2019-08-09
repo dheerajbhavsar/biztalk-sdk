@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TraceInterceptorConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TrackPoint Type="Start">
+    <Location xsi:type="xsd:string">locNewInvoice</Location>
+    <ExtractionInfo xsi:type="xsd:string">@InvoiceID</ExtractionInfo>
+  </TrackPoint>
+  <TrackPoint Type="End">
+    <Location xsi:type="xsd:string">locInvoicePaid</Location>
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Send">
+    <Location xsi:type="xsd:string">locSendInvoice</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Paid">
+    <Location xsi:type="xsd:string">locInvoicePaid</Location>
+    <ExtractionInfo xsi:type="xsd:string" />
+  </TrackPoint>
+  <TrackPoint Type="Data" ItemName="Total">
+    <Location xsi:type="xsd:string">locSendInvoice</Location>
+    <ExtractionInfo xsi:type="xsd:string">@Total</ExtractionInfo>
+  </TrackPoint>
+</TraceInterceptorConfiguration>

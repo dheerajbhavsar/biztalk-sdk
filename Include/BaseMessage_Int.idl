@@ -1,0 +1,228 @@
+#define MAKE_BASEMSG_GUID(id) fff93##id##-75a2-450a-8a39-53120ca8d8fa
+
+#define UUID_ICloneable MAKE_BASEMSG_GUID(000)
+#define UUID_ICloneableByRef MAKE_BASEMSG_GUID(001)
+#define UUID_IBaseMessage MAKE_BASEMSG_GUID(002)
+#define UUID_IBaseMessagePart MAKE_BASEMSG_GUID(003)
+#define UUID_IBaseMessagePartList MAKE_BASEMSG_GUID(004)
+#define UUID_IBaseMessageContext MAKE_BASEMSG_GUID(005)
+#define UUID_IBaseMessageFactory MAKE_BASEMSG_GUID(006)
+#define UUID_IStreamHelper MAKE_BASEMSG_GUID(007)
+#define UUID_IBasePropertyBag MAKE_BASEMSG_GUID(009)
+#define UUID_IDisposable MAKE_BASEMSG_GUID(00a)
+#define UUID_IStreamInfo MAKE_BASEMSG_GUID(00b)
+#define UUID_IFilteredCloneable MAKE_BASEMSG_GUID(00c)
+
+interface IBaseMessage;
+interface IBaseMessagePart;
+interface IBasePropertyBag;
+interface IBaseMessageContext;
+
+[
+	object,
+	uuid(UUID_ICloneable),
+	pointer_default(unique)
+]
+interface ICloneable : IUnknown
+{
+	HRESULT Clone([in] REFIID riid, [out,iid_is(riid)] void ** ppvoid);
+};
+
+[
+	object,
+	uuid(UUID_ICloneableByRef),
+	pointer_default(unique)
+]
+interface ICloneableByRef : IUnknown
+{
+	// Streams created by StreamFactory are always cloneable by reference
+	HRESULT CloneByRef([in] LONG start, [in] LONG length, [out,retval] IStream** ppStm);
+};
+
+[
+	object,
+	uuid(UUID_IFilteredCloneable),
+	pointer_default(unique)
+]
+interface IFilteredCloneable : IUnknown
+{
+	HRESULT FilteredCloneByNamespace([in] REFIID riid, [in] BSTR bstrNamespaceFilter, [out,iid_is(riid)] void ** ppvoid);
+};
+
+[
+	object,
+	uuid(UUID_IDisposable),
+	pointer_default(unique)
+]
+interface IDisposable : IUnknown
+{
+	// Streams created by StreamFactory always implment this interface
+	HRESULT Dispose();
+};
+
+typedef enum _StreamCapabilities
+{	
+	NoCapabilities			= 0x00,
+	StreamIsReadable		= 0x01,
+	StreamIsWritable 		= 0x02,
+	StreamIsSeekable		= 0x04,
+	StreamIsMarkable		= 0x08,
+	StreamIsCloneable		= 0x10,
+	StreamIsCloseable		= 0x20
+} StreamCapabilities;
+
+[
+	object,
+	uuid(UUID_IStreamInfo),
+	pointer_default(unique)
+]
+interface IStreamInfo : IUnknown
+{
+	// Streams created by StreamFactory always implment this interface
+	[propget] HRESULT CanSeek([out,retval] BOOL* pVal);
+	[propget] HRESULT CanRead([out,retval] BOOL* pVal);
+	[propget] HRESULT CanWrite([out,retval] BOOL* pVal);
+
+	// "Chunky" call (get all of the above)
+	[propget] HRESULT Capabilities( [out, retval] LONG* pVal );
+
+	[propget] HRESULT Position([out,retval] ULARGE_INTEGER* pVal);
+};
+
+[
+	object,
+	uuid(UUID_IBaseMessagePart),
+	pointer_default(unique)
+]
+interface IBaseMessagePart : IUnknown
+{
+	[propget] HRESULT PartID([out,retval] GUID* pVal);
+
+	// properties of the part
+	[propget] HRESULT PartProperties([out, retval] IBasePropertyBag** pVal);
+	[propputref] HRESULT PartProperties([in] IBasePropertyBag* val);
+
+	[propget] HRESULT ContentType([out, retval] BSTR *pVal);
+	[propput] HRESULT ContentType([in] BSTR newVal);
+	[propget] HRESULT Charset([out, retval] BSTR *pVal);
+	[propput] HRESULT Charset([in] BSTR newVal);
+
+	HRESULT GetSize([out] ULARGE_INTEGER *pVal, [out, retval] BOOL *pfImplemented);
+
+	// The Data contains a Stream that can potentially be read/written however
+	// its implementation may only support read
+	[propget] HRESULT Data([out,retval] IStream** ppStream);
+	[propputref] HRESULT Data([in] IStream* pStream);
+
+	HRESULT GetOriginalDataStream([out,retval] IStream** ppStream);
+	[propget] HRESULT IsMutable([out,retval] BOOL* pVal);
+};
+
+[
+	object,
+	uuid(UUID_IBaseMessage),
+	pointer_default(unique)
+]
+interface IBaseMessage : IUnknown
+{
+	[propget] HRESULT MessageID([out,retval] GUID* pVal);
+	[propget] HRESULT Context([out, retval] IBaseMessageContext* *pVal);
+	[propputref] HRESULT Context([in] IBaseMessageContext* val);
+
+	// The followings are convenience properties for accessing the Main or Body Part of the Message
+	[propget] HRESULT BodyPart([out,retval] IBaseMessagePart** ppPart);
+	[propget] HRESULT BodyPartName([out,retval] BSTR *pbstrPartName); 
+
+	HRESULT GetSize([out] ULARGE_INTEGER *pVal, [out, retval] BOOL *pfImplemented);
+
+	// PartCount contains number of parts in the message.
+	// The following two methods can be used to enumerate all parts.
+	[propget] HRESULT PartCount([out, retval] LONG *pVal);
+	HRESULT GetPartByIndex([in] LONG index, [out] BSTR *pbstrPartName, [out,retval] IBaseMessagePart** ppPart);
+
+	HRESULT AddPart([in] BSTR bstrPartName, [in] IBaseMessagePart* pPart, [in] BOOL bIsBody);
+	HRESULT GetPart([in] BSTR bstrPartName, [out,retval] IBaseMessagePart** ppPart);
+	HRESULT RemovePart([in] BSTR bstrPartName);
+
+    HRESULT GetErrorInfo([out,retval] IErrorInfo** ppErrInfo);
+    HRESULT SetErrorInfo([in] IErrorInfo* pErrInfo);
+
+	[propget] HRESULT IsMutable([out,retval] BOOL* pVal);
+};
+
+[
+	object,
+	uuid(UUID_IBasePropertyBag),
+	pointer_default(unique)
+]
+interface IBasePropertyBag : IUnknown
+{
+	// Read properties by index
+	HRESULT ReadAt([in] LONG index, [out] BSTR* pbstrName,[out] BSTR* pbstrNamespace, [out,retval] VARIANT *pVar);
+
+	// Read a property
+	HRESULT Read([in] BSTR bstrName,[in] BSTR bstrNamespace, [out,retval] VARIANT *pVar);
+
+	// Write a property
+	HRESULT Write([in] BSTR bstrName,[in] BSTR bstrNameSpace,[in] VARIANT var);
+
+	// Get the Property Count
+	HRESULT CountProperties([out] ULONG *cCount) ;
+};
+
+typedef [public] enum 
+PropertyType_tag
+{
+	PropWritten	= 0x01,
+	PropPromoted = 0x02,
+	PropPredicate =	0x04,
+	PropWasPromoted	= 0x10
+} PropertyType;
+
+[
+	object,
+	uuid(UUID_IBaseMessageContext),
+	pointer_default(unique)
+]
+interface IBaseMessageContext : IBasePropertyBag
+{
+	// Mark the Property for Promotion
+	HRESULT Promote([in]BSTR bstrName, [in] BSTR bstrNamespace, [in] VARIANT Var);
+
+	// Mark the Property for Promotion
+	HRESULT AddPredicate([in]BSTR bstrName, [in] BSTR bstrNamespace, [in] VARIANT Var);
+
+	// Check if an existing Property is already promoted
+	HRESULT IsPromoted([in]BSTR bstrName, [in] BSTR bstrNamespace, [out,retval] BOOL *pbPromotionFlag);
+	HRESULT GetPropertyType ([in]BSTR bstrName, [in] BSTR bstrNamespace, [out,retval] PropertyType* pType); 
+};
+	
+[
+	object,
+	uuid(UUID_IBaseMessageFactory),
+	pointer_default(unique)
+]
+interface IBaseMessageFactory : IUnknown
+{
+	HRESULT CreateMessagePart([out,retval] IBaseMessagePart** ppPart);
+	HRESULT CreateMessage([out,retval] IBaseMessage** ppMsg);
+	HRESULT CreatePropertyBag([out,retval] IBasePropertyBag** ppPropBag);
+	HRESULT CreateMessageContext([out,retval] IBaseMessageContext** ppContext);
+};
+
+[
+	object,
+	uuid(UUID_IStreamHelper),
+	pointer_default(unique)
+]
+interface IStreamHelper: IUnknown
+{
+	HRESULT CreateStreamFromFile([in] BSTR bstrFileName, [in] LONG start, [in] LONG length, [in] BSTR bstrCharset, [out,retval] IStream** ppRet);
+	HRESULT CreateStreamFromString([in] BSTR bstrData, [in] LONG start, [in] LONG length, [in] BSTR bstrCharset, [out,retval] IStream** ppRet);
+	HRESULT CreateStreamFromStream([in] IStream* pStm, [in] LONG start, [in] LONG length, [in] BSTR bstrCharset, [out,retval] IStream** ppRet);
+	HRESULT CreateStreamFromByteArray([in, size_is(size)] byte* pData, [in] LONG size, [in] LONG start, [in] LONG length, [in] BSTR bstrCharset, [out,retval] IStream** ppRet);
+	HRESULT CreateStreamFromDOM([in] IXMLDOMNode* pNode, [out,retval] IStream** ppRet);
+	HRESULT CreateStreamFromSequentialStream([in] ISequentialStream* pStm, [in] BSTR bstrCharset, [out,retval] IStream** ppRet);
+	HRESULT CreateDOMFromStream([in] IStream *pStream, [out,retval] IXMLDOMNode **ppNode);
+};
+

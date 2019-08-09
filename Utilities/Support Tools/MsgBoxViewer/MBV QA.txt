@@ -1,0 +1,212 @@
+
+								MsgBoxViewer (MBV) Q & A
+								========================
+
+
+Q: What is the purpose of MBV ?
+A: The goal of MBV is to retrieve the maximum amount of information from a BizTalk Group in one click in the minimum amount of time, identify all possible issues which could be critical or need attention and present them in a user friendly format.
+
+
+
+Q: How is MBV different compared to other known tools like BPA or BizTalk Server 2006 Documenter ?
+A: While BizTalk Documenter generates a nicely formatted overview document of a BizTalk Group, BPA and MBV are health check tools and generate reports of a BizTalk System that are complementary to each other.
+
+   - BPA was developed by the PG for BizTalk 2K6 and reports two levels of warnings. BPA 1.1 was updated to contain some MBV rules but also contains a lot of additional rules relating to  BAM and the Rules Engine for example.
+     BPA also provides detailed documentation on its own warnings.
+
+   - MBV was developed by a Microsoft Support Engineer in collaboration with BizTalk Support and Field teams and contains some BPA rules but also adds additional ones.
+     MBV reports two levels of warnings with corresponding links to MS KB articles, MS BizTalk Documentation, or BizTalk Whitepapers (but does not provide its own documentation of its warnings).
+     MBV also retrieves detailed collapsible reports of information related to a BizTalk Group including its settings and its complete topology organized by servers, so MBV is more a mix of BPA and BizTalk Documenter.
+
+
+
+Q: Which version of BizTalk Server can be analyzed with MBV ?
+A: All versions and their SPs since BizTalk 2004 can be analyzed.
+
+
+
+Q: Is MBV safe to run on a Production System ?
+A: Yes, firstly, MBV does not need to be "installed" and secondly it uses only read SQL queries targeting the MsgBox, DTA, or Mgmt DB and uses WMI to get info about the topology.
+   The queries it contains were tested to not generate performance issues and locks
+
+
+
+Q: Can MVB generate locks, deadlocks or Orphaned SPIDs on BizTalk DBs that it queries?
+A: No, MBV uses only one thread for all its queries and does NOT use MSDTC transactions.
+    If you have other health check tools querying your BizTalk DBs and running at same time as MBV I cannot predict the results.
+    It is preferable to avoid using other Admin BizTalk tools when you use MBV.
+
+
+
+Q: When I execute MBV, I get a "SecurityException" error
+A: This error is raised when you start MBV from a remote location. You need to copy MBV locally and start it from a local folder  
+
+
+
+Q: Is MBV able to analyze large BizTalk configurations involving multiple servers and clusters ?
+A: Yes, MBV is able to identify and include in the topology report all servers and Cluster names involved in the BizTalk group 
+
+
+
+Q: Is MBV able to analyze large BizTalk configurations involving multiple servers and clusters ?
+A: Yes, MBV is able to identify and include in the topology report all servers and cluster names involved in the BizTalk group 
+
+
+Q: Is MBV able to analyze multiple MsgBox DB configurations ?
+A: Yes, MBV will identify and analyze all MsgBoxes in the BizTalk group
+
+
+
+Q: Where do the SQL queries executed by MBV come from ?
+A: Some of them come directly from BizTalk Architect Lee Graber’s "Advanced Queries" document. Other queries come from Microsoft BizTalk Support teams or known SQL & BizTalk Troubleshooting documents.
+
+
+
+Q: Why do you have both a Console and a GUI version ?
+A: The GUI tool interactively displays information collected in listviews and allows you to easily select which queries to execute. The Console version can immediately issue a Collect and can be launched by any type of parent application (like "PssDiagForBiztalk")  
+
+
+
+Q: Why is MBV updated so frequently ?
+A: To include ASAP additional check rules & warnings based on issues met by Microsoft BizTalk Support and Field teams.
+ 
+
+Q: Why does MBV not use .NET 2.0 ?
+A: In order to be executable on BizTalk 2004 Servers which might only have .NET 1.1 installed
+
+
+
+Q: Why does MBV have two Listviews containing queries to execute ?
+A: The first list contains queries which will always be executed and the second list offers you the option to choose additional ones
+
+
+
+Q: What is the recommended choice of queries to execute?
+A: I recommend that you select ALL queries the first time in order to collect the maximum number of reports including a fully detailed Topology Report and to have maximum checks done so all possible warnings are raised in the Summary Report. You can then unselect some queries depending of the type of output you want or to have a faster collection time
+
+
+
+Q: Why do I sometimes see timeout errors in the HTML or status log files ?
+A: Some queries like Fragmentation or MSG Count in DTA db can take a long time to execute and so the default Query Timeout of 30 seconds will expire.
+   In this case, the tool will report a timeout error but will continue to execute other queries
+
+
+
+Q: Can we stop a pending Collect if it is taking too long to finish ?
+A: No, MBV does not offer this feature to avoid having inconsistent output files. You would have to kill the MBV process.
+   Future version could implement that if consistency of output files is sure to be preserved. 
+
+
+
+Q: How does MBV manage the errors met by some queries ?
+A: Each error generated by a query is caught in order that it cannot prevent the next queries from executing
+
+
+
+Q: why do I have Access Denied Errors executing some queries ?
+A: These Access Denied errors are caused mainly by missing SQL, WMI, or REGISTRY access permissions for the user running MBV.
+Recommendation is to be a BizTalk Admin but one of the assumptions that we often make with MBV is that the user running MBV will have complete access rights to both BizTalk Server and SQL Server but it is not always the case.
+Ideally the user should be a BizTalk admin with SQL admin rights but you can play with the "User Roles" tab to see which query has chance to succeed according to the roles you select.
+
+
+
+Q: How can I reduce the total duration of the Cllect ?
+A: Either by reducing the number of queries to execute, or by reducing the query timeout if you have too many time consuming queries  
+
+
+
+Q: What is the real purpose of the status log file ?
+A: This file will report ALL activity generated by MBV with the time stamp of each query and report generated. This file is also very interesting for the author to identify possible bugs
+
+
+
+Q: What is the real purpose of the History log file ?
+A: This file will contain in plain text ALL Collect outputs made since the last purge. This file can be purged in the GUI.
+
+
+
+Q: Can the Query or Connection Timeout be changed ?
+A: Yes, both the GUI and Console versions can have the timeout changed 
+
+
+
+Q: Can I have the MsgBox or DTA db Tables size reports ordered by table name ?
+A: Yes, you have the possibility to change the order type in the "Options" tab or by using a parameter in the Console version
+
+
+
+Q: Can I know the collect duration from a HTML report ?
+A: Yes since build 9.23.5, the first line of the summary Report includes this information
+
+
+Q: Sometimes MBV appears to not be responding, how d I know what it is doing ?
+A: The status bar shows the pending query and recent builds of the tool use two different threads for the GUI and the Collect engine so even during a long query the tool window is always visible and responsive. Be sure to use version 9.23.3 at the minimum
+
+
+
+Q: What is the role of the different tabs in the second half of the Gui tool ?
+A: The tabs contain listviews of some important reports including the Summary Report and these listviews are populated during the Collect.
+   You can navigate into these lists (except the Summary Report one) even if the collect is still pending !
+
+
+
+Q: How can I have more know info about the queries to execute ?
+A: For each query to be executed, the GUI version displays in its list the target and scope of the query, its caption, and its type (SQL, WMI, .NET, etc...)
+
+
+
+Q: What means really this entry in the Header Report ? : "This BizTalk Server is NOT a member of the targeted BizTalk group"
+A: It means that the BizTalk server running MBV does not belong to the BizTalk group referenced by Mgmt DB server and name you have specified.
+   By default when running on a BizTalk Server, MBV automatically tries to get the targeted Mgmt DB server and name from the registry
+
+
+
+Q: Can I run MBV on a server which is not a BizTalk one ?
+A: Yes, MBV can be run on any server ( Win 2K, Win 2K3, Win XP or Vista,etc..).
+If it is not executed on a BizTalk Server, you will have to specify the Mgmt DB Location and Name.
+However, in this case, the query to collect local perfmon counters will not be executed and the ability to detect throttling will be missing!  
+
+
+
+Q: Is it possible to develop some solutions analyzing automatically the MBV output file ?
+A: Yes, MBV also allows the option to generate output in an XML file containing its own schema (in GUI version)
+    Ideas of possible solutions to develop around XML MBV file :
+    - Custom  Summary Report analyzer
+    - Tool to build a Visio diagram from the Topology Report
+    - Tool to identify differences between several MBV XMLs
+    - ...
+
+
+
+Q: What is the SQL Query used behind the "Running SPIDs" or "Locked SPIDS" queries  ?
+A: These two queries use a SP_who3.SQL script based on sp_who2 but updated for BizTalk   
+
+
+
+Q: Why some Queries can execute only on SQL 2K5 ?
+A: Some queries like "Most CPU SQL Queries" are based on SQL 2K5 relational rowsets through dynamic management views (DMVs).
+
+
+
+Q: Can MBV run periodically and automatically some Collect ?
+A: You can schedule the console version "MBVConsole.exe" with the Windows Scheduler to analyze a group periodically 
+
+
+
+Q: Can I have access to previous HTML files generated ?
+A: Yes, each Collect generates an HTML file in the specified output folder containing in its title the MBV version + current Date & Time to uniquely identify it.
+
+Q: How is built the "Msg Flows" Report ?
+A: This Flow report is built from the Subscription table but also from some orchestration port bindings tables.
+    This report cannot show all possible flows!
+
+
+
+Q: Is MBV able to retrieve BizTalk errors in the Application journal
+A: Yes, recent versions of MBV provide the possibility to collect 100 max BizTalk error events in last 24 hours" in an optional query
+
+
+Q: When I open HTML file in IE on some machines, I can not expand the reports
+A: MBV HTML files use scripting and IE can be configured to prevent scripting from executing for security reasons
+
+

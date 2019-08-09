@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessRulesHelloWorld2", "BusinessRulesHelloWorld2.csproj", "{D31FFC05-926E-456A-AC2C-D4DBB156F931}"
+	ProjectSection(ProjectDependencies) = postProject
+		{24C3FFED-75F4-4E62-8CBD-2F55F3877C10} = {24C3FFED-75F4-4E62-8CBD-2F55F3877C10}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld2Library", "HelloWorld2Library\HelloWorld2Library.csproj", "{24C3FFED-75F4-4E62-8CBD-2F55F3877C10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D31FFC05-926E-456A-AC2C-D4DBB156F931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31FFC05-926E-456A-AC2C-D4DBB156F931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31FFC05-926E-456A-AC2C-D4DBB156F931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31FFC05-926E-456A-AC2C-D4DBB156F931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C3FFED-75F4-4E62-8CBD-2F55F3877C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C3FFED-75F4-4E62-8CBD-2F55F3877C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C3FFED-75F4-4E62-8CBD-2F55F3877C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

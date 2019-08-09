@@ -1,0 +1,30 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicReceive", "DynamicReceive.btproj", "{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Debug|.NET.Build.0 = Debug|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Debug|.NET.Deploy.0 = Debug|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Release|.NET.ActiveCfg = Release|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Release|.NET.Build.0 = Release|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Release|.NET.Deploy.0 = Release|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D9C9546-44CD-4571-A0D1-BF08D02A66C6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

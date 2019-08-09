@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Multiplier", "http://localhost/Multiplier", "{5B3B940A-7EA9-45C6-A5A7-1EF91A7752FB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/Multiplier"
+		Debug.AspNetCompiler.PhysicalPath = "..\Multiplier\"
+		Debug.AspNetCompiler.TargetPath = "..\..\..\..\..\..\..\PrecompiledWeb\HTTPSolicitResponse\Multiplier\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Multiplier"
+		Release.AspNetCompiler.PhysicalPath = "..\Multiplier\"
+		Release.AspNetCompiler.TargetPath = "..\..\..\..\..\..\..\PrecompiledWeb\HTTPSolicitResponse\Multiplier\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\Program Files\Microsoft BizTalk Server 2016\SDK\Samples\AdaptersUsage\HttpSolicitResponse\Multiplier\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B3B940A-7EA9-45C6-A5A7-1EF91A7752FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3B940A-7EA9-45C6-A5A7-1EF91A7752FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

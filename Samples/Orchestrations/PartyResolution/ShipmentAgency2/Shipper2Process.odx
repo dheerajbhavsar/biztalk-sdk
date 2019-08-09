@@ -1,0 +1,424 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="3f883010-3940-4416-b15e-31df2f273122" LowerBound="1.1" HigherBound="83.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.Samples.BizTalk.ShipmentAgency2" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="a1325a82-75b2-44fd-9bfa-f6a2cb3bf362" ParentLink="Module_ServiceDeclaration" LowerBound="46.1" HigherBound="82.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShipmentAgency2Process" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="CorrelationDeclaration" OID="82e2ce2e-863d-4c60-9725-90c575ced4e6" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShippingCorrelationType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipmentAgency2CorrelationSets" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="3f46d1fd-ac59-4226-9361-ac00ae12c77a" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="61.105" HigherBound="61.146">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="5c06a77e-5fa3-4406-81bd-306d5adb8a04" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="ef49dbdf-46d2-40f0-adcb-149f8d093bd0" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="69.93" HigherBound="69.123">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="b74f48c8-25e9-495e-aab3-fb44b5faf961" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="11de891b-352f-44de-a326-5eb6bd5f0ea4" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="79.88" HigherBound="79.118">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="81de9dab-489f-4ef2-b737-23f6382451d7" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_3" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="ec6d980e-eb45-4979-8671-fff4c8e78d26" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="71.91" HigherBound="71.121">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="9e29c25d-9212-42fa-bf9b-d30e43d13f56" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_4" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="11ebc70a-010f-4bb4-be27-bc1a213a6a52" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentAdviceAckMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipmentAdviceAckMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="aa62a542-d6af-4a09-abe0-42d644427184" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentAdviceMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipmentAdviceMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="edcb8454-056a-4e97-9297-669f5f3ca35b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentOrderRequestAckMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipmentOrderRequestAckMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1a9b434a-b3a0-4bf7-80c6-5bd20c4c0641" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentOrderRequestMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipmentOrderRequestMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="feb57ef6-a6fa-4149-addd-06a43ad90070" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="5c06a77e-5fa3-4406-81bd-306d5adb8a04" ParentLink="ServiceBody_Statement" LowerBound="60.1" HigherBound="62.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveShipmentFiles" />
+                    <om:Property Name="MessageName" Value="ShipmentOrderRequestMessage" />
+                    <om:Property Name="OperationName" Value="ShippingOrderOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive Shipment Order" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="444e863e-5ff1-43e5-b1ab-53ca618f5165" ParentLink="ServiceBody_Statement" LowerBound="62.1" HigherBound="68.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct Shipment Order Ack Message" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="60197f3e-2594-4eaa-8506-f7db39f7b881" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="67.1">
+                        <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentOrderAck" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Create Shipment Order Ack" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="65b003ff-00a1-45b5-975d-1902ed13240b" ParentLink="Transform_InputMessagePartRef" LowerBound="66.136" HigherBound="66.177">
+                            <om:Property Name="MessageRef" Value="ShipmentOrderRequestMessage" />
+                            <om:Property Name="PartRef" Value="MessagePart_1" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="d9c07323-fa3a-4b0d-a6cc-3988cd3f2067" ParentLink="Transform_OutputMessagePartRef" LowerBound="66.28" HigherBound="66.72">
+                            <om:Property Name="MessageRef" Value="ShipmentOrderRequestAckMessage" />
+                            <om:Property Name="PartRef" Value="MessagePart_1" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="2b0a6834-556d-4232-9b72-593c7016c690" ParentLink="Construct_MessageRef" LowerBound="63.23" HigherBound="63.53">
+                        <om:Property Name="Ref" Value="ShipmentOrderRequestAckMessage" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="b74f48c8-25e9-495e-aab3-fb44b5faf961" ParentLink="ServiceBody_Statement" LowerBound="68.1" HigherBound="70.1">
+                    <om:Property Name="PortName" Value="SendShipmentAck" />
+                    <om:Property Name="MessageName" Value="ShipmentOrderRequestAckMessage" />
+                    <om:Property Name="OperationName" Value="ShipingOrderAckOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send Shipment Order Ack Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="9e29c25d-9212-42fa-bf9b-d30e43d13f56" ParentLink="ServiceBody_Statement" LowerBound="70.1" HigherBound="72.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="ReceiveShipmentFiles" />
+                    <om:Property Name="MessageName" Value="ShipmentAdviceMessage" />
+                    <om:Property Name="OperationName" Value="ShippingAdviceOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive Shipment Advice Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="bdc9c3a1-8f63-4ca3-8740-4ddb0200a37a" ParentLink="ServiceBody_Statement" LowerBound="72.1" HigherBound="78.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct Shipping Advice Ack" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="4ebecdb8-abab-41da-b27f-2bedbcdb1524" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="77.1">
+                        <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentAdviceAck" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Create Shipping Advice Ack" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="7231fbd7-bc0a-4f24-a774-8397064a6a12" ParentLink="Transform_InputMessagePartRef" LowerBound="76.131" HigherBound="76.166">
+                            <om:Property Name="MessageRef" Value="ShipmentAdviceMessage" />
+                            <om:Property Name="PartRef" Value="MessagePart_1" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="d58e2a3a-ac6d-496b-9fb6-d00b57af0ba5" ParentLink="Transform_OutputMessagePartRef" LowerBound="76.28" HigherBound="76.66">
+                            <om:Property Name="MessageRef" Value="ShipmentAdviceAckMessage" />
+                            <om:Property Name="PartRef" Value="MessagePart_1" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="d117bc03-8483-402b-b02e-338bf4563fec" ParentLink="Construct_MessageRef" LowerBound="73.23" HigherBound="73.47">
+                        <om:Property Name="Ref" Value="ShipmentAdviceAckMessage" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="81de9dab-489f-4ef2-b737-23f6382451d7" ParentLink="ServiceBody_Statement" LowerBound="78.1" HigherBound="80.1">
+                    <om:Property Name="PortName" Value="SendShipmentAck" />
+                    <om:Property Name="MessageName" Value="ShipmentAdviceAckMessage" />
+                    <om:Property Name="OperationName" Value="ShipingAdviceAckOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send Shipping Advice Ack" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e52b8554-221e-4803-a1e7-d39b573fc0f5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="49.1" HigherBound="51.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShippingPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveShipmentFiles" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="208c25a6-2648-4c91-a540-7d4f0187947d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="49.1" HigherBound="50.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="95a6f114-2a4e-4db5-b957-ffe7a4840ad6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="51.1" HigherBound="53.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipingPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendShipmentAck" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="cdbd9c42-a476-4c6f-92d1-82d8180bc20c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="51.1" HigherBound="52.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="bf4d974f-f99c-4bf0-a4e0-b40670af014e" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShipmentAdviceAckMessageType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="a0d3f9a0-6c32-430c-827b-d616e2b4fba2" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.Schemas.ShipmentAdviceAcknowledgement" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="19392a68-a092-4a0c-a012-c1af549203c1" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShipmentAdviceMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="606679ff-0997-4d49-bc0f-987b25619dbd" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.Schemas.ShipmentAdvice" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="b895276d-1009-495e-aaae-fb7523d6f2b8" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShipmentOrderRequestAckMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="3b662daa-3275-450d-9ac9-8d13afc12b0f" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.Schemas.ShipmentOrderAcknowledgement" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d44ac4f3-0c87-4526-ace4-bf050611ffbf" ParentLink="Module_MessageType" LowerBound="16.1" HigherBound="20.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShipmentOrderRequestMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="8efe9278-da13-4ee9-affb-b2cc2dabbd3c" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.Schemas.ShipmentOrderRequest" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c36109c2-ca57-4b0a-a4f4-b239006410b0" ParentLink="Module_PortType" LowerBound="20.1" HigherBound="31.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShipingPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="3c74f00a-ef3f-4c7a-a1af-33fa4c313e1b" ParentLink="PortType_OperationDeclaration" LowerBound="22.1" HigherBound="26.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipingOrderAckOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="56705251-cb65-4cbc-a896-7940976901d6" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="24.13" HigherBound="24.47">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentOrderRequestAckMessageType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="ef8f3a89-f5bf-4e98-960a-661e5313da80" ParentLink="PortType_OperationDeclaration" LowerBound="26.1" HigherBound="30.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipingAdviceAckOperation" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="4f51ce05-1ab2-48a5-934f-0779658b9898" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="28.13" HigherBound="28.41">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentAdviceAckMessageType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="6b23e8ad-ef40-4ed6-a7b9-c88d40aacb98" ParentLink="Module_PortType" LowerBound="31.1" HigherBound="42.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShippingPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="0cda30bc-5384-4627-a8af-beb3932d3c51" ParentLink="PortType_OperationDeclaration" LowerBound="33.1" HigherBound="37.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShippingOrderOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="67dc9345-cca9-46fd-8360-94f72ba62947" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="35.13" HigherBound="35.44">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentOrderRequestMessageType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="1f82decb-0a90-4c51-a947-db2431b3671d" ParentLink="PortType_OperationDeclaration" LowerBound="37.1" HigherBound="41.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShippingAdviceOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="faad13a4-5f4b-42c3-8074-41de36325a3d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="39.13" HigherBound="39.38">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentAdviceMessageType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="84a8c06a-9b10-4153-a854-9ad7a2b440fd" ParentLink="Module_CorrelationType" LowerBound="42.1" HigherBound="46.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ShippingCorrelationType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="3c4fed69-5bc5-4eda-abd9-1f99d66e21ed" ParentLink="CorrelationType_PropertyRef" LowerBound="44.9" HigherBound="44.47">
+                <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.Schemas.PONo" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.Samples.BizTalk.ShipmentAgency2
+{
+    private messagetype ShipmentAdviceAckMessageType
+    {
+        body Microsoft.Samples.BizTalk.Schemas.ShipmentAdviceAcknowledgement MessagePart_1;
+    };
+    private messagetype ShipmentAdviceMessageType
+    {
+        body Microsoft.Samples.BizTalk.Schemas.ShipmentAdvice MessagePart_1;
+    };
+    private messagetype ShipmentOrderRequestAckMessageType
+    {
+        body Microsoft.Samples.BizTalk.Schemas.ShipmentOrderAcknowledgement MessagePart_1;
+    };
+    private messagetype ShipmentOrderRequestMessageType
+    {
+        body Microsoft.Samples.BizTalk.Schemas.ShipmentOrderRequest MessagePart_1;
+    };
+    private porttype ShipingPortType
+    {
+        oneway ShipingOrderAckOperation
+        {
+            ShipmentOrderRequestAckMessageType
+        };
+        oneway ShipingAdviceAckOperation
+        {
+            ShipmentAdviceAckMessageType
+        };
+    };
+    private porttype ShippingPortType
+    {
+        oneway ShippingOrderOperation
+        {
+            ShipmentOrderRequestMessageType
+        };
+        oneway ShippingAdviceOperation
+        {
+            ShipmentAdviceMessageType
+        };
+    };
+    private correlationtype ShippingCorrelationType
+    {
+        Microsoft.Samples.BizTalk.Schemas.PONo
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    private service ShipmentAgency2Process
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ShippingPortType ReceiveShipmentFiles;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ShipingPortType SendShipmentAck;
+        correlation ShippingCorrelationType ShipmentAgency2CorrelationSets;
+        message ShipmentAdviceAckMessageType ShipmentAdviceAckMessage;
+        message ShipmentAdviceMessageType ShipmentAdviceMessage;
+        message ShipmentOrderRequestAckMessageType ShipmentOrderRequestAckMessage;
+        message ShipmentOrderRequestMessageType ShipmentOrderRequestMessage;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5c06a77e-5fa3-4406-81bd-306d5adb8a04")]
+            activate receive (ReceiveShipmentFiles.ShippingOrderOperation, ShipmentOrderRequestMessage, initialize ShipmentAgency2CorrelationSets);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("444e863e-5ff1-43e5-b1ab-53ca618f5165")]
+            construct ShipmentOrderRequestAckMessage
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("60197f3e-2594-4eaa-8506-f7db39f7b881")]
+                transform (ShipmentOrderRequestAckMessage.MessagePart_1) = Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentOrderAck (ShipmentOrderRequestMessage.MessagePart_1);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b74f48c8-25e9-495e-aab3-fb44b5faf961")]
+            send (SendShipmentAck.ShipingOrderAckOperation, ShipmentOrderRequestAckMessage, ShipmentAgency2CorrelationSets);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9e29c25d-9212-42fa-bf9b-d30e43d13f56")]
+            receive (ReceiveShipmentFiles.ShippingAdviceOperation, ShipmentAdviceMessage, ShipmentAgency2CorrelationSets);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bdc9c3a1-8f63-4ca3-8740-4ddb0200a37a")]
+            construct ShipmentAdviceAckMessage
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4ebecdb8-abab-41da-b27f-2bedbcdb1524")]
+                transform (ShipmentAdviceAckMessage.MessagePart_1) = Microsoft.Samples.BizTalk.ShipmentAgency2.ShipmentAdviceAck (ShipmentAdviceMessage.MessagePart_1);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("81de9dab-489f-4ef2-b737-23f6382451d7")]
+            send (SendShipmentAck.ShipingAdviceAckOperation, ShipmentAdviceAckMessage, ShipmentAgency2CorrelationSets);
+        }
+    }
+}
+

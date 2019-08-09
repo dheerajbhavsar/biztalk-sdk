@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<ns0:PurchaseOrder xmlns:ns0="http://SendMail.PurchaseOrder">
+  <PONumber>12345</PONumber>
+  <CustomerInfo>
+    <Name>John Frum</Name>
+    <Email>JohnFrum@example.com</Email>
+  </CustomerInfo>
+  <Description>
+    <Item>Flower</Item>
+    <Count>10000000</Count>
+  </Description>
+</ns0:PurchaseOrder>

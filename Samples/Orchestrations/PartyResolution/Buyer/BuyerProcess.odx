@@ -1,0 +1,144 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="18b96dce-b57a-4968-bf4b-7e9f1ab1da2d" LowerBound="1.1" HigherBound="32.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.Samples.BizTalk.Buyer" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="7493facb-5fa7-4078-b9ee-6430fa20bdb2" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PORequestPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="60197452-aa21-490e-be58-1066969bbcfd" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="a2e9d463-47c9-4392-b299-c0d399bd41b5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.22">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.Buyer.POMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="673780d1-a8c3-48ba-b1d1-e787d7f2a6f5" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="POMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="89881cb4-615e-4d33-9a69-c294818674b4" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Microsoft.Samples.BizTalk.Schemas.PurchaseOrder" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="4cbc6e65-69de-4e46-b8f3-84bcd9d50846" ParentLink="Module_ServiceDeclaration" LowerBound="15.1" HigherBound="31.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BuyerProcess" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="ServiceBody" OID="359d148a-d45e-4cc3-ba2e-e1d8dac1b9ff" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="76a42b2c-005f-4671-aa41-a69d67659ecf" ParentLink="ServiceBody_Statement" LowerBound="25.1" HigherBound="27.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceivePO" />
+                    <om:Property Name="MessageName" Value="MsgPO" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="8a3bd1b5-39cb-42b5-866d-aae0dbad57ca" ParentLink="ServiceBody_Statement" LowerBound="27.1" HigherBound="29.1">
+                    <om:Property Name="PortName" Value="SendPORequest" />
+                    <om:Property Name="MessageName" Value="MsgPO" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ca4c361a-94ee-410b-9c54-226d7caa5b24" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="18.1" HigherBound="20.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.Buyer.PORequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePO" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="edef3e57-96d2-4bc1-a434-9796bd255fce" ParentLink="PortDeclaration_CLRAttribute" LowerBound="18.1" HigherBound="19.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8f3002fd-1424-4d63-96f6-cd441b04013b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="20.1" HigherBound="22.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.Buyer.PORequestPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendPORequest" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="8dd12671-3c09-4dcc-a76f-e8eb160d3822" ParentLink="PortDeclaration_CLRAttribute" LowerBound="20.1" HigherBound="21.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f3998fb5-31f4-4918-bf1e-7e5ec7a02680" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.Buyer.POMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgPO" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.Samples.BizTalk.Buyer
+{
+    private messagetype POMessage
+    {
+        body Microsoft.Samples.BizTalk.Schemas.PurchaseOrder MessagePart_1;
+    };
+    private porttype PORequestPortType
+    {
+        oneway Operation_1
+        {
+            POMessage
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    private service BuyerProcess
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PORequestPortType ReceivePO;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PORequestPortType SendPORequest;
+        message POMessage MsgPO;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("76a42b2c-005f-4671-aa41-a69d67659ecf")]
+            activate receive (ReceivePO.Operation_1, MsgPO);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8a3bd1b5-39cb-42b5-866d-aae0dbad57ca")]
+            send (SendPORequest.Operation_1, MsgPO);
+        }
+    }
+}
+

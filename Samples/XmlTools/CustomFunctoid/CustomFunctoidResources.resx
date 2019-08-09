@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+            Microsoft ResX Schema 
+        
+            Version 1.3
+                
+            The primary goals of this format is to allow a simple XML format 
+            that is mostly human readable. The generation and parsing of the 
+            various data types are done through the TypeConverter classes 
+            associated with the data types.
+        
+            Example:
+        
+                ... ado.net/XML headers & schema ...
+                <resheader name="resmimetype">text/microsoft-resx</resheader>
+                <resheader name="version">1.3</resheader>
+                <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+                <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+                <data name="Name1">this is my long string</data>
+                <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+                <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+                    [base64 mime encoded serialized .NET Framework object]
+                </data>
+                <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+                    [base64 mime encoded string representing a byte array form of the .NET Framework object]
+                </data>
+        
+            There are any number of "resheader" rows that contain simple 
+            name/value pairs.
+            
+            Each data row contains a name, and value. The row also contains a 
+            type or mimetype. Type corresponds to a .NET class that support 
+            text/value conversion through the TypeConverter architecture. 
+            Classes that don't support this are serialized and stored with the 
+            mimetype set.
+                     
+            The mimetype is used for serialized objects, and tells the 
+            ResXResourceReader how to depersist the object. This is currently not 
+            extensible. For a given mimetype the value must be set accordingly:
+        
+            Note - application/x-microsoft.net.object.binary.base64 is the format 
+                   that the ResXResourceWriter will generate, however the reader can 
+                   read any of the formats listed below.
+        
+            mimetype: application/x-microsoft.net.object.binary.base64
+            value   : The object must be serialized with 
+                    : System.Serialization.Formatters.Binary.BinaryFormatter
+                    : and then encoded with base64 encoding.
+        
+            mimetype: application/x-microsoft.net.object.soap.base64
+            value   : The object must be serialized with 
+                    : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+                    : and then encoded with base64 encoding.
+            mimetype: application/x-microsoft.net.object.bytearray.base64
+            value   : The object must be serialized into a byte array 
+                    : using a System.ComponentModel.TypeConverter
+                    : and then encoded with base64 encoding.
+        -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+ 
+ 
+  <data name="IDS_BUILDARRAYFUNCTOID_DESCRIPTION">
+    <value>Use this functoid to build a single dimension array from all its input parameters. This functoid can accept variable number of inputs. It is used in conjunction with the Extract array functoid to extract specific values from this array.</value>
+  </data>
+  <data name="IDS_BUILDARRAYFUNCTOID_NAME">
+    <value>Build array functoid</value>
+  </data>
+  <data name="IDS_BUILDARRAYFUNCTOID_TOOLTIP">
+    <value>Builds a single dimension array from all its inputs.</value>
+  </data>
+  <data name="IDB_BUILDARRAYFUNCTOID_BITMAP" type="System.Drawing.Bitmap, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AAAAAAAAAHYAAAAoAAAAEAAAABAAAAABAAQAAAAAAAAAAADEDgAAxA4AABAAAAAQAAAAAAAA/wAA
+        gP8AgAD/AICA/4AAAP+AAID/gIAA/4CAgP/AwMD/AAD//wD/AP8A/////wAA//8A/////wD//////wAA
+        AAAAAAAAkRERERERERCREREREREREJEREREREREQkRERERERERCf////////EJ8RHxEfER8QnxEfER8R
+        HxCfER8RHxEfEJ////////8QkRERERERERCREREREREREJEREREREREQkRERERERERCREREREREREJmZ
+        mZmZmZmQ
+</value>
+  </data>
+ 
+  
+  <data name="IDS_EXTRACTARRAYFUNCTOID_DESCRIPTION">
+    <value>Use this functoid to extract a specific value from the array built by a Build array functoid. Thus functoid accepts exactly two input parameters: a link from the Build array functoid and an index to extract a specific value from the array.</value>
+  </data>
+  <data name="IDS_EXTRACTARRAYFUNCTOID_NAME">
+    <value>Extract array functoid</value>
+  </data>
+  <data name="IDS_EXTRACTARRAYFUNCTOID_TOOLTIP">
+    <value>Returns a specific value from the array built by the Build array functoid.</value>
+  </data>
+  <data name="IDB_EXTRACTARRAYFUNCTOID_BITMAP" type="System.Drawing.Bitmap, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AAAAAAAAAHYAAAAoAAAAEAAAABAAAAABAAQAAAAAAAAAAADEDgAAxA4AABAAAAAQAAAAAAAA/wAA
+        gP8AgAD/AICA/4AAAP+AAID/gIAA/4CAgP/AwMD/AAD//wD/AP8A/////wAA//8A/////wD//////wAA
+        AAAAAAAAkREf//8RERCRER8RHxEREJERHxEfEREQkREf//8RERCREREfEREREJEREf/xEREQkRERHxER
+        ERCREREfEREREJ////////8QnxEfER8RHxCfER8RHxEfEJ8RHxEfER8Qn////////xCREREREREREJmZ
+        mZmZmZmQ
+</value>
+  </data>
+    
+  
+  
+  <data name="IDS_CUSTOMSTRINGCONCATFUNCTOID_DESCRIPTION">
+    <value>This functoid concatenates its input parameters. This functoid requires exactly two input parameters.</value>
+  </data>
+  <data name="IDS_CUSTOMSTRINGCONCATFUNCTOID_NAME">
+    <value>Custom concatenate functoid</value>
+  </data>
+  <data name="IDS_CUSTOMSTRINGCONCATFUNCTOID_TOOLTIP">
+    <value>Returns concatentation of its input parameters.</value>
+  </data>
+   <data name="IDB_CUSTOMSTRINGCONCATFUNCTOID_BITMAP" type="System.Drawing.Bitmap, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AAAAAAAAAHYAAAAoAAAAEAAAABAAAAABAAQAAAAAAAAAAADEDgAAxA4AABAAAAAQAAAAAAAA/wAA
+        gP8AgAD/AICA/4AAAP+AAID/gIAA/4CAgP/AwMD/AAD//wD/AP8A/////wAA//8A/////wD//////wAA
+        AAAAAAAAkRERERH/ERCRERERHxHxEJEREREREfEQkRH/8RH/ERCRH/EfHxEREJHxEREfEfEQkfERERH/
+        ERCR8REREREREJHxEREREREQkf8RERERERCRH/EfEREREJER//EREREQkRERERERERCREREREREREJmZ
+        mZmZmZmQ
+</value>
+ </data>
+  
+  
+   <data name="IDS_LONGESTSTRINGFUNCTOID_NAME">
+    <value>Longest String</value>
+  </data>
+  <data name="IDS_LONGESTSTRINGFUNCTOID_DESCRIPTION">
+    <value>This functoid returns the longest string of all its input parameters. It can accept variable number of inputs.</value>
+  </data>
+   <data name="IDS_LONGESTSTRINGFUNCTOID_TOOLTIP">
+    <value>Returns the longest input string.</value>
+  </data>
+   <data name="IDB_LONGESTSTRINGFUNCTOID_BITMAP" type="System.Drawing.Bitmap, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AAAAAAAAAHYAAAAoAAAAEAAAABAAAAABAAQAAAAAAAAAAADEDgAAxA4AABAAAAAQAAAAAAAA/wAA
+        gP8AgAD/AICA/4AAAP+AAID/gIAA/4CAgP/AwMD/AAD//wD/AP8A/////wAA//8A/////wD//////wAA
+        AAAAAAAAkRERERERERCREREREREREJEREREREREQkRERERERERCRH///8REREJEf///xEREQkR/xER//
+        ERCRH/ERER8REJEf8REf/xEQkR/xER8RERCRH/ERH/8REJEREREREREQkRERERERERCREREREREREJmZ
+        mZmZmZmQ
+</value>
+  </data>
+  
+  
+  <data name="IDS_CUMULATIVEMULTIPLYFUNCTOID_DESCRIPTION">
+    <value>Use the Cumulative Multiply functoid to compute the accumulated product value of a field. This functoid can accept up to two of the following input parameters: the fields that must be accumulated and the scope to which they are to be accumulated.</value>
+  </data>
+   <data name="IDS_CUMULATIVEMULTIPLYFUNCTOID_TOOLTIP">
+    <value>Returns product of the input spanning over the parent record.</value>
+  </data> 
+  <data name="IDS_CUMULATIVEMULTIPLYFUNCTOID_NAME">
+    <value>Cumulative Multiply</value>
+  </data>
+  <data name="IDB_CUMULATIVEMULTIPLYFUNCTOID_BITMAP" type="System.Drawing.Bitmap, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AAAAAAAAAHYAAAAoAAAAEAAAABAAAAABAAQAAAAAAAAAAADEDgAAxA4AABAAAAAQAAAAAAAA/wAA
+        gP8AgAD/AICA/4AAAP+AAID/gIAA/4CAgP/AwMD/AAD//wD/AP8A/////wAA//8A/////wD//////wAA
+        AAAAAAAAkRERERERERCREREREREREJEREREREREQkRH/8fER8RCRH/EfHx8REJHxERER8REQkfERER8f
+        ERCR8RER8RHxEJHxEREREREQkf8RERERERCRH/EfEREREJER//EREREQkRERERERERCREREREREREJmZ
+        mZmZmZmQ
+</value>
+  </data>
+</root>

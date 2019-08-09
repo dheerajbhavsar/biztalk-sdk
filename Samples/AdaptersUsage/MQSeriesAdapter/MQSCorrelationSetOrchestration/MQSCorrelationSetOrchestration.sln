@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQSCorrelationSetOrchestration", "MQSCorrelationSetOrchestration.btproj", "{D778B8EB-6C8C-478B-B17E-23D0B092BABB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Debug|.NET.Build.0 = Debug|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Debug|.NET.Deploy.0 = Debug|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Release|.NET.ActiveCfg = Release|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Release|.NET.Build.0 = Release|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Release|.NET.Deploy.0 = Release|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D778B8EB-6C8C-478B-B17E-23D0B092BABB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

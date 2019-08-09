@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.0.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
+  <ModuleRefCollection>
+    <ModuleRef Name="ArbitraryXPathSample" Version="1.0.0.0" Culture="" PublicKeyToken="" FullName="">
+      <Services>
+        <Service Name="ArbitraryXPathSample.CalculateTotalAmount">
+          <Ports>
+            <Port Name="Port_Receive_Message_In" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="ArbitraryXPathSampleReceivePort" />
+            </Port>
+            <Port Name="Port_Send_Message_Out" Modifier="1" BindingOption="1">
+              <SendPortRef Name="ArbitraryXPathSampleSendPort" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+        </Service>
+      </Services>
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="ArbitraryXPathSampleSendPort" IsStatic="true" IsTwoWay="false">
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" />
+      <PrimaryTransport>
+        <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ArbitraryXPathPropertyHandler\ArbitraryXPathSample\Output\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2004-01-22T00:00:00.0000000-08:00</FromTime>
+        <ToTime>2004-01-22T23:59:59.0000000-08:00</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2004-01-22T00:00:00.0000000-08:00</FromTime>
+        <ToTime>2004-01-22T23:59:59.0000000-08:00</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="ArbitraryXPathSampleReceivePort" IsTwoWay="false">
+      <ReceiveLocations>
+        <ReceiveLocation Name="ArbitraryXPathSampleReceivePortLocation">
+          <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ArbitraryXPathPropertyHandler\ArbitraryXPathSample\Input\*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileMask vt="8"&gt;*.xml&lt;/FileMask&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="ArbitraryXPathSample.XPathReceivePipeline" FullyQualifiedName="ArbitraryXPathSample:1.0.0.0:ArbitraryXPathSample.XPathReceivePipeline" Type="1" />
+          <ReceivePipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection />
+</BindingInfo>

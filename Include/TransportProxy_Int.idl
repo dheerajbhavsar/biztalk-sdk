@@ -1,0 +1,384 @@
+#define MAKE_TRANSPORT_PROXY_GUID(id) 4F812##id##-E3E0-472a-AD0A-AFDE1FE7356C
+
+interface IBTTransportProxy;
+interface IBTTransportBatch;
+interface IBTTransport;
+interface IBTTransportControl;
+interface IBTTransportConfig;
+interface IBTBatchCallBack;
+interface IBTTransmitter;
+interface IBTBatchTransmitter;
+interface IBTTransmitterBatch;
+interface IBTDTCCommitConfirm;
+
+#define UUID_IBTTransportProxy MAKE_TRANSPORT_PROXY_GUID(22f)
+#define UUID_IBTTransport MAKE_TRANSPORT_PROXY_GUID(230)
+#define UUID_IBTTransportBatch MAKE_TRANSPORT_PROXY_GUID(231)
+#define UUID_IBTBatchTransmitter MAKE_TRANSPORT_PROXY_GUID(232)
+#define UUID_IBTTransmitter MAKE_TRANSPORT_PROXY_GUID(233)
+#define UUID_IBTBatchCallBack MAKE_TRANSPORT_PROXY_GUID(234)
+#define UUID_IBTTransportControl MAKE_TRANSPORT_PROXY_GUID(235)
+#define UUID_IBTTransportConfig MAKE_TRANSPORT_PROXY_GUID(236)
+#define UUID_IBTTransmitterBatch MAKE_TRANSPORT_PROXY_GUID(239)
+#define UUID_IBTDTCCommitConfirm MAKE_TRANSPORT_PROXY_GUID(23a)
+#define UUID_IBtsErrors MAKE_TRANSPORT_PROXY_GUID(23b) // change where should this live?
+
+
+/*
+Description:
+	The Transport Proxy abstracts the Message Agent and the Endpoint Manager,
+	it is the essentially the Adapter plateform. It manages the lifetime and 
+	configuration of Adapters, provides batch supports for messages, and 
+	provides the necessary abstration for Adapters using Request-Response and
+	Solicit-Response style protocols.
+*/
+[
+	object,
+	uuid(UUID_IBTTransportProxy),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTTransportProxy : IUnknown
+{
+	/*
+	Description:
+		Fetch a new batch from the Transport Proxy. The call back 
+		may be correlated back to the Adapters submission using either
+		the interface pointer pCallBack and or the vCallbackCookie.
+	*/
+ 	HRESULT GetBatch(	
+ 			[in] IBTBatchCallBack* pCallBack,
+			[in] VARIANT vCallbackCookie,
+			[out,retval] IBTTransportBatch** ppBatch);
+
+	/*
+	Description:
+		Adapters should create new messages and message parts
+		using the BaseMessageFactory.
+	*/
+ 	HRESULT GetMessageFactory(
+ 			[out,retval] IBaseMessageFactory** ppRet);
+
+	/*
+	Description:
+		Isolated Receiver's (Non-creatable receivers) should register them selfs with the
+		Transport Proxy. after registration, the Adapters configuration
+		will be pushed to it.
+	*/
+	HRESULT RegisterIsolatedReceiver(
+			[in] BSTR bstrURL,
+			[in] IBTTransportConfig* pCallBack);
+
+	/*
+	Description:
+		A receiver should notify the Transport Proxy if it deems it
+		neccessary to shut down a receive URL.
+	*/
+	HRESULT ReceiverShuttingdown( 
+ 			[in] BSTR bstrReceiveURL, 
+ 			[in] IErrorInfo* pErrorInfo );
+
+	/*
+	Description:
+		Isolated Receiver's (Non-creatable receivers) should call this method prior to shutdown, 
+		no subsequent calls or work should be done on the Transport Proxy.
+	*/
+	HRESULT TerminateIsolatedReceiver();
+
+	/*
+	Description:
+		Raise an error.
+	*/
+	HRESULT SetErrorInfo([in] IErrorInfo* pErrorInfo);
+};
+
+
+/*
+Description:
+	In general Adapters should take advantage of the IBTTransportBatch 
+	ability to perform multiple opperations on a single batch. All 
+	operations within the same batch will be committed to the database
+	in a single roundtrip, for performance reasons it is therefore
+	advisable to batch up work items in a single IBTTransportBatch.
+*/
+[
+	object,
+	uuid(UUID_IBTTransportBatch),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTTransportBatch : IUnknown
+{
+	/*
+	Description:
+		New messages are submitted to the Transport Proxy using
+		SubmitMessage. It is the Adapters responsibility to set the
+		following system properties on the message context:
+		InboundTransportLocation
+		InboundTransportType.
+	*/
+	HRESULT SubmitMessage([in] IBaseMessage* pIndoc);
+
+	/*
+	Description:
+ 		Clear empties the current batch and allows it to be re-used.
+	*/
+ 	HRESULT Clear();
+
+	/*
+	Description:
+ 		Commit this unit of work, implicitely calls Clear()
+	*/
+ 	HRESULT Done([in] IUnknown* pTransaction, [out,retval] IBTDTCCommitConfirm** pDTCCommitConfirm);
+
+	/*
+	Description:
+		Transmitters sending messages asynchronously must call
+		delete on the message once it has been successfully sent.
+	*/
+	HRESULT DeleteMessage(
+ 			[in] IBaseMessage* pIndoc);
+
+	/*
+	Description:
+		Suspend a message.
+	*/
+ 	HRESULT MoveToSuspendQ(
+ 			[in] IBaseMessage* pIndoc );
+
+	/*
+	Description:
+		Resubmit a message. If a transmission fails, the Adapter component
+		should use the system properties RetryCount and RetryInterval to determine
+		the dtTimeStamp for the resubmit. If the all the retries have been 
+		exhausted the Adapter should call MoveToNextTransport.
+	*/
+	HRESULT Resubmit(
+ 			[in] IBaseMessage* pIndoc, 
+ 			[in] DATE dtTimeStamp);
+
+	/*
+	Description:
+		This will route the message to the next Adapter for transmission. If 
+		no remaining backup transports are available this call will fail. The 
+		Adapter should then suspend the message.
+	*/
+ 	HRESULT MoveToNextTransport(
+ 			[in] IBaseMessage * pIndoc );
+
+	/*
+	Description:
+		This API is used to submit a request message for a request-response pair.
+		By specifying fFirstResponseOnly = TRUE, the first response only will be 
+		delivered, FALSE will deliver all response messages for the given request.
+		@param pRequest - the request message to be submitted
+		@param bstrCorrelationToken - the unique identifier to be used to correlate the
+			response message back to the request message
+		@param fFirstResponseOnly - only return the first response message to the Adapter
+		@param dtExpirationTime - the expiration time after which no response messages will be returned
+		@param pResponseCallback - the call back interface to which response messages for 
+			this request will be delivered
+	*/
+	HRESULT SubmitRequestMessage( 	
+			[in] IBaseMessage* pRequest,
+			[in] BSTR bstrCorrelationToken,
+			[in] BOOL fFirstResponseOnly,
+			[in] DATE dtExpirationTime,
+			[in] IBTTransmitter* pResponseCallback );
+
+
+	/*
+	Description:
+		Cancel previously requested responses in SubmitRequestMessage().
+	*/
+	HRESULT CancelResponseMessage(
+ 			[in] BSTR bstrCorrelationToken ); 
+
+	/*
+	Description:
+		Used to submit the response message for a solicit-response pair. This will
+		ensure the correct properties a flowed ensuring that the response message
+		is correctly correlated back to the solicit message sent
+	*/
+	HRESULT SubmitResponseMessage(
+			[in] IBaseMessage* pSolicitDocSent, 
+			[in] IBaseMessage* pResponseDocToSubmit);
+
+	[propget] HRESULT ResourceTracker([out,retval] IResourceTracker** ppResTracker);
+};
+
+/*
+Description:
+	Base interface for all transport components
+*/
+[
+	object,
+	uuid(UUID_IBTTransport),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTTransport : IBaseComponent
+{
+	[propget] HRESULT TransportType([out,retval] BSTR* pbstrProtocol);
+	[propget] HRESULT ClassID([out, retval] GUID* pClassID);
+};
+
+[
+	object,
+	uuid(UUID_IBTTransportControl),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTTransportControl : IUnknown
+{
+ 	HRESULT Initialize([in] IBTTransportProxy* pTransProxy);
+	HRESULT Terminate(); 
+};
+
+[
+	object,
+	uuid(UUID_IBTTransportConfig),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTTransportConfig : IUnknown
+{
+	HRESULT AddReceiveEndpoint(
+ 				[in] BSTR bstrURL, 
+				[in] IPropertyBag* pConfig,
+				[in] IPropertyBag* pBizTalkConfig);
+
+	HRESULT UpdateEndpointConfig(
+ 				[in] BSTR bstrURL, 
+				[in] IPropertyBag* pConfig,
+				[in] IPropertyBag* pBizTalkConfig);
+
+	HRESULT RemoveReceiveEndpoint(
+ 				[in] BSTR bstrURL );
+};
+
+
+/*
+Description:
+	IBTBatchCallBack is called to notify an Adapter that
+	it's batch has completed. If every thing in the batch completed
+	successfully hrStatus will be S_OK. Otherwise, the Adapter should
+	drill down into the BTBatchOperationStatus to determine the nature
+	of the failure.
+*/
+typedef enum _BatchOperationType
+{	
+	BT_Submit 					= 0,
+	BT_Delete 					= 1,
+	BT_MoveToSuspendQ 			= 2,
+	BT_Resubmit					= 3,
+	BT_MoveToNextTransport		= 4,
+	BT_SubmitRequest			= 5,
+	BT_CancelResponse			= 6
+} BatchOperationType;
+
+typedef struct _BTBatchOperationStatus
+{
+	BatchOperationType Type;
+	HRESULT hrStatus;
+	LONG nMessageCount;
+	[size_is(nMessageCount)] HRESULT* hrMessageStatus;
+} BTBatchOperationStatus;
+
+[
+	object,
+	uuid(UUID_IBTBatchCallBack),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTBatchCallBack : IUnknown
+{
+ 	HRESULT BatchComplete(	[in] HRESULT hrStatus, 
+							[in] short nOpCount, 
+							[in,size_is(nOpCount)] BTBatchOperationStatus* pOperationStatus, 
+							[in] VARIANT vCallbackCookie);
+};
+
+
+/*
+Description:
+	If transport does not support batching it should implement the IBTTransmitter
+	interface.
+*/
+[
+	object,
+	uuid(UUID_IBTTransmitter),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTTransmitter : IBTTransportControl
+{
+	/*
+	Description:
+		If transport does not support transactions it will return a NULL Tx 
+		interface pointer. Otherwise, the Tx returned will be used by the 
+		Message Agent, and then commited by the Transport Proxy.
+
+	Params:
+		pMessage : Message to be sent
+		dDeleteMessage : If the message is sent synchronously the Adapter should 
+							return TRUE. If FALSE is returned, the Adapter should 
+							call DeleteMessage once the transmission is complete.
+	*/
+	HRESULT TransmitMessage(
+ 		[in] IBaseMessage* pMessage,			
+ 		[out,retval] BOOL* bDeleteMessage);
+};
+
+
+/*
+Description:
+	Transports which are capable of sendng batches of messages should implement 
+	the IBTBatchTransmitter interface.
+*/
+[
+	object,
+	uuid(UUID_IBTBatchTransmitter),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTBatchTransmitter : IBTTransportControl
+{
+ 	HRESULT GetBatch([out,retval] IBTTransmitterBatch** ppBatch);
+};
+
+[
+	object,
+	uuid(UUID_IBTTransmitterBatch),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTTransmitterBatch : IUnknown
+{
+	HRESULT BeginBatch( [out] LONG* pnMaxBatchSize, [out,retval] IUnknown** ppTransaction );
+	HRESULT TransmitMessage([in] IBaseMessage* pMessage, [out,retval] BOOL* bDeleteMsgOnDone);
+ 	HRESULT Done([in] IBTDTCCommitConfirm* pDTCCommitConfirm);
+	HRESULT Clear();
+};
+
+[
+	object,
+	uuid(UUID_IBTDTCCommitConfirm),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBTDTCCommitConfirm : IUnknown
+{
+	HRESULT DTCCommitConfirm([in] IUnknown* pTransaction, [in] BOOL bCommitSuccessful);
+};
+
+[
+	object,
+	uuid(UUID_IBtsErrors),
+	oleautomation,
+	pointer_default(unique)
+]
+interface IBtsErrors : IUnknown
+{
+	HRESULT AddErrorInfo([in] IErrorInfo* pErrInfo);
+}

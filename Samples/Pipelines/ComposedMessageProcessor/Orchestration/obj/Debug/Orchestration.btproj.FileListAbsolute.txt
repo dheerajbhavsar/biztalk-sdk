@@ -1,0 +1,8 @@
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\bin\Debug\CMP.Orchestration.dll
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\bin\Debug\CMP.Orchestration.pdb
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\bin\Debug\Microsoft.BizTalk.Pipeline.dll
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\bin\Debug\Microsoft.BizTalk.TestTools.dll
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\bin\Debug\Microsoft.XLANGs.BaseTypes.dll
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\obj\Debug\CMP.Orchestration.dll
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\obj\Debug\CMP.Orchestration.pdb
+C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\ComposedMessageProcessor\Orchestration\bin\Debug\CMP.PipelinesAndSchemas.dll

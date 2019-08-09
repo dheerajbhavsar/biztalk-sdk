@@ -1,0 +1,4 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+#include "BaseMessage_Int.idl"

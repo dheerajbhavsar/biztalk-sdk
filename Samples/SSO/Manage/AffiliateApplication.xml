@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<SSO>
+  <application name="SSOApplication">
+    <description>An SSO Application</description>
+    <contact>someone@companyname.com</contact>
+    <appUserAccount>DomainName\AppUserGroup</appUserAccount>
+    <appAdminAccount>DomainName\AppAdminGroup</appAdminAccount>
+    <field ordinal="0" label="User ID" masked="no" />
+    <field ordinal="1" label="Password" masked="yes" />
+    <flags groupApp="no" configStoreApp="no" allowTickets="no" validateTickets="yes" allowLocalAccounts="no" timeoutTickets="yes" adminAccountSame="no" enableApp="no" />
+  </application>
+</SSO>

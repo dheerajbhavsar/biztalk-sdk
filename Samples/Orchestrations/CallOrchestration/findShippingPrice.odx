@@ -1,0 +1,167 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="75f0245b-2ea6-48cf-8c2c-2446911c593f" LowerBound="1.1" HigherBound="44.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.Samples.BizTalk.CallOrchestration" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="d51e5e63-49c8-4d7f-a50f-be0035f68483" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReturnToCallerPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5c3e00dc-2c9b-4629-a859-2d76d013fb53" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="a36d4e0a-0688-4fa9-b860-4a6b26ed7157" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.15">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.CallOrchestration.PO" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="3f47bf7b-7534-44c1-b04e-6b71922ed83d" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="43.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="findShippingPrice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="6f474156-7fd1-4867-b077-c29d18b513af" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="InitialValue" Value="15" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="minShipPrice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7568b8ad-6231-41b2-946f-ca5e3bd67eb0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="15.1" HigherBound="16.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="shipRate" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="139495af-33e1-41f1-80c1-3572b00e6052" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageDeclaration" OID="fa2e021d-4ab7-4449-ade0-fe6a706ebe85" ParentLink="ServiceBody_Declaration" LowerBound="16.15" HigherBound="16.44">
+                    <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.CallOrchestration.PO" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="POMessageParameter" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageDeclaration" OID="825590b1-d1fb-4cc0-bd30-22427d7b7437" ParentLink="ServiceBody_Declaration" LowerBound="16.46" HigherBound="16.76">
+                    <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.CallOrchestration.PO" />
+                    <om:Property Name="ParamDirection" Value="Out" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="POMessageOutput" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="31a02c03-7cb7-4aff-9360-a491ad159aa1" ParentLink="ServiceBody_Statement" LowerBound="20.1" HigherBound="41.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="FindShippingPrice" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="10455e12-e3df-4423-8cb2-be8734dc6af3" ParentLink="ReallyComplexStatement_Branch" LowerBound="21.13" HigherBound="31.1">
+                        <om:Property Name="Expression" Value="(POMessageParameter(Microsoft.Samples.BizTalk.CallOrchestration.Weight) * shipRate) &lt; minShipPrice" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="LessThanMin" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="7621e139-b9ab-45dc-9cf2-0cb4acda7253" ParentLink="ComplexStatement_Statement" LowerBound="23.1" HigherBound="30.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_1" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="d173db0c-c756-4082-9ff3-681325a6ab68" ParentLink="ComplexStatement_Statement" LowerBound="26.1" HigherBound="29.1">
+                                <om:Property Name="Expression" Value="POMessageOutput = POMessageParameter;&#xD;&#xA;POMessageOutput(Microsoft.Samples.BizTalk.CallOrchestration.shipmentPrice) = minShipPrice;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="4f48029a-1edd-4f85-8ace-e65c5730695b" ParentLink="Construct_MessageRef" LowerBound="24.27" HigherBound="24.42">
+                                <om:Property Name="Ref" Value="POMessageOutput" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="6313b44a-d168-49ba-8bd3-8cc5a4112cb7" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="706d483a-cebd-4af1-874b-1b90e023d131" ParentLink="ComplexStatement_Statement" LowerBound="33.1" HigherBound="40.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_2" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="2cfd7bc9-4365-44d5-bf69-95ceb56cac22" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="39.1">
+                                <om:Property Name="Expression" Value="POMessageOutput = POMessageParameter;&#xD;&#xA;POMessageOutput(Microsoft.Samples.BizTalk.CallOrchestration.shipmentPrice) = POMessageParameter(Microsoft.Samples.BizTalk.CallOrchestration.Weight) * shipRate;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessageAssignment_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="0cac06e8-8f37-4cbb-a26d-b2c3258f1895" ParentLink="Construct_MessageRef" LowerBound="34.27" HigherBound="34.42">
+                                <om:Property Name="Ref" Value="POMessageOutput" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.Samples.BizTalk.CallOrchestration
+{
+    private porttype ReturnToCallerPortType
+    {
+        oneway Operation_1
+        {
+            PO
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    private service findShippingPrice
+    {
+        System.Int32 minShipPrice;
+        System.Int32 shipRate;
+        body (message PO POMessageParameter, out message PO POMessageOutput)
+        {
+            minShipPrice = 15;
+            shipRate = 1;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("31a02c03-7cb7-4aff-9360-a491ad159aa1")]
+            if ((POMessageParameter(Microsoft.Samples.BizTalk.CallOrchestration.Weight) * shipRate) < minShipPrice)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7621e139-b9ab-45dc-9cf2-0cb4acda7253")]
+                construct POMessageOutput
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d173db0c-c756-4082-9ff3-681325a6ab68")]
+                    POMessageOutput = POMessageParameter;
+                    POMessageOutput(Microsoft.Samples.BizTalk.CallOrchestration.shipmentPrice) = minShipPrice;
+                }
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("706d483a-cebd-4af1-874b-1b90e023d131")]
+                construct POMessageOutput
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2cfd7bc9-4365-44d5-bf69-95ceb56cac22")]
+                    POMessageOutput = POMessageParameter;
+                    POMessageOutput(Microsoft.Samples.BizTalk.CallOrchestration.shipmentPrice) = POMessageParameter(Microsoft.Samples.BizTalk.CallOrchestration.Weight) * shipRate;
+                }
+            }
+        }
+    }
+}
+

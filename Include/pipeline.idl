@@ -1,0 +1,4 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "BaseMessage.idl";
+#include "Pipeline_Int.idl"

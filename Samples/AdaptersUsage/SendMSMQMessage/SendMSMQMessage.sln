@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMSMQMessage", "SendMSMQMessage.csproj", "{8F51DC80-FD31-443C-A8B0-62E13ADA06D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F51DC80-FD31-443C-A8B0-62E13ADA06D7}.Debug|Default.ActiveCfg = Debug|Any CPU
+		{8F51DC80-FD31-443C-A8B0-62E13ADA06D7}.Debug|Default.Build.0 = Debug|Any CPU
+		{8F51DC80-FD31-443C-A8B0-62E13ADA06D7}.Release|Default.ActiveCfg = Release|Any CPU
+		{8F51DC80-FD31-443C-A8B0-62E13ADA06D7}.Release|Default.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

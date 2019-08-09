@@ -1,0 +1,22 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoansProcessor", "LoansProcessor.btproj", "{0C337056-DD70-401D-A8D8-B645385F191F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C337056-DD70-401D-A8D8-B645385F191F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C337056-DD70-401D-A8D8-B645385F191F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C337056-DD70-401D-A8D8-B645385F191F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0C337056-DD70-401D-A8D8-B645385F191F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C337056-DD70-401D-A8D8-B645385F191F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C337056-DD70-401D-A8D8-B645385F191F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

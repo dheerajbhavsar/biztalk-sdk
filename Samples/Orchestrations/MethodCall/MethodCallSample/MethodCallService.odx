@@ -1,0 +1,349 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="226d66d5-fca5-4b02-9c70-d82581f10211" LowerBound="1.1" HigherBound="88.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.Samples.BizTalk.MethodCallSample" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="e85781d4-ff1d-46f9-905a-9a4866a8ccb8" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="87.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MethodCallService" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="56a890a4-333a-435d-9331-b7433e7cfd32" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iVar1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="fbbc4c49-97f8-4e71-8ab4-1867340c3ae3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iVar2" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d5c2eb1d-280b-45c4-80ed-e557645e68a8" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iResult" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="84ccaa20-6b60-48da-bee4-93935fca286c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="InitialValue" Value="&quot;0&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iVar3" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="33fe2d9e-5ddc-4c12-b377-10136dfebe81" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MathLibrary.MathHelper" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mathVar" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="620bf846-b4b0-4e08-b524-8105bca1a228" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MethodCallSample.InputSchema" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mIncoming" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="72da1957-6943-4010-9cbf-3789f7e929d2" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MethodCallSample.OutputSchema" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mOutgoing" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="9ca99035-6da5-4130-8ce2-29b8e4fb505e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="32cfee45-d707-4ed2-8373-c733940ab5d8" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="48.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="MethodCallReceiveRequestPort" />
+                    <om:Property Name="MessageName" Value="mIncoming" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="765e2777-5ee3-48fe-a7d5-63220ad6c68a" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="53.1">
+                    <om:Property Name="Expression" Value="iVar1 = mIncoming.fld1;&#xD;&#xA;iVar2 = mIncoming.fld2;&#xD;&#xA;iVar3 = mIncoming.fld3;&#xD;&#xA;mathVar = new Microsoft.Samples.BizTalk.MathLibrary.MathHelper();" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Assign Variables" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="a6418ba9-446a-448c-b796-057b56fc2234" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="72.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Decide_1" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="DecisionBranch" OID="35213cad-0860-41d5-bc40-c26641a673c5" ParentLink="ReallyComplexStatement_Branch" LowerBound="54.13" HigherBound="61.1">
+                        <om:Property Name="Expression" Value="iVar3 == &quot;Add&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Check if the operation is Add" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="e3c5f23e-2bef-4670-a038-7d24eb4fdc88" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="60.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;&#xD;&#xA;iResult = mathVar.Add(iVar1,iVar2);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Call Add Method" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="1d772789-2ee3-42d1-a992-9eead1520b07" ParentLink="ReallyComplexStatement_Branch" LowerBound="61.18" HigherBound="67.1">
+                        <om:Property Name="Expression" Value="iVar3 == &quot;Sub&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Check if the Operation is Subtract" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="fe3852d3-bb46-453c-887a-ba5c2df27061" ParentLink="ComplexStatement_Statement" LowerBound="63.1" HigherBound="66.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;iResult = mathVar.Subtract(iVar1,iVar2);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Call Subtract Method" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="8e689e1a-8dba-428d-ba09-7abda147aa43" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Terminate" OID="c86c2d3a-81dc-4879-8ab0-5bb9b47bcb1a" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="71.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Terminate_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="b75346ca-907c-41f0-9a62-c6af83e67a11" ParentLink="ServiceBody_Statement" LowerBound="72.1" HigherBound="76.1">
+                    <om:Property Name="Expression" Value="&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Debug.WriteLine(iResult);&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Write Trace Statement" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="ce63ed3f-327d-48bd-b936-aa565d7a9d54" ParentLink="ServiceBody_Statement" LowerBound="76.1" HigherBound="83.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="e184b45d-e413-4a5f-bbb9-1c2d28043b12" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="82.1">
+                        <om:Property Name="Expression" Value="mOutgoing= Microsoft.Samples.BizTalk.MathLibrary.Helper.ConstructDoc(iResult);&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct Outgoing Message" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="374e4d99-60e6-4890-bb51-11c8d0006fe4" ParentLink="Construct_MessageRef" LowerBound="77.23" HigherBound="77.32">
+                        <om:Property Name="Ref" Value="mOutgoing" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="889aa615-a14b-49ae-8537-1acfa7592cf7" ParentLink="ServiceBody_Statement" LowerBound="83.1" HigherBound="85.1">
+                    <om:Property Name="PortName" Value="MethodCallSendOutputPort" />
+                    <om:Property Name="MessageName" Value="mOutgoing" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a7fdb3d9-9761-4f7b-bf38-6c697c1af4d0" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MethodCallSample.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MethodCallReceiveRequestPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="b9e53d73-f192-414c-bc90-774a4b0ef89b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c56e8242-3297-4bdf-847a-53668fda8774" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="2" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MethodCallSample.PortType_2" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MethodCallSendOutputPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="d4811841-fca6-45ee-9b7c-1f9ab7408056" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3f4c1094-d486-462e-b2ad-8c0cadcda17d" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5f5f4621-5205-4072-8b6f-f04c713ea66e" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="e8173e07-f2d8-4172-bafa-0aca9a728632" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.24">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.MethodCallSample.InputSchema" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0f99580c-7a4d-4c74-8388-5ad6c877981f" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_2" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8ffa6175-cf82-4b39-a720-dd52c458fd68" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="636e0f1e-65a3-403b-8051-55541d3b8305" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.25">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.MethodCallSample.OutputSchema" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c1aeec29-1a04-4005-9b78-8c26335ed548" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_3" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2fcddcbd-5198-4261-8dfb-defb2e1e96a8" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="5b6800de-09af-4673-8414-57b74ca7fdb6" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.25">
+                    <om:Property Name="Ref" Value="Microsoft.Samples.BizTalk.MethodCallSample.OutputSchema" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+    <om:Element Type="ExpressionValidationOff" OID="00000000-0000-0000-0000-000000000000">
+        <om:Property Name="Signal" Value="False" />
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.Samples.BizTalk.MethodCallSample
+{
+    public porttype PortType_1
+    {
+        oneway Operation_1
+        {
+            InputSchema
+        };
+    };
+    public porttype PortType_2
+    {
+        oneway Operation_1
+        {
+            OutputSchema
+        };
+    };
+    public porttype PortType_3
+    {
+        oneway Operation_1
+        {
+            OutputSchema
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    private service MethodCallService
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_1 MethodCallReceiveRequestPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_2 MethodCallSendOutputPort;
+        message InputSchema mIncoming;
+        message OutputSchema mOutgoing;
+        System.Int32 iVar1;
+        System.Int32 iVar2;
+        System.Int32 iResult;
+        System.String iVar3;
+        Microsoft.Samples.BizTalk.MathLibrary.MathHelper mathVar;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("32cfee45-d707-4ed2-8373-c733940ab5d8")]
+            activate receive (MethodCallReceiveRequestPort.Operation_1, mIncoming);
+            iVar1 = 0;
+            iVar2 = 0;
+            iResult = 0;
+            iVar3 = "0";
+            mathVar = new Microsoft.Samples.BizTalk.MathLibrary.MathHelper();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("765e2777-5ee3-48fe-a7d5-63220ad6c68a")]
+            iVar1 = mIncoming.fld1;
+            iVar2 = mIncoming.fld2;
+            iVar3 = mIncoming.fld3;
+            mathVar = new Microsoft.Samples.BizTalk.MathLibrary.MathHelper();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6418ba9-446a-448c-b796-057b56fc2234")]
+            if (iVar3 == "Add")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e3c5f23e-2bef-4670-a038-7d24eb4fdc88")]
+                
+                
+                iResult = mathVar.Add(iVar1,iVar2);
+            }
+            else if (iVar3 == "Sub")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fe3852d3-bb46-453c-887a-ba5c2df27061")]
+                
+                iResult = mathVar.Subtract(iVar1,iVar2);
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c86c2d3a-81dc-4879-8ab0-5bb9b47bcb1a")]
+                terminate "";;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b75346ca-907c-41f0-9a62-c6af83e67a11")]
+            
+            
+            System.Diagnostics.Debug.WriteLine(iResult);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ce63ed3f-327d-48bd-b936-aa565d7a9d54")]
+            construct mOutgoing
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e184b45d-e413-4a5f-bbb9-1c2d28043b12")]
+                mOutgoing= Microsoft.Samples.BizTalk.MathLibrary.Helper.ConstructDoc(iResult);
+                
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("889aa615-a14b-49ae-8537-1acfa7592cf7")]
+            send (MethodCallSendOutputPort.Operation_1, mOutgoing);
+        }
+    }
+}
+

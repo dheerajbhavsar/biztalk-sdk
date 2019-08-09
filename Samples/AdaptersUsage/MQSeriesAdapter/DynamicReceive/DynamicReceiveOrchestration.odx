@@ -1,0 +1,568 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="09e84f10-4fc9-4086-b411-11486064fdbf" LowerBound="1.1" HigherBound="149.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="DynamicReceive" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="dd0a9309-d57b-4636-861e-b43b3cdc442b" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e8f47cd5-81e5-414e-a017-de46b0c6535c" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="c65da4ad-dbcd-486f-9b54-d6d95ca3a75c" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e9249b1a-ccb8-44ad-9565-2346937def89" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_2" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="12b18a74-f31e-4e9e-bb0d-b3bcad386d68" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="95019a32-f0a5-4e2a-a641-3c3f02feffac" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c2c0eed6-d5bb-48e3-89fa-f66e9726ab1b" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_3" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5352307f-adf6-40d5-b84b-1d42780b1b58" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="a70c8ec5-48ff-4002-8a47-67484b7185ac" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="42a6a0bf-6ae1-41da-ac48-30edc5a0889d" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="22.37" HigherBound="22.59">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0ca5498e-2b21-4cf0-90e8-1e4741a6c1b4" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_4" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b702a249-d531-4a74-a6b4-695eb976b54b" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="4c4bcbba-172d-4f68-a146-9e56c53b8ae1" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="ffe1a4c8-2d6d-404d-ad65-15be6c5a654c" ParentLink="Module_PortType" LowerBound="32.1" HigherBound="39.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_5" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="c9151e03-f749-4af3-b289-90a4996b6f8f" ParentLink="PortType_OperationDeclaration" LowerBound="34.1" HigherBound="38.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="ba2667d7-5237-4631-9e71-fd5df5fd0af7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="36.13" HigherBound="36.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="c3da2ced-b32e-4b0a-ba66-17c17e730543" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="36.37" HigherBound="36.59">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="dc15609b-6b38-4ebb-a760-a2ef881c0899" ParentLink="Module_PortType" LowerBound="39.1" HigherBound="46.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_6" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="76449506-5827-454d-a66e-d616841002f1" ParentLink="PortType_OperationDeclaration" LowerBound="41.1" HigherBound="45.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="fbaaec19-4595-40a8-8642-a756305ff911" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="43.13" HigherBound="43.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="9cb240ff-aa33-4b3f-921c-7493b5706894" ParentLink="Module_PortType" LowerBound="46.1" HigherBound="53.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_7" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="ae44532f-cf8c-4d56-89a5-59dcfbcf4d38" ParentLink="PortType_OperationDeclaration" LowerBound="48.1" HigherBound="52.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="b3ba52d9-69be-437c-a22b-b4230eee0428" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="50.13" HigherBound="50.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="6ea62342-6b80-4608-a9a3-f141290ed8af" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="50.37" HigherBound="50.59">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="cb8bce93-0ec0-49d9-adf9-c3d2518dbfbf" ParentLink="Module_ServiceDeclaration" LowerBound="53.1" HigherBound="148.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="DynamicReceiveOrchestration" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="909a4478-505a-4d36-ab8a-caf23fc75be5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+                <om:Property Name="InitialValue" Value="&quot;localhost&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="server" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b0a0ff2b-b1a2-41b7-8f4c-bebccadb2b8c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
+                <om:Property Name="InitialValue" Value="&quot;DQM&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="queueManager" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="88d61de9-9409-46f4-af16-98c1d227cb20" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="67.1" HigherBound="68.1">
+                <om:Property Name="InitialValue" Value="&quot;dynamicQueue&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="queue" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="5a0b6384-4919-443e-80bc-ba6035dca6aa" ParentLink="ServiceDeclaration_Transaction" LowerBound="54.21" HigherBound="54.73">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9769688a-049e-46e0-be7a-5d9b08203fcf" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a57d8c85-dd16-45cb-a2bc-c91f1445b7e8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_2" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c7f8c629-f4e1-4dda-ad78-48c433e40486" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="64.1" HigherBound="65.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_3" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="eb3592b1-b5fb-4eb2-b452-6dfc66ad3363" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="1422d5c5-2bb6-4036-a07f-4e859591a25e" ParentLink="ServiceBody_Statement" LowerBound="70.1" HigherBound="75.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_1" />
+                    <om:Property Name="MessageName" Value="Message_1" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="3ad12213-a410-46f2-9569-6381a05efe22" ParentLink="ServiceBody_Statement" LowerBound="75.1" HigherBound="118.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="804fab8e-d483-49bb-905d-4a038125306f" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="116.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="8a6f257e-3989-4183-af59-07cdd6ad1339" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="115.1">
+                            <om:Property Name="Expression" Value="Message_2 = Message_1;&#xD;&#xA;&#xD;&#xA;//Create the queue from here or comment next 2 lines to create the queue else where&#xD;&#xA;admin = (Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2)&#xD;&#xA;(System.Activator.CreateInstance(&#xD;&#xA;System.Type.GetTypeFromProgID(&quot;MQSAdapterAdmin2.MQSAdmin&quot;,server)));&#xD;&#xA;//This call would return ResultCode.QueueAlreadyExists if the queue already exists&#xD;&#xA;resultCode = admin.CreateQueue(queueManager,queue,&#xD;&#xA; Microsoft.BizTalk.Adapter.MQS.Agent.QueueUsage.Normal, &quot;&quot;, &quot;&quot;, &quot;&quot;, 0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//This is a dynamic receive scenario&#xD;&#xA;Message_2(MQSeries.DynamicReceive) = &quot;yes&quot;;&#xD;&#xA;&#xD;&#xA;//Wait for 5s before trying to get messages&#xD;&#xA;Message_2(MQSeries.WaitInterval) = 5;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Specify the dynamic receive address&#xD;&#xA;Port_2(Microsoft.XLANGs.BaseTypes.Address) = &quot;mqs://&quot; + server + &quot;/&quot; + queueManager + &quot;/&quot; + queue; &#xD;&#xA;&#xD;&#xA;//Now match messages with the following options...&#xD;&#xA;//Comment these out to get all messages&#xD;&#xA;Message_2(MQSeries.MQMD_MsgId) = &quot;616130306161303062623030626230306161303061613030&quot;;&#xD;&#xA;Message_2(MQSeries.MQMD_CorrelId) = &quot;313131323133313431353136313731383139323032313232&quot;; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="9ea44fb4-e12b-46bf-9e5a-7595e6bcdd78" ParentLink="Construct_MessageRef" LowerBound="84.31" HigherBound="84.40">
+                            <om:Property Name="Ref" Value="Message_2" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="AtomicTransaction" OID="574b0f47-8966-4977-93b1-b16278d0d78a" ParentLink="Scope_Transaction" LowerBound="77.18" HigherBound="77.51">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_2" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="TransactionAttribute" OID="6ca8194c-9990-42aa-8c6b-333260cf2e17" ParentLink="Statement_CLRAttribute" LowerBound="76.1" HigherBound="77.1">
+                        <om:Property Name="Batch" Value="True" />
+                        <om:Property Name="Retry" Value="True" />
+                        <om:Property Name="Timeout" Value="60" />
+                        <om:Property Name="Isolation" Value="Serializable" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="719b1053-e24a-4929-aa96-aadd59dd9b9b" ParentLink="Scope_VariableDeclaration" LowerBound="79.1" HigherBound="80.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="Microsoft.BizTalk.Adapter.MQS.Agent.ResultCode" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="resultCode" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="5d005694-3e32-4882-99cc-eef3c0eddacb" ParentLink="Scope_VariableDeclaration" LowerBound="80.1" HigherBound="81.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="admin" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="fa98ce35-b347-445b-ac05-fcdae13a6a91" ParentLink="ServiceBody_Statement" LowerBound="118.1" HigherBound="120.1">
+                    <om:Property Name="PortName" Value="Port_2" />
+                    <om:Property Name="MessageName" Value="Message_2" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="b9e46d20-8b51-488f-a6ed-023a86a28cdd" ParentLink="ServiceBody_Statement" LowerBound="120.1" HigherBound="122.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_2" />
+                    <om:Property Name="MessageName" Value="Message_3" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_2" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="abb42d7e-e65b-45fd-aef9-9ed11a1d12c5" ParentLink="ServiceBody_Statement" LowerBound="122.1" HigherBound="144.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_2" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableDeclaration" OID="e290006a-d4c3-48ee-a367-8e056187a20e" ParentLink="Scope_VariableDeclaration" LowerBound="126.1" HigherBound="127.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="Microsoft.BizTalk.Adapter.MQS.Agent.ResultCode" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="resultCode" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="af64be60-81bf-490a-a546-e0f06a288e14" ParentLink="Scope_VariableDeclaration" LowerBound="127.1" HigherBound="128.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="admin" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="AtomicTransaction" OID="bfea0aa8-729a-4105-8b2b-d1a866549324" ParentLink="Scope_Transaction" LowerBound="124.18" HigherBound="124.51">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_3" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="739b49c7-527f-44a7-ad4f-90e3be1ea3f4" ParentLink="ComplexStatement_Statement" LowerBound="130.1" HigherBound="142.1">
+                        <om:Property Name="Expression" Value="//Code to delete the dynamically created queue &#xD;&#xA;//after message was received&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;admin = (Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2)&#xD;&#xA;(System.Activator.CreateInstance(&#xD;&#xA;System.Type.GetTypeFromProgID(&quot;MQSAdapterAdmin2.MQSAdmin&quot;,server)));&#xD;&#xA;&#xD;&#xA;//Uncomment the following line to delete the queue&#xD;&#xA;//resultCode = admin.DeleteQueue(queueManager,queue);&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Expression_1" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="TransactionAttribute" OID="01c33eff-8980-466d-bbdd-7d11802d8779" ParentLink="Statement_CLRAttribute" LowerBound="123.1" HigherBound="124.1">
+                        <om:Property Name="Batch" Value="True" />
+                        <om:Property Name="Retry" Value="True" />
+                        <om:Property Name="Timeout" Value="60" />
+                        <om:Property Name="Isolation" Value="Serializable" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="1fdfc650-7563-4779-b247-afdc0e475f3d" ParentLink="ServiceBody_Statement" LowerBound="144.1" HigherBound="146.1">
+                    <om:Property Name="PortName" Value="Port_3" />
+                    <om:Property Name="MessageName" Value="Message_3" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_2" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="39ea8b68-af60-4c44-b0a6-7d4266afe406" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="56.1" HigherBound="58.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="2" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="DynamicReceive.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="b36db784-2d99-4a33-a94f-e9bce981c8bd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="56.1" HigherBound="57.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="c:\temp\in\*.txt" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a3b1342e-c7d5-4b75-b2d9-5e289c947c32" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="58.1" HigherBound="60.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="19" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="DynamicReceive.PortType_6" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_3" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="PhysicalBindingAttribute" OID="54b11d63-02c7-4746-8bf1-f91a9650a9ae" ParentLink="PortDeclaration_CLRAttribute" LowerBound="58.1" HigherBound="59.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="c:\temp\out\%MessageID%.txt" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ad357720-8c56-493a-a1e5-76fe5ccbd11f" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="60.1" HigherBound="62.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="18" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="DynamicReceive.PortType_7" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_2" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="9f164721-d99e-407f-a07e-973e048aa10a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="60.1" HigherBound="61.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module DynamicReceive
+{
+    internal porttype PortType_1
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_2
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_3
+    {
+        requestresponse Operation_1
+        {
+            System.Xml.XmlDocument, System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_4
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_5
+    {
+        requestresponse Operation_1
+        {
+            System.Xml.XmlDocument, System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_6
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_7
+    {
+        requestresponse Operation_1
+        {
+            System.Xml.XmlDocument, System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction DynamicReceiveOrchestration
+    {
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "c:\\temp\\in\\*.txt", typeof(Microsoft.BizTalk.DefaultPipelines.PassThruReceive))]
+        port implements PortType_1 Port_1;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "c:\\temp\\out\\%MessageID%.txt", typeof(Microsoft.BizTalk.DefaultPipelines.PassThruTransmit))]
+        port uses PortType_6 Port_3;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Microsoft.BizTalk.DefaultPipelines.PassThruReceive), typeof(Microsoft.BizTalk.DefaultPipelines.PassThruTransmit))]
+        port uses dynamic PortType_7 Port_2;
+        message System.Xml.XmlDocument Message_1;
+        message System.Xml.XmlDocument Message_2;
+        message System.Xml.XmlDocument Message_3;
+        System.String server;
+        System.String queueManager;
+        System.String queue;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1422d5c5-2bb6-4036-a07f-4e859591a25e")]
+            activate receive (Port_1.Operation_1, Message_1);
+            server = "localhost";
+            queueManager = "DQM";
+            queue = "dynamicQueue";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3ad12213-a410-46f2-9569-6381a05efe22")]
+            [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+            scope atomic transaction Transaction_2
+            {
+                Microsoft.BizTalk.Adapter.MQS.Agent.ResultCode resultCode;
+                Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2 admin;
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("804fab8e-d483-49bb-905d-4a038125306f")]
+                    construct Message_2
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8a6f257e-3989-4183-af59-07cdd6ad1339")]
+                        Message_2 = Message_1;
+                        
+                        //Create the queue from here or comment next 2 lines to create the queue else where
+                        admin = (Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2)
+                        (System.Activator.CreateInstance(
+                        System.Type.GetTypeFromProgID("MQSAdapterAdmin2.MQSAdmin",server)));
+                        //This call would return ResultCode.QueueAlreadyExists if the queue already exists
+                        resultCode = admin.CreateQueue(queueManager,queue,
+                         Microsoft.BizTalk.Adapter.MQS.Agent.QueueUsage.Normal, "", "", "", 0);
+                        
+                        
+                        //This is a dynamic receive scenario
+                        Message_2(MQSeries.DynamicReceive) = "yes";
+                        
+                        //Wait for 5s before trying to get messages
+                        Message_2(MQSeries.WaitInterval) = 5;
+                        
+                        
+                        //Specify the dynamic receive address
+                        Port_2(Microsoft.XLANGs.BaseTypes.Address) = "mqs://" + server + "/" + queueManager + "/" + queue; 
+                        
+                        //Now match messages with the following options...
+                        //Comment these out to get all messages
+                        Message_2(MQSeries.MQMD_MsgId) = "616130306161303062623030626230306161303061613030";
+                        Message_2(MQSeries.MQMD_CorrelId) = "313131323133313431353136313731383139323032313232"; 
+                        
+                        
+                        
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fa98ce35-b347-445b-ac05-fcdae13a6a91")]
+            send (Port_2.Operation_1, Message_2);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b9e46d20-8b51-488f-a6ed-023a86a28cdd")]
+            receive (Port_2.Operation_1, Message_3);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("abb42d7e-e65b-45fd-aef9-9ed11a1d12c5")]
+            [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+            scope atomic transaction Transaction_3
+            {
+                Microsoft.BizTalk.Adapter.MQS.Agent.ResultCode resultCode;
+                Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2 admin;
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("739b49c7-527f-44a7-ad4f-90e3be1ea3f4")]
+                    //Code to delete the dynamically created queue 
+                    //after message was received
+                    
+                    
+                    admin = (Microsoft.BizTalk.Adapter.MQS.Agent.IMQSAdmin2)
+                    (System.Activator.CreateInstance(
+                    System.Type.GetTypeFromProgID("MQSAdapterAdmin2.MQSAdmin",server)));
+                    
+                    //Uncomment the following line to delete the queue
+                    //resultCode = admin.DeleteQueue(queueManager,queue);
+                    
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1fdfc650-7563-4779-b247-afdc0e475f3d")]
+            send (Port_3.Operation_1, Message_3);
+        }
+    }
+}
+

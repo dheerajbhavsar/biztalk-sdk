@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:baf="BiztalkAdapterFramework.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="BiztalkAdapterFramework.xsd" />
+  <xs:element name="Config">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="uri" type="xs:string" default="indigo://">
+            <xs:annotation>
+                <xs:appinfo>
+                    <baf:designer>
+                        <baf:browsable show="false" />
+                    </baf:designer>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>
+
+        <xs:element name="cookie" type="xs:string" minOccurs="1" default="cookie">
+            <xs:annotation>
+                <xs:appinfo>
+                    <baf:designer>
+                        <baf:displayname _locID="">cookie</baf:displayname>
+                        <baf:description _locID="">Comprises part of the URI - feel free to edit.</baf:description>
+                    </baf:designer>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>
+        
+        <xs:element name="connectionString" type="xs:string" minOccurs="1" default="Data Source='.';Initial Catalog='Northwind';Integrated Security='SSPI';">
+          <xs:annotation>
+            <xs:appinfo>
+              <baf:designer>
+                <baf:displayname _locID="">Connection String</baf:displayname>
+                <baf:description _locID="">The SQL database connection string.</baf:description>
+              </baf:designer>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element name="cmdText" type="xs:string" minOccurs="1" default="">
+          <xs:annotation>
+            <xs:appinfo>
+              <baf:designer>
+                <baf:displayname _locID="">Stored Procedure</baf:displayname>
+                <baf:description _locID="">The stored procedure name.</baf:description>
+              </baf:designer>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

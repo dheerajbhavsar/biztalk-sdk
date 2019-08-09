@@ -1,0 +1,193 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7476349b-6e31-46d2-81d6-4367636403f6" LowerBound="1.1" HigherBound="52.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="ArbitraryXPathSample" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="97861b0f-88ee-4b99-89a6-e0b7f0abb76d" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveMessageIn" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="419f9eb5-4aea-4fb2-8cd7-65e7858481c1" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="7f8e3389-1521-4f4a-958e-67db6c13c837" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.23">
+                    <om:Property Name="Ref" Value="ArbitraryXPathSample.PODocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c030ff61-16a0-4638-9326-98d92fe5c769" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendMessageOut" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="07f0c1eb-462e-46d3-8b73-411a8cc90a91" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="4040d815-b562-4ad4-b11b-cd3d952b23ab" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.23">
+                    <om:Property Name="Ref" Value="ArbitraryXPathSample.PODocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="19c3e326-db71-49e0-8571-84a6f3deab00" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="51.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CalculateTotalAmount" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="e7822077-37f3-49c6-953d-ebb392b5d2d1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="ArbitraryXPathSample.PODocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_In" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fc06c6cd-f923-475a-a161-d18870c606ab" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="ArbitraryXPathSample.PODocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="677ea5fa-f702-473e-a0a4-dd0b6b33f04a" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="e39e6b81-38b1-4929-bdde-0615f0b74b7c" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Receive_Message_In" />
+                    <om:Property Name="MessageName" Value="Message_In" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Message_In" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="cf13e963-8bcd-4c81-899c-fcc67404ebd1" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="47.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Message_Out" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="a1eee199-f4ca-4391-9b6a-435b78352ced" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="46.1">
+                        <om:Property Name="Expression" Value="Message_Out = Message_In;&#xD;&#xA;Message_Out(ArbitraryXPathSample.TotalAmount)=Message_Out(ArbitraryXPathSample.Item1Price) *&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item1Quantity) + &#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item2Price) *&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item2Quantity) +&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item3Price) *&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item3Quantity) +&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item4Price) *&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item4Quantity) +&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item5Price) *&#xD;&#xA;                                              Message_Out(ArbitraryXPathSample.Item5Quantity);" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_Message_Out" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="4479857d-9f5f-4488-9206-758c341af3bb" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.34">
+                        <om:Property Name="Ref" Value="Message_Out" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="f8c5b70e-cda5-419f-9626-7ddc22e13c72" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="49.1">
+                    <om:Property Name="PortName" Value="Port_Send_Message_Out" />
+                    <om:Property Name="MessageName" Value="Message_Out" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Message_Out" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="85802a39-498e-45c4-b63e-e90a7099745b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="2" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="ArbitraryXPathSample.PortType_ReceiveMessageIn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Receive_Message_In" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="17a26d7c-5d56-4941-9405-b0a89d08e743" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="bf968679-948d-426c-8c53-c09f8fe0b26e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="5" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="ArbitraryXPathSample.PortType_SendMessageOut" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Send_Message_Out" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="7df515c2-76d9-4144-9796-04d84272a116" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module ArbitraryXPathSample
+{
+    internal porttype PortType_ReceiveMessageIn
+    {
+        oneway Operation_1
+        {
+            PODocument
+        };
+    };
+    internal porttype PortType_SendMessageOut
+    {
+        oneway Operation_1
+        {
+            PODocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service CalculateTotalAmount
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveMessageIn Port_Receive_Message_In;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SendMessageOut Port_Send_Message_Out;
+        message PODocument Message_In;
+        message PODocument Message_Out;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e39e6b81-38b1-4929-bdde-0615f0b74b7c")]
+            activate receive (Port_Receive_Message_In.Operation_1, Message_In);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cf13e963-8bcd-4c81-899c-fcc67404ebd1")]
+            construct Message_Out
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("a1eee199-f4ca-4391-9b6a-435b78352ced")]
+                Message_Out = Message_In;
+                Message_Out(ArbitraryXPathSample.TotalAmount)=Message_Out(ArbitraryXPathSample.Item1Price) *
+                                                              Message_Out(ArbitraryXPathSample.Item1Quantity) + 
+                                                              Message_Out(ArbitraryXPathSample.Item2Price) *
+                                                              Message_Out(ArbitraryXPathSample.Item2Quantity) +
+                                                              Message_Out(ArbitraryXPathSample.Item3Price) *
+                                                              Message_Out(ArbitraryXPathSample.Item3Quantity) +
+                                                              Message_Out(ArbitraryXPathSample.Item4Price) *
+                                                              Message_Out(ArbitraryXPathSample.Item4Quantity) +
+                                                              Message_Out(ArbitraryXPathSample.Item5Price) *
+                                                              Message_Out(ArbitraryXPathSample.Item5Quantity);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f8c5b70e-cda5-419f-9626-7ddc22e13c72")]
+            send (Port_Send_Message_Out.Operation_1, Message_Out);
+        }
+    }
+}
+

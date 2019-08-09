@@ -1,0 +1,161 @@
+<!-- 
+===========================================================================
+  File:      OrderShippingProcess.bpel
+ 
+  Summary:
+
+  A sample BPEL file representing interactions with a Shipper Process
+	
+
+  Sample:    BPEL Import Sample
+
+===========================================================================
+ This file is part of the Microsoft BizTalk Server 2016 SDK
+
+ Copyright (c) Microsoft Corporation. All rights reserved.
+
+ This source code is intended only as a supplement to Microsoft BizTalk
+ Server 2006 release and/or on-line documentation. See these other
+ materials for detailed information regarding Microsoft code samples.
+
+ THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ KIND, WHETHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ PURPOSE.
+===========================================================================
+-->
+<process name="OrderShippingProcess" targetNamespace="http://contoso.org/samples" suppressJoinFailure="yes" xmlns:tns="http://contoso.org/samples" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/">
+	<!-- 
+     PARTNERLINKS :Services that partcipate in the process
+      -->
+	<partnerLinks>
+		<!-- The 'client' role represents the requester of this service. -->
+		<partnerLink name="ordering" partnerLinkType="tns:OrderingSystemLinkType" myRole="OrderingService"/>
+		<partnerLink name="orderingresponse" partnerLinkType="tns:OrderingResponseLinkType" partnerRole="OrderingServiceResponse"/>
+		<partnerLink name="shipper" partnerLinkType="tns:ShipperPartnerLinkType" partnerRole="ShippingService"/>
+		<partnerLink name="shipperresponse" partnerLinkType="tns:ShipperPartnerResponseLinkType" myRole="ShippingResponseRole"/>
+		<partnerLink name="shippingrequestor" partnerLinkType="tns:ShippingRequestorPartnerLinkType" myRole="ShippingRequestor"/>
+		<partnerLink name="invoiceprocessor" partnerLinkType="tns:InvoiceProcessorPartnerLinkType" myRole="InvoiceProcessor"/>
+		<partnerLink name="invoiceresponse" partnerLinkType="tns:InvoiceResponsePartnerLinkType" partnerRole="InvoiceResponse"/>
+		<partnerLink name="orderingconfirmation" partnerLinkType="tns:FinalConfirmLinkType" partnerRole="OrderingServiceConfirmation"/>
+	</partnerLinks>
+	<partners>
+		<partner name="Shipper">
+			<partnerLink name="shipper"/>
+			<partnerLink name="shippingrequestor"/>
+			<partnerLink name="invoiceprocessor"/>
+		</partner>
+	</partners>
+	<!-- 
+     VARIABLES : Messages and XML documents that the process uses
+	-->
+	<variables>
+		<!-- Reference to the message passed as input during initiation -->
+		<variable name="order" messageType="tns:OrderMessageType"/>
+		<variable name="order_ack" messageType="tns:OrderAckMessageType"/>
+		<variable name="order_shipped" messageType="tns:OrderAckMessageType"/>
+		<variable name="ship_request" messageType="tns:ShipRequestMessageType"/>
+		<variable name="ship_request_ack" messageType="tns:ShipRequestAckMessageType"/>
+		<variable name="pickup_notification" messageType="tns:PickupNotificationMessageType"/>
+		<variable name="ship_status" messageType="tns:ShipStatusMessageType"/>
+		<variable name="ship_history" messageType="tns:ShippingHistoryMessageType"/>
+		<variable name="invoice" messageType="tns:InvoiceMessageType"/>
+		<variable name="invoice_ack" messageType="tns:InvoiceAckMessageType"/>
+		<variable name="payment_confirmation" messageType="tns:PaymentConfirmationMessageType"/>
+	</variables>
+
+  <correlationSets>
+		<correlationSet name="OrderCorrelationSet"
+              properties="tns:OrderID"/>
+  </correlationSets>
+	<!-- 
+     PROCESS SEQUENCE: Flow of services that constitute this process
+      -->
+	<sequence name="main">
+		<receive name="receiveOrder" partnerLink="ordering" portType="tns:OrderingPortType" operation="PlaceOrder" variable="order" createInstance="yes">
+			<correlations> <correlation set="OrderCorrelationSet" initiate="yes"/> </correlations> 
+		</receive>
+		<assign name="assign1">
+			<copy >
+				<from variable="order" part="OrderMessagePart" query="/OrderMessage/ShippingInfo"></from>
+				<to variable="ship_request" part="ShipRequestMessagePart" query="/ShipRequest/ShippingInfo"/>
+			</copy>
+		</assign>
+		<invoke name="requestShipping" partnerLink="shipper" portType="tns:Shipping" operation="PlaceShipOrder" inputVariable="ship_request">
+			<correlations> <correlation set="OrderCorrelationSet" pattern="out"/> </correlations> 
+		</invoke>
+		<receive name="receiveShippingConfirmation" partnerLink="shipperresponse" portType="tns:ShippingResponse" operation="GetShipAck" variable="ship_request_ack">
+			<correlations> <correlation set="OrderCorrelationSet" /> </correlations> 
+		</receive>
+		<switch>
+			<case condition="bpws:getVariableProperty('ship_request_ack', 'Ship_Acknowledged') = true()">
+				<assign>
+					<copy>
+						<from expression="'OK'"/>
+						<to variable="order_ack" part="OrderAckMessagePart" query="/OrderAckMessage/Ack"/>
+					</copy>
+				</assign>
+			</case>
+		<otherwise>
+			<assign>
+				<copy>
+					<from expression="'NOTOK'"/>
+					<to variable="order_ack" part="OrderAckMessagePart" query="/OrderAckMessage/Ack"/>
+				</copy>
+			</assign>
+		</otherwise>
+		</switch>
+		<reply name="confirmOrder" partnerLink="orderingresponse" portType="tns:OrderingResponsePortType" operation="GetOrderAck" variable="order_ack"/>
+		<receive name="receivePickup" partnerLink="shippingrequestor" portType="tns:ShippingRequestor" operation="GetPickupNotification" variable="pickup_notification" createInstance="no"> 
+			<correlations> <correlation set="OrderCorrelationSet" /> </correlations> 
+		</receive>
+		<assign>
+			<copy>
+				<from variable="pickup_notification" part="PickupNotificationMessagePart" query="/PickupNotificationMessage/Event"/>
+				<to variable="ship_history" part="ShippingHistoryPart" query="/ShippingHistory/Event"/>
+			</copy>
+		</assign>
+		<while condition="bpws:getVariableProperty('ship_history', 'Ship_Completed')= true()">
+			<sequence>
+			<receive name="receiveStatus" partnerLink="shippingrequestor" portType="tns:ShippingRequestor" operation="GetShipStatus" variable="ship_status" createInstance="no">
+				<correlations> <correlation set="OrderCorrelationSet" /> </correlations> 
+			</receive>
+			<switch>
+				<case condition="bpws:getVariableProperty('ship_status', 'ShipStatus') = 'DONE'">
+					<assign>
+					<copy>
+						<from expression="true()"/>
+						<to variable="ship_history" property="tns:Ship_Completed"/>
+					</copy>
+					</assign>
+				</case>
+
+			</switch>
+			</sequence>
+		</while>
+		<receive name="receiveInvoice" partnerLink="invoiceprocessor" portType="tns:InvoiceProcessor" operation="ProcessInvoice" variable="invoice" createInstance="no">
+			<correlations> <correlation set="OrderCorrelationSet" /> </correlations> 
+		</receive>
+		<assign>
+			<copy>
+				<from variable="invoice" part="InvoiceMessagePart"/>
+				<to variable="invoice_ack" part="InvoiceAckMessagePart"/>
+			</copy>
+		</assign>
+		<invoke name="respondInvoice" partnerLink="invoiceresponse" portType="tns:InvoiceResponse" operation="RespondInvoice" inputVariable="invoice_ack">
+			<correlations> <correlation set="OrderCorrelationSet" pattern="out"/> </correlations> 
+		</invoke>
+
+		<receive name="receivePaymentConfirmation" partnerLink="shippingrequestor" portType="tns:ShippingRequestor" operation="GetPaymentConfirmation" variable="payment_confirmation" createInstance="no">
+			<correlations> <correlation set="OrderCorrelationSet" /> </correlations> 
+		</receive>
+		<assign>
+			<copy>
+				<from expression="'SHIPPED'"/>
+				<to variable="order_shipped" part="OrderAckMessagePart" query="/OrderAckMessage/Ack"/>
+			</copy>
+		</assign>
+		<invoke name="finalConfirmation" partnerLink="orderingconfirmation" portType="tns:OrderingConfirmationPortType" operation="GetOrderConfirmation" inputVariable="order_shipped"/>
+
+	</sequence>
+</process>

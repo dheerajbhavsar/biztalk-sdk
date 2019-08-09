@@ -1,0 +1,363 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="8cb6538f-1e7d-4798-be6e-5a37fc97f4d7" LowerBound="1.1" HigherBound="107.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.Samples.BizTalk.MessageEnrichment" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="CorrelationType" OID="c2c175fc-87d5-47fa-9d47-3aacd6921d0c" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceivePortNameCorrelationType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="77b230fc-346c-4564-83f9-21ffc4e43d82" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.28">
+                <om:Property Name="Ref" Value="BTS.ReceivePortName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="ceae2f28-0c35-4a8d-b55c-40ebfdb6604f" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="106.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MessageEnrichmentOrchestration" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="b0a4479c-0200-49eb-8000-6911a00e8878" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UNASegment" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="9026e3f8-e9c2-4f99-b7a8-ec127d9f6232" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UNGSegment" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="0875e73a-5869-48eb-a8d4-3c542f88ff4c" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MessageEnrichment.ReceivePortNameCorrelationType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePortNameCorrelation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="4032ceae-659b-4172-8da7-96b88895650c" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="103.74" HigherBound="103.111">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="6e2b77b6-c84c-4a0e-a9ed-35f67a272888" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="503a01ad-fe63-4f28-9d9d-54b607705b5d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EnrichedMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8552c79b-b695-44ab-994b-e521a292ea6f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EDIMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="954fd763-22e0-4694-add0-92cdee9b7772" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="8139f4d5-0789-4562-9506-ed3b9e633030" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="40.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveMessagePort" />
+                    <om:Property Name="MessageName" Value="EDIMessage" />
+                    <om:Property Name="OperationName" Value="MessageReceiveOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="This receive is used to receive an EDIFACT or X12 message for it's further enrichment." />
+                    <om:Property Name="Name" Value="ReceiveEDIDocument" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="2befa467-5723-425d-8cd2-96e2bf4130ed" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.ReceivePortName" />
+                        <om:Property Name="RHS" Value="&quot;ReceiveEDIPort&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Decision" OID="7a38e9d5-9995-44cf-8a5d-fb9b76f2d883" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="102.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="DetermineMessageType" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="47926e05-6eea-4b55-8421-d3a87ea5ff4e" ParentLink="ReallyComplexStatement_Branch" LowerBound="41.13" HigherBound="76.1">
+                        <om:Property Name="Expression" Value="MessageEnrichmentLibrary.OrchestrationUtilities.IsMessageEDIFACT(EDIMessage(BTS.MessageType)) == true" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="AnalystComments" Value="Process EDIFACT message" />
+                        <om:Property Name="Name" Value="IsMessageEDIFACT" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="6773c142-860c-4cae-8202-381558c69c9e" ParentLink="ComplexStatement_Statement" LowerBound="43.1" HigherBound="53.1">
+                            <om:Property Name="Expression" Value="if (MessageEnrichmentLibrary.OrchestrationUtilities.IsHeaderExist(EDIMessage, typeof(EDI.UNA_Segment)))&#xD;&#xA;    {UNASegment = EDIMessage(EDI.UNA_Segment);}&#xD;&#xA;else&#xD;&#xA;    {UNASegment = null;}&#xD;&#xA;&#xD;&#xA;if (MessageEnrichmentLibrary.OrchestrationUtilities.IsHeaderExist(EDIMessage, typeof(EDI.UNG_Segment)))&#xD;&#xA;    {UNGSegment = EDIMessage(EDI.UNG_Segment);}&#xD;&#xA;else&#xD;&#xA;    {UNGSegment = null;}" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="AnalystComments" Value="Determine if UNA and UNG headers exist and assign variables appropriately" />
+                            <om:Property Name="Name" Value="UNA and UNG segments detection" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Construct" OID="006ac18c-173f-4764-ae90-81439d8d4315" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="75.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="AnalystComments" Value="Create enriched EDIFACT message" />
+                            <om:Property Name="Name" Value="ConstructEnrichedEDIFACTMessage" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="aa634ab4-80df-457f-83cd-19c0ddbbc5cb" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="74.1">
+                                <om:Property Name="Expression" Value="EnrichedMessage = EDIMessage;&#xD;&#xA;&#xD;&#xA;EnrichedMessage = &#xD;&#xA;MessageEnrichmentLibrary.EDIHeaders.CreateEDIMessage(&#xD;&#xA;EDIMessage,&#xD;&#xA;&quot;EDIFACTEnrichedMessage&quot;,&#xD;&#xA;&quot;http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006/EnrichedMessageXML&quot;,&#xD;&#xA;MessageEnrichmentLibrary.EDIHeaders.SerializeEDIFACTHeaders(&#xD;&#xA;                                UNASegment, &#xD;&#xA;                                EDIMessage(EDI.UNB_Segment), &#xD;&#xA;                                UNGSegment)&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// A set of properties which will be promoted is assigned here. &#xD;&#xA;// This properties should also be in appropriate correlation type&#xD;&#xA;EnrichedMessage(BTS.ReceivePortName) = &quot;EnrichmentOrchestration&quot;;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="EnrichedMessageAssignment" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="f760e4e3-36d7-4954-a26c-a8b2593b618c" ParentLink="Construct_MessageRef" LowerBound="54.27" HigherBound="54.42">
+                                <om:Property Name="Ref" Value="EnrichedMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="2f9627e9-889f-4d6c-8938-af87536ea8d7" ParentLink="ReallyComplexStatement_Branch" LowerBound="76.18" HigherBound="97.1">
+                        <om:Property Name="Expression" Value="MessageEnrichmentLibrary.OrchestrationUtilities.IsMessageX12(EDIMessage(BTS.MessageType)) == true" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="AnalystComments" Value="Process X12 message" />
+                        <om:Property Name="Name" Value="IsMessageX12" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="410cd074-f3b9-4d4a-8773-0951701d051c" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="96.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="AnalystComments" Value="Create enriched X12 message" />
+                            <om:Property Name="Name" Value="ConstructEnrichedX12Message" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="8d62a33e-d45a-4f0f-be73-3300f0716ff7" ParentLink="Construct_MessageRef" LowerBound="79.27" HigherBound="79.42">
+                                <om:Property Name="Ref" Value="EnrichedMessage" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="2f34bcba-2af6-4024-a3b6-668d4405eaa7" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="95.1">
+                                <om:Property Name="Expression" Value="EnrichedMessage = EDIMessage;&#xD;&#xA;&#xD;&#xA;EnrichedMessage = &#xD;&#xA;MessageEnrichmentLibrary.EDIHeaders.CreateEDIMessage(&#xD;&#xA;EDIMessage,&#xD;&#xA;&quot;X12EnrichedMessage&quot;,&#xD;&#xA;&quot;http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006/EnrichedMessageXML&quot;,&#xD;&#xA;MessageEnrichmentLibrary.EDIHeaders.SerializeX12Headers(EDIMessage(EDI.ISA_Segment), EDIMessage(EDI.GS_Segment))&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;// A set of properties which will be promoted is assigned here. &#xD;&#xA;// This properties should also be in appropriate correlation type&#xD;&#xA;EnrichedMessage(BTS.ReceivePortName) = &quot;EnrichmentOrchestration&quot;;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="EnrichedMessageAssignment" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="8b71aafa-bc0c-425f-a261-75ac81c57343" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="AnalystComments" Value="Process non-EDI message" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Terminate" OID="8fd7d0ff-a18f-4b1a-aff4-777dc6b61d91" ParentLink="ComplexStatement_Statement" LowerBound="99.1" HigherBound="101.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;Message type is not recognized&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="AnalystComments" Value="Finish processing" />
+                            <om:Property Name="Name" Value="TerminateOrchestration" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="6e2b77b6-c84c-4a0e-a9ed-35f67a272888" ParentLink="ServiceBody_Statement" LowerBound="102.1" HigherBound="104.1">
+                    <om:Property Name="PortName" Value="SendMessagePort" />
+                    <om:Property Name="MessageName" Value="EnrichedMessage" />
+                    <om:Property Name="OperationName" Value="MessageSendOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="This send is used to send enriched EDIFACT or X12 message into message box." />
+                    <om:Property Name="Name" Value="SendEmrichedMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8bd2d87c-2a58-404a-b5b3-7ff76d4e1d52" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MessageEnrichment.ReceiveMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="This port is used to receive an EDIFACT or X12 message for it's further enrichment." />
+                <om:Property Name="Name" Value="ReceiveMessagePort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="ec4ac7a5-088b-455c-b900-2198e03892da" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d6bdca72-c383-4c61-b46c-074709584730" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="26" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.Samples.BizTalk.MessageEnrichment.SendMessagePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="This port is used to send enriched EDIFACT or X12 message into message box." />
+                <om:Property Name="Name" Value="SendMessagePort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="b89a463d-9ca5-418d-9914-3433fadd7f36" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="9f094c26-ed2f-454f-b486-202faa55de6f" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e40996e7-523d-4089-af51-1a4b1a0ce2e8" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessageReceiveOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="85f800ab-ab90-49bf-b069-764031bea96f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b9214835-5e2f-4e0c-8805-9bf7ac3593fc" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendMessagePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b45f04f3-f31a-4ac7-acc9-6acd695225fe" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessageSendOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="be3b647e-7c22-48cd-82e1-9fc19631d36c" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.Samples.BizTalk.MessageEnrichment
+{
+    internal porttype ReceiveMessageType
+    {
+        oneway MessageReceiveOperation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype SendMessagePortType
+    {
+        oneway MessageSendOperation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal correlationtype ReceivePortNameCorrelationType
+    {
+        BTS.ReceivePortName
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service MessageEnrichmentOrchestration
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements ReceiveMessageType ReceiveMessagePort;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses SendMessagePortType SendMessagePort;
+        correlation ReceivePortNameCorrelationType ReceivePortNameCorrelation;
+        message System.Xml.XmlDocument EnrichedMessage;
+        message System.Xml.XmlDocument EDIMessage;
+        System.String UNASegment;
+        System.String UNGSegment;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8139f4d5-0789-4562-9506-ed3b9e633030")]
+            activate ((BTS.ReceivePortName == "ReceiveEDIPort"))receive (ReceiveMessagePort.MessageReceiveOperation, EDIMessage);
+            UNASegment = "";
+            UNGSegment = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7a38e9d5-9995-44cf-8a5d-fb9b76f2d883")]
+            if (MessageEnrichmentLibrary.OrchestrationUtilities.IsMessageEDIFACT(EDIMessage(BTS.MessageType)) == true)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6773c142-860c-4cae-8202-381558c69c9e")]
+                if (MessageEnrichmentLibrary.OrchestrationUtilities.IsHeaderExist(EDIMessage, typeof(EDI.UNA_Segment)))
+                    {UNASegment = EDIMessage(EDI.UNA_Segment);}
+                else
+                    {UNASegment = null;}
+                
+                if (MessageEnrichmentLibrary.OrchestrationUtilities.IsHeaderExist(EDIMessage, typeof(EDI.UNG_Segment)))
+                    {UNGSegment = EDIMessage(EDI.UNG_Segment);}
+                else
+                    {UNGSegment = null;}
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("006ac18c-173f-4764-ae90-81439d8d4315")]
+                construct EnrichedMessage
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("aa634ab4-80df-457f-83cd-19c0ddbbc5cb")]
+                    EnrichedMessage = EDIMessage;
+                    
+                    EnrichedMessage = 
+                    MessageEnrichmentLibrary.EDIHeaders.CreateEDIMessage(
+                    EDIMessage,
+                    "EDIFACTEnrichedMessage",
+                    "http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006/EnrichedMessageXML",
+                    MessageEnrichmentLibrary.EDIHeaders.SerializeEDIFACTHeaders(
+                                                    UNASegment, 
+                                                    EDIMessage(EDI.UNB_Segment), 
+                                                    UNGSegment)
+                    );
+                    
+                    
+                    // A set of properties which will be promoted is assigned here. 
+                    // This properties should also be in appropriate correlation type
+                    EnrichedMessage(BTS.ReceivePortName) = "EnrichmentOrchestration";
+                }
+            }
+            else if (MessageEnrichmentLibrary.OrchestrationUtilities.IsMessageX12(EDIMessage(BTS.MessageType)) == true)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("410cd074-f3b9-4d4a-8773-0951701d051c")]
+                construct EnrichedMessage
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2f34bcba-2af6-4024-a3b6-668d4405eaa7")]
+                    EnrichedMessage = EDIMessage;
+                    
+                    EnrichedMessage = 
+                    MessageEnrichmentLibrary.EDIHeaders.CreateEDIMessage(
+                    EDIMessage,
+                    "X12EnrichedMessage",
+                    "http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006/EnrichedMessageXML",
+                    MessageEnrichmentLibrary.EDIHeaders.SerializeX12Headers(EDIMessage(EDI.ISA_Segment), EDIMessage(EDI.GS_Segment))
+                    );
+                    
+                    // A set of properties which will be promoted is assigned here. 
+                    // This properties should also be in appropriate correlation type
+                    EnrichedMessage(BTS.ReceivePortName) = "EnrichmentOrchestration";
+                }
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8fd7d0ff-a18f-4b1a-aff4-777dc6b61d91")]
+                terminate "Message type is not recognized";;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6e2b77b6-c84c-4a0e-a9ed-35f67a272888")]
+            send (SendMessagePort.MessageSendOperation, EnrichedMessage, initialize ReceivePortNameCorrelation);
+        }
+    }
+}
+

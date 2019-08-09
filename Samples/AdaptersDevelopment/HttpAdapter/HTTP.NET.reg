@@ -1,0 +1,39 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\CLSID\{C796F3DD-66E8-4067-9AF0-4DBA9BCF7F0B}]
+@="Http Adapter Sample"
+"AppID"="{12A6EBAA-CF68-4B58-B36E-A5A19B22C04E}"
+
+[HKEY_CLASSES_ROOT\CLSID\{C796F3DD-66E8-4067-9AF0-4DBA9BCF7F0B}\BizTalk]
+@="BizTalk"
+"TransportType"="HTTP.NET"
+"Constraints"=dword:00003D83
+
+' Property Pages:
+' Note: No inbound handler properties to be configured
+"OutboundProtocol_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A283}"
+"ReceiveLocation_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A280}"
+"TransmitLocation_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A282}"
+
+"InboundEngineCLSID"="{883C611E-1505-4c55-96D7-E0F5ABF7E62C}"
+"InboundTypeName"="Microsoft.Samples.BizTalk.Adapters.HttpReceive.HttpReceiveAdapter"
+"OutboundEngineCLSID"="{D5353BB1-BAE9-4de7-8362-F1160FAD3985}"
+"OutboundTypeName"="Microsoft.Samples.BizTalk.Adapters.HttpTransmitter.HttpTransmitAdapter"
+"OutboundAssemblyPath"="C:\\Program Files (x86)\\Microsoft BizTalk Server 2016\\SDK\\Samples\\AdaptersDevelopment\\HttpAdapter\\Run-Time\\HttpSend\\bin\\Debug\\Microsoft.Samples.BizTalk.Adapters.HttpTransmitter.dll"
+
+"AdapterMgmtTypeName"="Microsoft.Samples.BizTalk.Adapters.Designtime.HttpAdapterSample"
+"AdapterMgmtAssemblyPath"="C:\\Program Files (x86)\\Microsoft BizTalk Server 2016\\SDK\\Samples\\AdaptersDevelopment\\HttpAdapter\\Design-Time\\Adapter Management\\bin\\Debug\\Microsoft.Samples.BizTalk.Adapters.HttpAdapterSample.Designtime.dll"
+
+' Register the namespace in the message context used to store the adapters properties...
+"PropertyNameSpace"="http://schemas.microsoft.com/BizTalk/2003/SDK_Samples/Messaging/Transports/dotnethttp-properties"
+
+' Register the aliases used for dynamic sends...
+"AliasesXML"="<AdapterAliasList><AdapterAlias>HTTP.NET://</AdapterAlias></AdapterAliasList>"
+"ReceiveHandlerPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+"SendHandlerPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+"ReceiveLocationPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+"SendLocationPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+
+[HKEY_CLASSES_ROOT\CLSID\{C796F3DD-66E8-4067-9AF0-4DBA9BCF7F0B}\Implemented Categories]
+
+[HKEY_CLASSES_ROOT\CLSID\{C796F3DD-66E8-4067-9AF0-4DBA9BCF7F0B}\Implemented Categories\{7F46FC3E-3C2C-405B-A47F-8D17942BA8F9}]

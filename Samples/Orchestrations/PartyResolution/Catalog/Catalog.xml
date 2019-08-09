@@ -1,0 +1,4 @@
+<ShipmentCatalog>
+<Provider Name="ShipmentAgency2" Country="US" />
+<Provider Name="ShipmentAgency1" Country="Canada" />
+</ShipmentCatalog>

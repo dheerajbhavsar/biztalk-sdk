@@ -1,0 +1,136 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="2" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="51b4c6db-e314-43bd-bcf5-0f12ac51a841">
+        <om:Property Name="Name" Value="AdapterHarness" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="89fe893a-7355-4c56-8232-d41a5b252cc8" ParentLink="Module_PortType">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="Name" Value="AdapterFileSendPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="84ca2e43-44bb-4b4a-869c-4c3f49b773c9" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="Name" Value="SendOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="4f7af18d-5eee-431a-b70a-9ebb1e8e43c8" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="AdapterHarness.mySchema" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="f9e0e18e-543f-4726-aff5-493759308f1c" ParentLink="Module_PortType">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="Name" Value="AdapterFileReceivePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="86ac6526-7c04-4fb3-a097-7367e6f351d0" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="Name" Value="ReceiveOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="2e3ab558-515b-44fe-b515-3221a96853a4" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="AdapterHarness.mySchema" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="78efc6d2-b96a-4ead-b4bc-48c859ed33fa" ParentLink="Module_ServiceDeclaration">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Private" />
+            <om:Property Name="Name" Value="AdapterHarnessType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="ServiceBody" OID="4ad760ce-0789-4d36-a8b4-e6feff2e8187" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="2c5c9943-55fb-43ea-a43b-97aa8487d0b0" ParentLink="ServiceBody_Statement">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="AdapterFileReceivePort" />
+                    <om:Property Name="MessageName" Value="MessageType" />
+                    <om:Property Name="OperationName" Value="ReceiveOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="Name" Value="AdapterReceive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="fb78b5fd-1135-4371-bac6-a8b5f395de60" ParentLink="ServiceBody_Statement">
+                    <om:Property Name="PortName" Value="AdapterFileSendPort" />
+                    <om:Property Name="MessageName" Value="MessageType" />
+                    <om:Property Name="OperationName" Value="SendOperation" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="Name" Value="AdapterSend" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f09e3ade-068d-4311-8b1f-0399c0daeabf" ParentLink="ServiceDeclaration_PortDeclaration">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="Type" Value="AdapterHarness.AdapterFileSendPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="Name" Value="AdapterFileSendPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="d098f261-9fbf-4cea-baa4-b96968c60a24" ParentLink="PortDeclaration_CLRAttribute">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="7d315250-50d8-46ac-ad3f-8770851b8ba7" ParentLink="ServiceDeclaration_PortDeclaration">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="Type" Value="AdapterHarness.AdapterFileReceivePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="Name" Value="AdapterFileReceivePort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="ddcea933-9508-4961-8e21-5751a1ff7c84" ParentLink="PortDeclaration_CLRAttribute">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5e7e4305-0aca-471f-b2a0-dcbde7f53b3f" ParentLink="ServiceDeclaration_MessageDeclaration">
+                <om:Property Name="Type" Value="AdapterHarness.mySchema" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="Name" Value="MessageType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module AdapterHarness
+{
+    private porttype AdapterFileSendPortType
+    {
+        oneway SendOperation
+        {
+            AdapterHarness.mySchema
+        };
+    };
+    private porttype AdapterFileReceivePortType
+    {
+        oneway ReceiveOperation
+        {
+            AdapterHarness.mySchema
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    private service AdapterHarnessType
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses AdapterHarness.AdapterFileSendPortType AdapterFileSendPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements AdapterHarness.AdapterFileReceivePortType AdapterFileReceivePort;
+        message AdapterHarness.mySchema MessageType;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2c5c9943-55fb-43ea-a43b-97aa8487d0b0")]
+            activate receive (AdapterFileReceivePort.ReceiveOperation, MessageType);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fb78b5fd-1135-4371-bac6-a8b5f395de60")]
+            send (AdapterFileSendPort.SendOperation, MessageType);
+        }
+    }
+}
+

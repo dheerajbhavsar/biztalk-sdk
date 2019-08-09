@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "XMLCreator", "XMLCreator.vbproj", "{3C6A1C8C-413C-46C8-B3A2-0BEDDE6DD1D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C6A1C8C-413C-46C8-B3A2-0BEDDE6DD1D2}.Debug|Default.ActiveCfg = Debug|Any CPU
+		{3C6A1C8C-413C-46C8-B3A2-0BEDDE6DD1D2}.Debug|Default.Build.0 = Debug|Any CPU
+		{3C6A1C8C-413C-46C8-B3A2-0BEDDE6DD1D2}.Release|Default.ActiveCfg = Release|Any CPU
+		{3C6A1C8C-413C-46C8-B3A2-0BEDDE6DD1D2}.Release|Default.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

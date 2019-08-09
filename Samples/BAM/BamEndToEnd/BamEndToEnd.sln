@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components", "Components\Components.csproj", "{BE4517AC-9E08-48EC-B9EC-E0B01544C860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.btproj", "{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{261BFF04-9454-4A1D-AAFD-36FD2A117BAD}"
+	ProjectSection(SolutionItems) = preProject
+		BamEndToEnd.xml = BamEndToEnd.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BE4517AC-9E08-48EC-B9EC-E0B01544C860}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Debug|Any CPU.Deploy.0 = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D07BF0CB-AE74-45DC-AABB-5BA2AE637E30}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

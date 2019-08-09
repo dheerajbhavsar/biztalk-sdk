@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.0.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2005-03-17T22:41:26.9217055-08:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:PartyResolutionApplication]" Version="" Culture="" PublicKeyToken="" FullName="[Application:PartyResolutionApplication], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="RoutingPropertySchema.RoutingPropertySchema2" AssemblyQualifiedName="RoutingPropertySchema.RoutingPropertySchema2,CustomPartyResolutionPipeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079b794f2a7ab939">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="InboundDocumentSchema.InboundDocumentSchema2" AssemblyQualifiedName="InboundDocumentSchema.InboundDocumentSchema2,CustomPartyResolutionPipeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079b794f2a7ab939">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="CustomPartyResolutionPipeline" Version="1.0.0.0" Culture="neutral" PublicKeyToken="079b794f2a7ab939" FullName="CustomPartyResolutionPipeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079b794f2a7ab939">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="#" Version="0.0" Culture="neutral" PublicKeyToken="" FullName="#, Version=0.0, Culture=neutral, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="CustomPartyResolutionSendPort" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0" Type="2" />
+      <PrimaryTransport>
+        <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\CustomPartyResolution\Out\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>0</RetryCount>
+        <RetryInterval>0</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2005-03-17T00:00:00.0000000-08:00</FromTime>
+        <ToTime>2005-03-17T23:59:59.0000000-08:00</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2005-03-17T00:00:00.0000000-08:00</FromTime>
+        <ToTime>2005-03-17T23:59:59.0000000-08:00</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="CustomPartyResolutionReceivePort" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <ApplicationName>PartyResolutionApplication</ApplicationName>
+      <Description xsi:nil="true" />
+      <OrderedDelivery>false</OrderedDelivery>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="CustomPartyResolutionReceivePort" IsTwoWay="false" BindingOption="0">
+      <ReceiveLocations>
+        <ReceiveLocation Name="CustomPartyResolutionRecieveLocation">
+          <Address>C:\Program Files (x86)\Microsoft BizTalk Server 2016\SDK\Samples\Pipelines\CustomPartyResolution\In\*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2005-03-17T00:00:00.0000000-08:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2005-03-18T23:59:59.0000000-08:00</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2005-03-17T00:00:00.0000000-08:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2005-03-17T00:00:00.0000000-08:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.xml&lt;/FileMask&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="CustomPartyResolution_Pipeline.CustomPartyResolution_Pipeline" FullyQualifiedName="CustomPartyResolution_Pipeline.CustomPartyResolution_Pipeline, CustomPartyResolutionPipeline, Version=1.0.0.0" Type="1" />
+          <ReceivePipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="MyHost">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Description xsi:nil="true" />
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <ApplicationName>PartyResolutionApplication</ApplicationName>
+      <Description xsi:nil="true" />
+      <RouteFailedMessage>false</RouteFailedMessage>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection>
+    <Party Name="Bobs Bolts">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="Bobs Bolts" IsAutoCreated="true" />
+        <PartyAlias Name="Domain" Qualifier="DomainName" Value="bobsbolts.com" IsAutoCreated="false" />
+      </Aliases>
+      <SendPorts />
+      <SignatureCert xsi:nil="true" />
+      <CustomData xsi:nil="true" />
+    </Party>
+    <Party Name="Bens Hammers">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="Bens Hammers" IsAutoCreated="true" />
+        <PartyAlias Name="Domain" Qualifier="DomainName" Value="benshammers.com" IsAutoCreated="false" />
+      </Aliases>
+      <SendPorts />
+      <SignatureCert xsi:nil="true" />
+      <CustomData xsi:nil="true" />
+    </Party>
+  </PartyCollection>
+</BindingInfo>

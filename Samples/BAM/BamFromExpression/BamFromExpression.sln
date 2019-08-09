@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BamFromExpression", "BamFromExpression.btproj", "{E403A470-222E-4D37-8425-9A7BD383BDBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Debug|.NET.Build.0 = Debug|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Release|.NET.ActiveCfg = Release|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Release|.NET.Build.0 = Release|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Release|.NET.Deploy.0 = Release|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E403A470-222E-4D37-8425-9A7BD383BDBA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

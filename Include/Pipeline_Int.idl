@@ -1,0 +1,190 @@
+#define MAKE_PIPELINE_GUID(id) 05ac2##id##-2ed5-41f0-a961-2838a1836a22
+#define MAKE_CATEGORY_GUID(id) 9d0e4##id##-4cce-4536-83fa-4a5040674ad6
+
+#define UUID_IBaseComponent MAKE_PIPELINE_GUID(000)
+#define UUID_IComponent MAKE_PIPELINE_GUID(001)
+
+#define UUID_IDisassemblerComponent MAKE_PIPELINE_GUID(003)
+#define UUID_IAssemblerComponent MAKE_PIPELINE_GUID(004)
+#define UUID_IProbeMessage MAKE_PIPELINE_GUID(005)
+#define UUID_IProvideDOMData MAKE_PIPELINE_GUID(00a)
+#define UUID_IDocumentSpec MAKE_PIPELINE_GUID(00d)
+#define UUID_IPipelineContext MAKE_PIPELINE_GUID(00f)
+#define UUID_IComponentUI MAKE_PIPELINE_GUID(106)
+#define UUID_IPropertyAnnotation MAKE_PIPELINE_GUID(107)
+#define UUID_IResourceTracker MAKE_PIPELINE_GUID(108)
+#define UUID_IPipelineContextEx MAKE_PIPELINE_GUID(109)
+
+cpp_quote("#ifdef __cplusplus")
+cpp_quote("#ifdef __USEPIPELINENAMESPACE__")
+cpp_quote("namespace Pipeline {")
+cpp_quote("#endif")
+cpp_quote("#endif")
+
+cpp_quote("DEFINE_GUID(CATID_PipelineComponent,0x9d0e4100,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Any,0x9d0e4101,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Decoder,0x9d0e4103,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Parser,0x9d0e4104,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_DisassemblingParser,0x9d0e4105,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Serializer,0x9d0e4106,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_AssemblingSerializer,0x9d0e4107,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Encoder,0x9d0e4108,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Receiver,0x9d0e410a,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Transmitter,0x9d0e410b,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Streamer,0x9d0e410c,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_Validator,0x9d0e410d,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+cpp_quote("DEFINE_GUID(CATID_PartyResolver,0x9d0e410e,0x4cce,0x4536,0x83,0xfa,0x4a,0x50,0x40,0x67,0x4a,0xd6);")
+
+interface IPipelineContext;
+
+[
+	object,
+	uuid(UUID_IPropertyAnnotation),
+	pointer_default(unique)
+]
+interface IPropertyAnnotation : IUnknown
+{
+	[propget] HRESULT Name([out,retval] BSTR* pVal);
+	[propget] HRESULT Namespace([out,retval] BSTR* pVal);
+	[propget] HRESULT XPath([out,retval] BSTR* pVal);
+	[propget] HRESULT XSDType([out,retval] BSTR* pVal);
+};
+
+[
+	object,
+	uuid(UUID_IBaseComponent),
+	pointer_default(unique),
+    hidden
+]
+interface IBaseComponent : IUnknown
+{
+    [propget] HRESULT Name([out,retval] BSTR* pVal);
+    [propget] HRESULT Version([out,retval] BSTR* pVal);
+    [propget] HRESULT Description([out,retval] BSTR* pVal);
+};
+
+[
+	object,
+	uuid(UUID_IComponent),
+	pointer_default(unique)
+]
+interface IComponent : IUnknown
+{
+    HRESULT Execute([in] IPipelineContext* pContext,[in] IBaseMessage* pInMsg, [out,retval] IBaseMessage** ppOutMsg);
+};
+
+[
+	object,
+	uuid(UUID_IDisassemblerComponent),
+	pointer_default(unique)
+]
+interface IDisassemblerComponent : IUnknown
+{
+    HRESULT Disassemble([in] IPipelineContext* pContext,[in] IBaseMessage* pInMsg);
+    HRESULT GetNext([in] IPipelineContext* pContext,[out,retval] IBaseMessage** ppOutMsg);
+};
+
+[
+	object,
+	uuid(UUID_IAssemblerComponent),
+	pointer_default(unique)
+]
+interface IAssemblerComponent : IUnknown
+{
+    HRESULT AddDocument([in] IPipelineContext* pContext, [in] IBaseMessage* pInMsg);
+    HRESULT Assemble([in] IPipelineContext* pContext, [out,retval] IBaseMessage** ppOutMsg);
+};
+
+[
+	object,
+	uuid(UUID_IProbeMessage),
+	pointer_default(unique)
+]
+interface IProbeMessage : IUnknown
+{
+    HRESULT Probe([in] IPipelineContext* pContext, [in] IBaseMessage* pInMsg, [out,retval] VARIANT_BOOL* pRet);
+};
+
+[
+	object,
+	uuid(UUID_IProvideDOMData),
+	pointer_default(unique)
+]
+interface IProvideDOMData : IUnknown
+{
+    HRESULT GetDOM([out,retval] IXMLDOMNode** ppNode);
+};
+
+[
+	object,
+	uuid(UUID_IDocumentSpec),
+	pointer_default(unique)
+]
+interface IDocumentSpec : IUnknown
+{
+    [propget] HRESULT DocType([out,retval] BSTR* pRet);
+    [propget] HRESULT DocSpecName([out,retval] BSTR* pRet);
+    HRESULT GetBodyPath([out,retval] BSTR* pBodyPath);
+    HRESULT GetPropertyAnnotationEnumerator([out,retval] IUnknown** ppEnum);
+    HRESULT GetSchemaCollection([out,retval] IUnknown** ppSchemaCollection);
+};
+
+[
+	object,
+	uuid(UUID_IResourceTracker),
+	pointer_default(unique)
+]
+interface IResourceTracker : IUnknown
+{
+	HRESULT AddResource([in] IUnknown* pUnk);
+	HRESULT DisposeAll();
+};
+
+[
+	object,
+	uuid(UUID_IPipelineContext),
+	pointer_default(unique)
+]
+interface IPipelineContext : IUnknown
+{
+	[propget] HRESULT PipelineID([out,retval] GUID* pVal);
+	[propget] HRESULT PipelineName([out,retval] BSTR* pVal);
+	[propget] HRESULT StageID([out,retval] GUID* pVal);
+	[propget] HRESULT StageIndex([out,retval] LONG* pVal);
+	[propget] HRESULT ComponentIndex([out,retval] LONG* pVal);
+	[propget] HRESULT ResourceTracker([out,retval] IResourceTracker** ppResTracker);
+
+    HRESULT GetMessageFactory([out,retval] IBaseMessageFactory** ppRet);
+    HRESULT GetDocumentSpecByType([in] BSTR DocType, [out,retval] IDocumentSpec** ppRet);
+    HRESULT GetDocumentSpecByName([in] BSTR DocSpecName, [out,retval] IDocumentSpec** ppRet);
+    HRESULT GetGroupSigningCertificate([out,retval] BSTR* pCertName);
+}
+
+[
+	object,
+	uuid(UUID_IPipelineContextEx),
+	pointer_default(unique)
+]
+interface IPipelineContextEx : IUnknown
+{
+    HRESULT GetTransaction([out, retval] IUnknown** ppVal);
+	[propget] HRESULT AuthenticationRequiredOnReceivePort([out,retval] VARIANT_BOOL* pVal);
+}
+
+[
+	object,
+	uuid(UUID_IComponentUI),
+	pointer_default(unique)
+]
+interface IComponentUI : IUnknown
+{
+	[propget] HRESULT Icon([out,retval] HICON* phIcon);
+	HRESULT Validate([in]IUnknown* pProjectSystem, [out,retval] IUnknown** ppEnum);
+}
+
+cpp_quote("#ifdef __cplusplus")
+cpp_quote("#ifdef __USEPIPELINENAMESPACE__")
+cpp_quote("} // namespace Pipeline")
+cpp_quote("#endif")
+cpp_quote("#endif")
+

@@ -1,0 +1,169 @@
+<!--
+References:
+"Unattended Installation Settings Reference" @ http://technet.microsoft.com/en-us/library/cc749204.aspx
+
+Make sure to modify any lines marked with a lone "!"
+
+This file and the included scripts should be copied to the C:\scripts folder before running sysprep.
+
+Run sysprep with the following options:
+
+sysprep /generalize /oobe /shutdown /unattend:c:\scripts\unattend_Win2K8x64.xml
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!--
+By specifying a value of "*" for <ComputerName>, Windows setup will generate a new computer name using a combination of <RegisteredOwner>, <RegisteredOrganization>, and random alpha-numeric characters.
+-->
+	     <ComputerName>*</ComputerName>
+!            <ProductKey>UPDATEME</ProductKey>
+!            <RegisteredOrganization>UPDATEME</RegisteredOrganization>
+            <DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+            <DoNotCleanTaskBar>true</DoNotCleanTaskBar>
+!            <RegisteredOwner>UPDATEME</RegisteredOwner>
+            <ShowWindowsLive>false</ShowWindowsLive>
+            <StartPanelOff>false</StartPanelOff>
+!            <TimeZone>Pacific Standard Time</TimeZone>
+            <CopyProfile>true</CopyProfile>
+            <Display>
+                <ColorDepth>16</ColorDepth>
+                <HorizontalResolution>1024</HorizontalResolution>
+                <RefreshRate>60</RefreshRate>
+                <VerticalResolution>768</VerticalResolution>
+            </Display>
+        </component>
+        <component name="Microsoft-Windows-TerminalServices-LocalSessionManager" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <fDenyTSConnections>false</fDenyTSConnections>
+        </component>
+        <component name="Microsoft-Windows-Security-Licensing-SLC-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SkipAutoActivation>true</SkipAutoActivation>
+        </component>
+        <component name="Microsoft-Windows-IE-ESC" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <IEHardenAdmin>false</IEHardenAdmin>
+            <IEHardenUser>false</IEHardenUser>
+        </component>
+<!--
+Enter credentials for a user account that has permissions to join a computer to the domain specified in the <JoinDomain> element. (Note: you must enter your password in plaintext here. For better security, delete this file after the systems is restored.
+-->
+        <component name="Microsoft-Windows-UnattendedJoin" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Identification>
+                <Credentials>
+!                    <Domain>UPDATEME</Domain>
+!                    <Password>UPDATEME</Password>
+!                    <Username>UPDATEME</Username>
+                </Credentials>
+!                <JoinDomain>UPDATEME</JoinDomain>
+            </Identification>
+        </component>
+    </settings>
+    <settings pass="oobeSystem">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+!            <RegisteredOrganization>UPDATEME</RegisteredOrganization>
+!            <RegisteredOwner>UPDATEME</RegisteredOwner>
+            <UserAccounts>
+                <AdministratorPassword>
+!                    <Value>UPDATEME</Value>
+                    <PlainText>true</PlainText>
+                </AdministratorPassword>
+            </UserAccounts>
+            <AutoLogon>
+                <Password>
+!                    <Value>UPDATEME</Value>
+                    <PlainText>true</PlainText>
+                </Password>
+!                <Domain>UPDATEME</Domain>
+                <Enabled>true</Enabled>
+                <LogonCount>999</LogonCount>
+!                <Username>UPDATEME</Username>
+            </AutoLogon>
+<!--
+The following commands will be run the first time the image boots up after generalization.
+-->
+            <FirstLogonCommands>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript.exe slmgr.vbs -cpky</CommandLine>
+                    <Order>1</Order>
+                    <Description>Runonce1</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript.exe c:\scripts\ReplaceMachineName.vbs c:\scripts\UpdateSqlServerAndInstanceName.cmd $(NEWCOMPUTERNAME)</CommandLine>
+                    <Order>2</Order>
+                    <Description>Replace computer name in UpdateSqlServerAndInstanceName.cmd</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript.exe c:\scripts\ReplaceMachineName.vbs c:\scripts\UpdateInfo.xml $(NEWCOMPUTERNAME)</CommandLine>
+                    <Order>3</Order>
+                    <Description>Replace computer name in UpdateInfo.xml</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript.exe c:\scripts\UpdateRegistry.vbs c:\scripts\UpdateInfo.xml > c:\scripts\UpdateRegistry.log</CommandLine>
+                    <Order>4</Order>
+                    <Description>Update biztalk registry settings</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript.exe c:\scripts\UpdateDatabase.vbs c:\scripts\UpdateInfo.xml > c:\scripts\UpdateSqlServerDatabase.log</CommandLine>
+                    <Order>5</Order>
+                    <Description>Update biztalk databases</Description>
+		</SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cscript.exe c:\scripts\UpdateBAMDb.vbs c:\scripts\UpdateInfo.xml > c:\scripts\UpdateBAMDb.log</CommandLine>
+                    <Order>6</Order>
+                    <Description>Update BAM databases</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>c:\scripts\UpdateSSO.cmd c:\scripts\UpdateInfo.xml > c:\scripts\SSO.log</CommandLine>
+                    <Order>7</Order>
+                    <Description>Correct SSO configuration</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+!                    <CommandLine>c:\scripts\UpdateSqlServerAndInstanceName.cmd $(OLDCOMPUTERENAME) > c:\scripts\UpdateSqlServerAndInstanceName.log</CommandLine>
+                    <Order>8</Order>
+                    <Description>RenameSQL</Description>
+                </SynchronousCommand>
+
+                <SynchronousCommand wcm:action="add">
+!                    <CommandLine>cscript.exe c:\scripts\ReplaceMachineName.vbs "%programfiles(x86)%\Microsoft BizTalk Server 2016\Tracking\bm.exe.config" $(OLDCOMPUTERENAME)</CommandLine>
+                    <Order>9</Order>
+                    <Description>Replace computer name in bm.exe.config</Description>
+                </SynchronousCommand>
+            </FirstLogonCommands>
+            <OOBE>
+                <HideEULAPage>true</HideEULAPage>
+                <NetworkLocation>Work</NetworkLocation>
+                <ProtectYourPC>3</ProtectYourPC>
+            </OOBE>
+!            <TimeZone>Pacific Standard Time</TimeZone>
+        </component>
+    </settings>
+    <settings pass="generalize">
+        <component name="Microsoft-Windows-Security-Licensing-SLC" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <SkipRearm>0</SkipRearm>
+        </component>
+        <component name="Microsoft-Windows-ServerManager-SvrMgrNc" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DoNotOpenServerManagerAtLogon>true</DoNotOpenServerManagerAtLogon>
+        </component>
+        <component name="Microsoft-Windows-OutOfBoxExperience" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DoNotOpenInitialConfigurationTasksAtLogon>true</DoNotOpenInitialConfigurationTasksAtLogon>
+        </component>
+    </settings>
+    <cpi:offlineImage cpi:source="" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+</unattend>
+
+<!--
+When the virtual machine is started, Windows Setup will:
+ - Assign the copy a random computer name
+ - Change the local Administrators password
+ - Join the domain specified in the sysprep.xml file (under Microsoft-Windows-UnattendedJoin\Identification\JoinDomain)
+ - Add the groups/users specified under <DomainAccounts> to the local Administrators and the local Remote Desktop Users group.
+ - Run the referenced scripts to restore BizTalk functionality
+-->

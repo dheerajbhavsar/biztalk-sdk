@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<helpItems
+  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
+  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+  xmlns="http://msh"
+  schema="maml">
+
+  <!--
+  ===================================
+  Deploy-Policy CmdLet Help Topic
+  ===================================
+    -->
+
+  <command:command>
+
+    <command:details>
+      <command:name>Deploy-Policy</command:name>
+      <maml:description>
+        <maml:para>Creates a new BizTalk application.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para></maml:para>
+      </maml:copyright>
+      <command:verb>Deploy</command:verb>
+      <command:noun>Policy</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Deploy-Policy</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>Parameter1 name</maml:name>
+          <maml:description>
+            <maml:para>Descrition of parameter1.</maml:para>
+          </maml:description>
+          <command:parameterValue>value type</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Parameter2 name</maml:name>
+          <maml:description>
+            <maml:para>Descrition of parameter2.</maml:para>
+          </maml:description>
+          <command:parameterValue>value type</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+
+    <command:parameters>
+      <!-- one for each parameter -->
+      <command:parameter required="true" position="1">
+        <maml:name>Parameter name</maml:name>
+        <maml:description>
+          <maml:para>Parameter description.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Paremeter value type.</command:parameterValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Type name.</maml:name>
+          <maml:uri/>
+          <maml:description>
+            <maml:para>Description of type.</maml:para>
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Output object type.</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para>
+              Object type description
+            </maml:para>
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+
+    <command:examples>
+      <command:example>
+        <maml:title>
+          ------------------------ EXAMPLE 1 ------------------------
+        </maml:title>
+        <maml:introduction>
+          <maml:para>Description of example.</maml:para>
+        </maml:introduction>
+        <dev:code>Example code.</dev:code>
+        <dev:remarks>
+          <maml:para>Remarks about the example.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+
+  </command:command>
+
+  <!--
+  ===================================
+  Start-Application CmdLet Help Topic
+  ===================================
+    -->
+
+  <command:command>
+
+    <command:details>
+      <command:name>Start-Application</command:name>
+      <maml:description>
+        <maml:para>Creates a new BizTalk application.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para></maml:para>
+      </maml:copyright>
+      <command:verb>Start</command:verb>
+      <command:noun>Application</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Start-Application</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>Parameter1 name</maml:name>
+          <maml:description>
+            <maml:para>Descrition of parameter1.</maml:para>
+          </maml:description>
+          <command:parameterValue>value type</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Parameter2 name</maml:name>
+          <maml:description>
+            <maml:para>Descrition of parameter2.</maml:para>
+          </maml:description>
+          <command:parameterValue>value type</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+
+    <command:parameters>
+      <!-- one for each parameter -->
+      <command:parameter required="true" position="1">
+        <maml:name>Parameter name</maml:name>
+        <maml:description>
+          <maml:para>Parameter description.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Paremeter value type.</command:parameterValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Type name.</maml:name>
+          <maml:uri/>
+          <maml:description>
+            <maml:para>Description of type.</maml:para>
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Output object type.</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para>
+              Object type description
+            </maml:para>
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+
+    <command:examples>
+      <command:example>
+        <maml:title>
+          ------------------------ EXAMPLE 1 ------------------------
+        </maml:title>
+        <maml:introduction>
+          <maml:para>Description of example.</maml:para>
+        </maml:introduction>
+        <dev:code>Example code.</dev:code>
+        <dev:remarks>
+          <maml:para>Remarks about the example.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+
+  </command:command>
+
+  <!--
+  ======================================
+  BizTalk PowerShell Provider Help Topic
+  ======================================
+    -->
+
+  <providerHelp>
+    <Name>BizTalk</Name>
+    <RelatedLinks/>
+
+    <CmdletHelpPaths>
+
+      <CmdletHelpPath ID='Applications'>
+        <command:command>
+          <command:details>
+            <command:name>New-Item</command:name>
+          </command:details>
+          </command:command>
+      </CmdletHelpPath>
+
+    </CmdletHelpPaths>
+
+  </providerHelp>
+
+</helpItems>

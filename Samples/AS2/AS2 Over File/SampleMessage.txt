@@ -1,0 +1,33 @@
+Content-Length: 477
+Content-Type: text/plain
+Expect: 100-continue
+Host: localhost
+Mime-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Receipt-Delivery-Option: http://localhost/ReceiveMDN.aspx
+Disposition-Notification-To: http://localhost/ReceiveMDN.aspx
+AS2-From: Partner
+AS2-To: Home
+AS2-Version: 1.0
+Message-ID: 22345
+
+UNA:+.? '
+UNB+UNOB:1+Partner        :ZZZ+Home   :ZZZ+990831:1617+000244++INVOICE+'
+UNG+Invoic+Sender:ZZZZ+Receiver:ZZZZ+150615:1817+219088+21+100:20:10'
+UNH+UNH1+APERAK:D:98B:UN++13+UNH531+UNH641+UNH751'
+BGM+C00+C10601'
+DTM+C50'
+FTX+FTX++C10701+C10801'
+CNT+C27:14'
+RFF+C50'
+DTM+C50'
+NAD+NAD+C08201+C05801+C08001+C05901'
+CTA++C05601'
+COM+C07601:C07'
+ERC+C90101'
+FTX+FTX++C10701+C10801'
+RFF+C50'
+FTX+FTX++C10701+C10801'
+UNT+15+UNH1'
+UNE+1+219088'
+UNZ+1+000244'

@@ -1,0 +1,438 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7c259fd0-bbc1-4a17-b652-5c8ca268be46" LowerBound="1.1" HigherBound="118.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Microsoft.BizTalk.Edi.RoutingOrchestration" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="a44fe670-9c99-4268-bde7-5f5f88dd7682" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ActPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="adfd3dcd-7715-45c0-864e-518e283dea05" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveBatchElement" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="393a93d8-8dbb-4688-8a47-af91531ba757" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="71325e2b-4347-44b9-853d-13e21b843bfd" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BatchElementSendPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e798dd89-b504-42bb-8d70-88d6479377f7" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendBatchElementToIndividualParty" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="71130ee2-d59b-4d51-afd8-f2405aa7c7a4" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="85d4812b-9d6d-43c3-a80d-1e26c5a9a7a8" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BatchElementCT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="b18c3c3c-0498-416f-8c4a-a9d0ab77092f" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.20">
+                <om:Property Name="Ref" Value="EDI.BatchId" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="PropertyRef" OID="60ab8f57-9925-44f9-9b38-8b69864477b1" ParentLink="CorrelationType_PropertyRef" LowerBound="20.22" HigherBound="20.37">
+                <om:Property Name="Ref" Value="EDI.ToBeBatched" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="PropertyRef" OID="3c789ed7-e213-4f96-8ed8-e2ad28f294b0" ParentLink="CorrelationType_PropertyRef" LowerBound="20.39" HigherBound="20.53">
+                <om:Property Name="Ref" Value="EDI.ToBeRouted" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="5c482a07-e6c0-4f4d-8b92-f88277a46c2d" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="117.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BatchRoutingService" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="4f815da2-ecba-4932-aa22-62f1934541e5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="bLoop" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5df594f9-5502-4cb7-af5a-5b9f46732bab" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="Microsoft.BizTalk.Edi.BatchHelper.RoutingHelper" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="rh" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c7e1357a-8122-43d6-b146-71b7550f9202" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="batch" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="1c5f80c1-a66c-47b8-ac56-e827ae5729b7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="InitialValue" Value="System.String.Empty" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="batches" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b9fbc020-d7e6-4ffa-b01f-0c19e1c1705d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Microsoft.XLANGs.BaseTypes.RetryTransactionException" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="retryException" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="AtomicTransaction" OID="1897f50a-c361-4058-a5a5-527ab6e2c7b8" ParentLink="ServiceDeclaration_Transaction" LowerBound="24.21" HigherBound="24.40">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RoutingTransaction" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="TransactionAttribute" OID="767af2c7-4cd0-45df-a290-c9a9c4c182de" ParentLink="ServiceDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                <om:Property Name="Batch" Value="True" />
+                <om:Property Name="Retry" Value="True" />
+                <om:Property Name="Timeout" Value="60" />
+                <om:Property Name="Isolation" Value="Serializable" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="88591573-bf0c-4380-bbc2-62027d432ee0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BatchElement" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1b33e399-74b3-4436-88f0-453da655328a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BatchElementCopy" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="6f4ff234-8ed2-4397-8002-f4dce73d4288" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Scope" OID="d0d1c1f9-110c-408d-9a93-b81c80e1dd82" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="115.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GlobalScope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Receive" OID="9672cd67-a028-4074-a6a8-0749a0382c86" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="50.1">
+                        <om:Property Name="Activate" Value="True" />
+                        <om:Property Name="PortName" Value="ActivationRcvPort" />
+                        <om:Property Name="MessageName" Value="BatchElement" />
+                        <om:Property Name="OperationName" Value="ReceiveBatchElement" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ReceiveBatchElement" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DNFPredicate" OID="28743421-87e3-4053-8e84-c8a45223e2aa" ParentLink="Receive_DNFPredicate">
+                            <om:Property Name="LHS" Value="EDI.ToBeRouted" />
+                            <om:Property Name="RHS" Value="true" />
+                            <om:Property Name="Grouping" Value="OR" />
+                            <om:Property Name="Operator" Value="Equals" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="66851f1a-e947-44f9-b14c-beab7b4ab01a" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="56.1">
+                        <om:Property Name="Expression" Value="// Initialize router component with the stamped batch ids&#xD;&#xA;// This router class will split the ' ' delimited batch ids&#xD;&#xA;// and help the orchestration&#xD;&#xA;batches = BatchElement(EDI.BatchIds);&#xD;&#xA;rh = new Microsoft.BizTalk.Edi.BatchHelper.RoutingHelper(batches);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="InitializeRouter" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="While" OID="7cecce12-0c1e-4746-970c-597aab8dac6f" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="91.1">
+                        <om:Property Name="Expression" Value="bLoop" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="LoopOverAllParties" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Scope" OID="eeadba37-7fe0-4e04-9e1c-dce5a8333482" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="90.1">
+                            <om:Property Name="InitializedTransactionType" Value="True" />
+                            <om:Property Name="IsSynchronized" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="RoutingScope" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="CorrelationDeclaration" OID="d2df8741-5b69-419d-ab3e-c83190dda759" ParentLink="Scope_CorrelationDeclaration" LowerBound="62.1" HigherBound="63.1">
+                                <om:Property Name="Type" Value="Microsoft.BizTalk.Edi.RoutingOrchestration.BatchElementCT" />
+                                <om:Property Name="ParamDirection" Value="In" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="cBatchElement" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="StatementRef" OID="af86031f-c4b0-4e59-8adb-95b0f1e5c7dd" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="87.113" HigherBound="87.137">
+                                    <om:Property Name="Initializes" Value="True" />
+                                    <om:Property Name="Ref" Value="dc8e5e7f-79d5-4030-8483-19c1081a0d2b" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="StatementRef_2" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="182a4f98-8db5-4261-b9ea-7601677b3c4f" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="71.1">
+                                <om:Property Name="Expression" Value="// Get next batch for processing&#xD;&#xA;batch = rh.GetNextBatch();&#xD;&#xA;&#xD;&#xA;// Check loop termination&#xD;&#xA;bLoop = rh.HaveMoreBatches;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="GetNextParty" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Construct" OID="525b4f22-5011-4c62-bf2b-afcf53d5ff2a" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="86.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructBatchMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="29eb6b0d-1351-4f81-9221-de6b9ef7d71c" ParentLink="Construct_MessageRef" LowerBound="72.43" HigherBound="72.59">
+                                    <om:Property Name="Ref" Value="BatchElementCopy" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="6b987480-370c-40f9-8f04-a40b557f0fcf" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="85.1">
+                                    <om:Property Name="Expression" Value="// Create a new message per batch&#xD;&#xA;BatchElementCopy = BatchElement;&#xD;&#xA;&#xD;&#xA;// Copy all the original contexts to the copy element.&#xD;&#xA;BatchElementCopy(*) = BatchElement(*);&#xD;&#xA;&#xD;&#xA;// Stamp the party Id &#xD;&#xA;BatchElementCopy(EDI.ToBeBatched) = true;&#xD;&#xA;BatchElementCopy(EDI.ToBeRouted) = false;&#xD;&#xA;BatchElementCopy(EDI.BatchId) = System.Int32.Parse(batch, System.Globalization.CultureInfo.InvariantCulture);" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="BatchMessageAssignment" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="dc8e5e7f-79d5-4030-8483-19c1081a0d2b" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="88.1">
+                                <om:Property Name="PortName" Value="BatchElementSendPort" />
+                                <om:Property Name="MessageName" Value="BatchElementCopy" />
+                                <om:Property Name="OperationName" Value="SendBatchElementToIndividualParty" />
+                                <om:Property Name="OperationMessageName" Value="Send" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SendBatchMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="838e02f4-0b42-48c6-bce7-fae5cdf8e2e5" ParentLink="Scope_Catch" LowerBound="94.1" HigherBound="102.1">
+                        <om:Property Name="ExceptionName" Value="ae" />
+                        <om:Property Name="ExceptionType" Value="System.ArgumentException" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchArgumentException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="c7a143f8-06a6-4656-913c-f6ae1b0bb24f" ParentLink="Catch_Statement" LowerBound="97.1" HigherBound="99.1">
+                            <om:Property Name="Expression" Value="Microsoft.BizTalk.Edi.Shared.Logger.WriteLog(System.Diagnostics.EventLogEntryType.Error, 0x1FB4, &quot;ExceptionOccuredDuringRouting&quot;, ae.Message);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="LogToEventLog" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Throw" OID="32323404-f6be-4895-8094-ff3ca5b26d9b" ParentLink="Catch_Statement" LowerBound="99.1" HigherBound="101.1">
+                            <om:Property Name="ThrownReference" Value="ae" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ThrowArgumentException" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="f846d30b-8068-49b4-8f63-dcb4a4de64ae" ParentLink="Scope_Catch" LowerBound="102.1" HigherBound="113.1">
+                        <om:Property Name="ExceptionName" Value="e" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchGeneralException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="a16cfeee-0b1d-4b04-8190-2b7f8d716cd7" ParentLink="Catch_Statement" LowerBound="105.1" HigherBound="107.1">
+                            <om:Property Name="Expression" Value="Microsoft.BizTalk.Edi.Shared.Logger.WriteLog(System.Diagnostics.EventLogEntryType.Error, 0x1FB4, &quot;ExceptionOccuredDuringRouting&quot;, e.Message);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="LogToEventLog" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="cd0c4d81-e25d-44ed-8d75-301827f4af5a" ParentLink="Catch_Statement" LowerBound="107.1" HigherBound="110.1">
+                            <om:Property Name="Expression" Value="// Try this after a second&#xD;&#xA;retryException.DelayFor = new System.TimeSpan(0, 0, 1);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="SetRetryFrequency" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Throw" OID="cc7b9b40-fe58-40f6-a2d3-c6ce83e52ced" ParentLink="Catch_Statement" LowerBound="110.1" HigherBound="112.1">
+                            <om:Property Name="ThrownReference" Value="retryException" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ThrowException" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8d8ec856-7357-400d-9bd6-525c63718556" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="26.1" HigherBound="28.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.BizTalk.Edi.RoutingOrchestration.ActPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ActivationRcvPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="d7769673-cd68-4702-8445-6404e350bb28" ParentLink="PortDeclaration_CLRAttribute" LowerBound="26.1" HigherBound="27.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2f973fc5-8153-421f-865c-c64c14b1ec3d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Microsoft.BizTalk.Edi.RoutingOrchestration.BatchElementSendPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BatchElementSendPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="73f03016-c43d-4d69-a323-7e61f6350647" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Microsoft.BizTalk.Edi.RoutingOrchestration
+{
+    internal porttype ActPortType
+    {
+        oneway ReceiveBatchElement
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype BatchElementSendPortType
+    {
+        oneway SendBatchElementToIndividualParty
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal correlationtype BatchElementCT
+    {
+        EDI.BatchId, EDI.ToBeBatched, EDI.ToBeRouted
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+    internal service atomic transaction BatchRoutingService
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements ActPortType ActivationRcvPort;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses BatchElementSendPortType BatchElementSendPort;
+        message System.Xml.XmlDocument BatchElement;
+        message System.Xml.XmlDocument BatchElementCopy;
+        System.Boolean bLoop;
+        Microsoft.BizTalk.Edi.BatchHelper.RoutingHelper rh;
+        System.String batch;
+        System.String batches;
+        Microsoft.XLANGs.BaseTypes.RetryTransactionException retryException;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d0d1c1f9-110c-408d-9a93-b81c80e1dd82")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9672cd67-a028-4074-a6a8-0749a0382c86")]
+                    activate ((EDI.ToBeRouted == true))receive (ActivationRcvPort.ReceiveBatchElement, BatchElement);
+                    bLoop = true;
+                    batch = "";
+                    batches = System.String.Empty;
+                    retryException = new Microsoft.XLANGs.BaseTypes.RetryTransactionException();
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("66851f1a-e947-44f9-b14c-beab7b4ab01a")]
+                    // Initialize router component with the stamped batch ids
+                    // This router class will split the ' ' delimited batch ids
+                    // and help the orchestration
+                    batches = BatchElement(EDI.BatchIds);
+                    rh = new Microsoft.BizTalk.Edi.BatchHelper.RoutingHelper(batches);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7cecce12-0c1e-4746-970c-597aab8dac6f")]
+                    while (bLoop)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("eeadba37-7fe0-4e04-9e1c-dce5a8333482")]
+                        scope
+                        {
+                            correlation BatchElementCT cBatchElement;
+                            body
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("182a4f98-8db5-4261-b9ea-7601677b3c4f")]
+                                // Get next batch for processing
+                                batch = rh.GetNextBatch();
+                                
+                                // Check loop termination
+                                bLoop = rh.HaveMoreBatches;
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("525b4f22-5011-4c62-bf2b-afcf53d5ff2a")]
+                                construct BatchElementCopy
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("6b987480-370c-40f9-8f04-a40b557f0fcf")]
+                                    // Create a new message per batch
+                                    BatchElementCopy = BatchElement;
+                                    
+                                    // Copy all the original contexts to the copy element.
+                                    BatchElementCopy(*) = BatchElement(*);
+                                    
+                                    // Stamp the party Id 
+                                    BatchElementCopy(EDI.ToBeBatched) = true;
+                                    BatchElementCopy(EDI.ToBeRouted) = false;
+                                    BatchElementCopy(EDI.BatchId) = System.Int32.Parse(batch, System.Globalization.CultureInfo.InvariantCulture);
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("dc8e5e7f-79d5-4030-8483-19c1081a0d2b")]
+                                send (BatchElementSendPort.SendBatchElementToIndividualParty, BatchElementCopy, initialize cBatchElement);
+                            }
+                        }
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("838e02f4-0b42-48c6-bce7-fae5cdf8e2e5")]
+                    catch (System.ArgumentException ae)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("c7a143f8-06a6-4656-913c-f6ae1b0bb24f")]
+                        Microsoft.BizTalk.Edi.Shared.Logger.WriteLog(System.Diagnostics.EventLogEntryType.Error, 0x1FB4, "ExceptionOccuredDuringRouting", ae.Message);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("32323404-f6be-4895-8094-ff3ca5b26d9b")]
+                        throw ae;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f846d30b-8068-49b4-8f63-dcb4a4de64ae")]
+                    catch (System.Exception e)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a16cfeee-0b1d-4b04-8190-2b7f8d716cd7")]
+                        Microsoft.BizTalk.Edi.Shared.Logger.WriteLog(System.Diagnostics.EventLogEntryType.Error, 0x1FB4, "ExceptionOccuredDuringRouting", e.Message);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("cd0c4d81-e25d-44ed-8d75-301827f4af5a")]
+                        // Try this after a second
+                        retryException.DelayFor = new System.TimeSpan(0, 0, 1);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("cc7b9b40-fe58-40f6-a2d3-c6ce83e52ced")]
+                        throw retryException;
+                    }
+                }
+            }
+        }
+    }
+}
+

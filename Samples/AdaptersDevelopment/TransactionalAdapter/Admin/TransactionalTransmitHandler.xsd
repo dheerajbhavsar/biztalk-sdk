@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:baf="BiztalkAdapterFramework.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="BiztalkAdapterFramework.xsd" />
+    <xs:element name="Config">
+        <xs:complexType>
+            <xs:sequence>
+            
+                <xs:element name="maximumNumberOfMessages" default="100" minOccurs="1">
+                    <xs:annotation>
+                        <xs:appinfo>
+                            <baf:designer>
+                                <baf:displayname _locID="maximumNumberOfMessagesName">Maximum Messages in Batch</baf:displayname>
+                                <baf:description _locID="maximumNumberOfMessagesDesc">Maximum number of messages per batch.</baf:description>
+                                <baf:category _locID="advancedCategory">Advanced</baf:category>
+                            </baf:designer>
+                        </xs:appinfo>
+                    </xs:annotation>
+                    
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:maxInclusive value="100000" />
+                            <xs:minInclusive value="1" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                    
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\CLSID\{D629B470-A020-4c47-988D-96BF4F326A0B}]
+@="Txn Adapter Class"
+"AppID"="{EF93F9FF-D23D-4d2f-9554-FA4B0CD3E4DA}"
+
+[HKEY_CLASSES_ROOT\CLSID\{D629B470-A020-4c47-988D-96BF4F326A0B}\BizTalk]
+@="BizTalk"
+
+"TransportType"="Txn"
+"Constraints"=dword:00002d8b
+"InboundProtocol_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A281}"
+"OutboundProtocol_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A283}"
+"ReceiveLocation_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A280}"
+"TransmitLocation_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A282}"
+
+"OutboundEngineCLSID"="{D370B180-AF97-4528-B758-B912891B0A6D}"
+"InboundEngineCLSID"="{12F8CA70-4DE4-44e8-8F78-D947523F8DEF}"
+
+"InboundTypeName"="Microsoft.Samples.BizTalk.Adapter.Transactional.TransactionalReceiver"
+"InboundAssemblyPath"="C:\\Program Files (x86)\\Microsoft BizTalk Server 2016\\SDK\\Samples\\AdaptersDevelopment\\TransactionalAdapter\\Runtime\\bin\\Debug\\Microsoft.Samples.BizTalk.Adapter.Transactional.dll"
+"OutboundTypeName"="Microsoft.Samples.BizTalk.Adapter.Transactional.TransactionalTransmitter"
+"OutboundAssemblyPath"="C:\\Program Files (x86)\\Microsoft BizTalk Server 2016\\SDK\\Samples\\AdaptersDevelopment\\TransactionalAdapter\\Runtime\\bin\\Debug\\Microsoft.Samples.BizTalk.Adapter.Transactional.dll"
+"PropertyNameSpace"="http://schemas.microsoft.com/BizTalk/2006/txn-properties"
+
+"AdapterMgmtTypeName"="Microsoft.Samples.BizTalk.Adapter.TransactionalAdmin.TransactionalAdapterManagement"
+"AdapterMgmtAssemblyPath"="C:\\Program Files (x86)\\Microsoft BizTalk Server 2016\\SDK\\Samples\\AdaptersDevelopment\\TransactionalAdapter\\Admin\\bin\\Debug\\Microsoft.Samples.BizTalk.Adapter.TransactionalAdmin.dll"
+
+"ProtocolAlias"="txn://"
+
+"ReceiveHandlerPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+"SendHandlerPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+"ReceiveLocationPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+"SendLocationPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+
+"AliasesXML"="<AdapterAliasList><AdapterAlias>txn://</AdapterAlias></AdapterAliasList>"
+
+[HKEY_CLASSES_ROOT\CLSID\{D629B470-A020-4c47-988D-96BF4F326A0B}\Implemented Categories]
+
+[HKEY_CLASSES_ROOT\CLSID\{D629B470-A020-4c47-988D-96BF4F326A0B}\Implemented Categories\{7F46FC3E-3C2C-405B-A47F-8D17942BA8F9}]
+

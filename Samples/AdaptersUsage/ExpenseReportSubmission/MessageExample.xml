@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<ExpenseReport xmlns="http://BTSExpenseDemo.SchemaExpenseReport">
+	<FullName>John Johnson</FullName>
+	<Alias>JohnJ</Alias>
+	<Number>123456</Number>
+	<Date>10/5/2002</Date>
+	<Amount>35</Amount>
+		<Expenses Category="3" Amount="15">Book</Expenses>
+		<Expenses Category="4" Amount="20">Another book</Expenses>
+</ExpenseReport>
